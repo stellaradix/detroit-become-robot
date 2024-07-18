@@ -1,8 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bj7pd5x1t6skh"]
 
-[ext_resource type="Texture2D" uid="uid://coblt5sat8r7y" path="res://icon.svg" id="1_3nchl"]
+[ext_resource type="Texture2D" uid="uid://c4nmjuqottfvo" path="res://assets/player.png" id="1_ltbwo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpmbs"]
+radius = 8.0
+height = 34.0
 
 [node name="Player" type="CharacterBody2D"]
 
@@ -11,5 +13,4 @@ shape = SubResource("CapsuleShape2D_xpmbs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -0.5)
-scale = Vector2(0.140625, 0.226563)
-texture = ExtResource("1_3nchl")
+texture = ExtResource("1_ltbwo")
