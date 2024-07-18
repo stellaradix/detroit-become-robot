@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj7pd5x1t6skh"]
+[gd_scene load_steps=8 format=3 uid="uid://bj7pd5x1t6skh"]
 
-[ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_3v0y5"]
+[ext_resource type="Texture2D" path="res://assets/player.png" id="1_3v0y5"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_773mf"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_7dc0b"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="4_qy1bn"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="5_2jixw"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="6_hmtl6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpmbs"]
 radius = 8.0
 height = 36.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_773mf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xpmbs")
@@ -14,3 +20,21 @@ shape = SubResource("CapsuleShape2D_xpmbs")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -0.5)
 texture = ExtResource("1_3v0y5")
+
+[node name="PlayerStateChart" type="Node" parent="."]
+script = ExtResource("3_7dc0b")
+
+[node name="PlayerState" type="Node" parent="PlayerStateChart"]
+script = ExtResource("4_qy1bn")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="PlayerStateChart/PlayerState"]
+script = ExtResource("5_2jixw")
+
+[node name="ToRun" type="Node" parent="PlayerStateChart/PlayerState/Idle"]
+script = ExtResource("6_hmtl6")
+to = NodePath("../../Run")
+delay_in_seconds = "0.0"
+
+[node name="Run" type="Node" parent="PlayerStateChart/PlayerState"]
+script = ExtResource("5_2jixw")
