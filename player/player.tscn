@@ -11,7 +11,7 @@ position = Vector2(0, -0.5)
 scale = Vector2(0.140625, 0.226563)
 texture = ExtResource("1_3nchl")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_xpmbs")
