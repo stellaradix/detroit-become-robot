@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="detroit-become-robot"
+run/main_scene="res://Main/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+MenuManager="*res://Autoloads/menu_manager.tscn"
 
 [rendering]
 

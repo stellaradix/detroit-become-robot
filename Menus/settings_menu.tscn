@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbtgnp0cp4raq"]
+
+[ext_resource type="PackedScene" uid="uid://qii722e0stn" path="res://Components/UI/menu.tscn" id="1_5rdnn"]
+[ext_resource type="PackedScene" uid="uid://cfm65gewl2l0b" path="res://Components/UI/volume_slider.tscn" id="2_1vhmo"]
+[ext_resource type="Script" path="res://Menus/settings_menu.gd" id="2_7wl7m"]
+[ext_resource type="PackedScene" uid="uid://c0tkbjwwf6hm2" path="res://Components/UI/Menu_Button.tscn" id="4_sx06b"]
+[ext_resource type="AudioStream" uid="uid://cs1ybcwegohgi" path="res://Sound/Menu/ui_click.wav" id="5_cfeu0"]
+[ext_resource type="Texture2D" uid="uid://d2bu0qfk00a2o" path="res://assets/left_arrow.png" id="5_eedbd"]
+[ext_resource type="AudioStream" uid="uid://b34eoklabwu2h" path="res://Sound/Menu/ui_hover.wav" id="6_6arak"]
+
+[node name="Settings_menu" groups=["menu"] instance=ExtResource("1_5rdnn")]
+script = ExtResource("2_7wl7m")
+
+[node name="MenuBackground" parent="." index="0"]
+metadata/_edit_lock_ = true
+
+[node name="MasterSlider" parent="." index="1" instance=ExtResource("2_1vhmo")]
+layout_mode = 1
+offset_top = 128.0
+offset_bottom = 200.0
+
+[node name="Label" parent="MasterSlider/VBoxContainer" index="0"]
+text = "Master Volume"
+
+[node name="MusicSlider" parent="." index="2" instance=ExtResource("2_1vhmo")]
+layout_mode = 1
+offset_top = 232.0
+offset_bottom = 304.0
+
+[node name="Label" parent="MusicSlider/VBoxContainer" index="0"]
+text = "Music Volume"
+
+[node name="VolumeSlider" parent="MusicSlider/VBoxContainer" index="1"]
+bus_index = 1
+
+[node name="AudioStreamPlayer" parent="MusicSlider/VBoxContainer/VolumeSlider" index="0"]
+bus = &"Music"
+
+[node name="SFXSlider" parent="." index="3" instance=ExtResource("2_1vhmo")]
+layout_mode = 1
+offset_top = 336.0
+offset_bottom = 408.0
+
+[node name="Label" parent="SFXSlider/VBoxContainer" index="0"]
+text = "SFX Volume"
+
+[node name="VolumeSlider" parent="SFXSlider/VBoxContainer" index="1"]
+step = 0.01
+bus_index = 2
+
+[node name="AudioStreamPlayer" parent="SFXSlider/VBoxContainer/VolumeSlider" index="0"]
+stream = ExtResource("5_cfeu0")
+bus = &"SFX"
+
+[node name="MenuSlider" parent="." index="4" instance=ExtResource("2_1vhmo")]
+layout_mode = 1
+offset_top = 440.0
+offset_bottom = 512.0
+
+[node name="Label" parent="MenuSlider/VBoxContainer" index="0"]
+text = "Menu Volume"
+
+[node name="VolumeSlider" parent="MenuSlider/VBoxContainer" index="1"]
+bus_index = 3
+
+[node name="AudioStreamPlayer" parent="MenuSlider/VBoxContainer/VolumeSlider" index="0"]
+stream = ExtResource("6_6arak")
+bus = &"Menu"
+
+[node name="BackButton" parent="." index="5" instance=ExtResource("4_sx06b")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 1
+grow_vertical = 1
+icon = ExtResource("5_eedbd")
+ButtonMenu = "res://Menus/title_menu.tscn"
+
+[node name="Label" type="Label" parent="." index="6"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 40.0
+offset_right = 439.0
+offset_bottom = 100.0
+theme_override_colors/font_outline_color = Color(0.0784314, 0.0862745, 0.129412, 1)
+theme_override_constants/outline_size = 16
+text = "Settings"
+
+[connection signal="volume_changed" from="MasterSlider/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_volume_changed"]
+[connection signal="volume_changed" from="MusicSlider/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_volume_changed"]
+[connection signal="volume_changed" from="SFXSlider/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_volume_changed"]
+[connection signal="volume_changed" from="MenuSlider/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_volume_changed"]
+
+[editable path="MasterSlider"]
+[editable path="MusicSlider"]
+[editable path="SFXSlider"]
+[editable path="MenuSlider"]
