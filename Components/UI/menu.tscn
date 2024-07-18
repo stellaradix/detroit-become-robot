@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://b2cdtmdnikgwr" path="res://Themes/Title.tres" id="1_jcsx4"]
 [ext_resource type="PackedScene" uid="uid://d0gia0aa70285" path="res://Components/UI/menu_background.tscn" id="2_1205h"]
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" groups=["menu"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
