@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dpbp1apa67smx" path="res://Fonts/Perfect Dark Zero.ttf" id="3_p6qg2"]
 [ext_resource type="PackedScene" uid="uid://c0tkbjwwf6hm2" path="res://Components/UI/Menu_Button.tscn" id="4_uwl3f"]
 
-[node name="TitleMenu" groups=["menu"] instance=ExtResource("1_b7e0y")]
+[node name="TitleMenu" instance=ExtResource("1_b7e0y")]
 script = ExtResource("2_h64tl")
 
 [node name="MenuBackground" parent="." index="0"]
