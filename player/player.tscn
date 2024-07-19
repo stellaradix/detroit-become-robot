@@ -1,18 +1,48 @@
 [gd_scene load_steps=8 format=3 uid="uid://bj7pd5x1t6skh"]
 
-[ext_resource type="Texture2D" path="res://assets/player.png" id="1_3v0y5"]
-[ext_resource type="Script" path="res://player/player.gd" id="1_773mf"]
+[ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_3v0y5"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_7dc0b"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="4_qy1bn"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="5_2jixw"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="6_hmtl6"]
+
+[sub_resource type="GDScript" id="GDScript_ub4pc"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+
+
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction = Input.get_axis(\"move_left\", \"move_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpmbs"]
 radius = 8.0
 height = 36.0
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_773mf")
+script = SubResource("GDScript_ub4pc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xpmbs")
