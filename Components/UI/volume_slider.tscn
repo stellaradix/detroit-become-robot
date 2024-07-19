@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfm65gewl2l0b"]
+
+[ext_resource type="FontFile" uid="uid://5pxe0yke8pfb" path="res://Fonts/Quadrunde.ttf" id="1_8m108"]
+[ext_resource type="Script" path="res://Components/UI/VolumeSlider.gd" id="2_hyrg0"]
+
+[node name="Volume Slider" type="Panel"]
+offset_left = 280.0
+offset_top = 56.0
+offset_right = 872.0
+offset_bottom = 128.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -23.0
+offset_right = 568.0
+offset_bottom = 27.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8m108")
+theme_override_font_sizes/font_size = 38
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("2_hyrg0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/VolumeSlider"]
+
+[connection signal="value_changed" from="VBoxContainer/VolumeSlider" to="VBoxContainer/VolumeSlider" method="_on_value_changed"]

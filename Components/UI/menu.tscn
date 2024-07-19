@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://qii722e0stn"]
+
+[ext_resource type="Theme" uid="uid://b2cdtmdnikgwr" path="res://Themes/Title.tres" id="1_jcsx4"]
+[ext_resource type="PackedScene" uid="uid://d0gia0aa70285" path="res://Components/UI/menu_background.tscn" id="2_1205h"]
+
+[node name="Menu" type="Control" groups=["menu"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jcsx4")
+
+[node name="MenuBackground" parent="." instance=ExtResource("2_1205h")]
+layout_mode = 1

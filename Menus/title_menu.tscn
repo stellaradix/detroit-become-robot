@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4nqkjp0p57s"]
+
+[ext_resource type="PackedScene" uid="uid://qii722e0stn" path="res://Components/UI/menu.tscn" id="1_b7e0y"]
+[ext_resource type="Script" path="res://Menus/title_menu.gd" id="2_h64tl"]
+[ext_resource type="FontFile" uid="uid://dpbp1apa67smx" path="res://Fonts/Perfect Dark Zero.ttf" id="3_p6qg2"]
+[ext_resource type="PackedScene" uid="uid://c0tkbjwwf6hm2" path="res://Components/UI/Menu_Button.tscn" id="4_uwl3f"]
+
+[node name="TitleMenu" instance=ExtResource("1_b7e0y")]
+script = ExtResource("2_h64tl")
+
+[node name="MenuBackground" parent="." index="0"]
+offset_left = -16.0
+offset_top = -48.0
+offset_right = -16.0
+offset_bottom = -48.0
+
+[node name="Label" type="Label" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -260.0
+offset_right = 384.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.0798066, 0.0844062, 0.130744, 1)
+theme_override_constants/outline_size = 64
+theme_override_fonts/font = ExtResource("3_p6qg2")
+theme_override_font_sizes/font_size = 225
+text = "Become Robot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" parent="." index="2" instance=ExtResource("4_uwl3f")]
+layout_mode = 1
+offset_left = 216.0
+offset_top = 264.0
+offset_right = -216.0
+offset_bottom = -304.0
+text = "Start Game"
+ButtonMenu = "res://Menus/placeholdermenu.tscn"
+
+[node name="SettingsButton" parent="." index="3" instance=ExtResource("4_uwl3f")]
+layout_mode = 1
+offset_left = 216.0
+offset_top = 376.0
+offset_right = -216.0
+offset_bottom = -192.0
+text = "Settings"
+ButtonMenu = "res://Menus/settings_menu.tscn"
+
+[node name="QuitButton" parent="." index="4" instance=ExtResource("4_uwl3f")]
+layout_mode = 1
+offset_left = 216.0
+offset_top = 496.0
+offset_right = -216.0
+offset_bottom = -72.0
+text = "Quit Game"
+
+[connection signal="pressed" from="QuitButton" to="." method="quit_game"]

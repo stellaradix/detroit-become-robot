@@ -1,0 +1,72 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://b2cdtmdnikgwr"]
+
+[ext_resource type="FontFile" uid="uid://5pxe0yke8pfb" path="res://Fonts/Quadrunde.ttf" id="1_g5rb5"]
+[ext_resource type="FontFile" uid="uid://dc8yi0iw25i6o" path="res://Fonts/KiwiSoda.ttf" id="2_m86xc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_monp1"]
+bg_color = Color(0.122522, 0.132915, 0.189998, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0784314, 0.0862745, 0.129412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geopp"]
+bg_color = Color(0.0784314, 0.0862745, 0.129412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dan10"]
+bg_color = Color(0.102198, 0.11142, 0.162107, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.102198, 0.11142, 0.162107, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fqth"]
+bg_color = Color(0.319695, 0.300263, 0.385031, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_etyqg"]
+bg_color = Color(0.160505, 0.15078, 0.199453, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.117647, 0.109804, 0.14902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksgrx"]
+bg_color = Color(0.160784, 0.14902, 0.2, 1)
+
+[resource]
+Button/colors/font_hover_color = Color(0.819608, 0.537255, 0.227451, 1)
+Button/colors/font_pressed_color = Color(0.583491, 0.220705, 0.219466, 1)
+Button/colors/icon_hover_color = Color(0.819608, 0.537255, 0.227451, 1)
+Button/colors/icon_pressed_color = Color(0.584314, 0.219608, 0.219608, 1)
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("1_g5rb5")
+Button/styles/hover = SubResource("StyleBoxFlat_monp1")
+Button/styles/normal = SubResource("StyleBoxFlat_geopp")
+Button/styles/pressed = SubResource("StyleBoxFlat_dan10")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_6fqth")
+HSlider/styles/grabber_area_highlight = null
+Label/font_sizes/font_size = 60
+Label/fonts/font = ExtResource("1_g5rb5")
+LineEdit/font_sizes/font_size = 48
+LineEdit/fonts/font = ExtResource("2_m86xc")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_etyqg")
+Panel/styles/panel = SubResource("StyleBoxFlat_ksgrx")
