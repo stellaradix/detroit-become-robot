@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://qn2lh78nfdxu"]
+[gd_scene load_steps=6 format=3 uid="uid://qn2lh78nfdxu"]
 
 [ext_resource type="Script" path="res://Guard.gd" id="1_kl3pk"]
+[ext_resource type="Texture2D" uid="uid://coblt5sat8r7y" path="res://icon.svg" id="2_ink2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnge"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_sge2x"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfojr"]
+size = Vector2(60, 20)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_o0kjn"]
 
 [node name="Guard" type="CharacterBody2D"]
 position = Vector2(-163, 129)
@@ -14,6 +18,22 @@ script = ExtResource("1_kl3pk")
 shape = SubResource("RectangleShape2D_lsnge")
 
 [node name="temp" type="Sprite2D" parent="."]
-position = Vector2(2.86102e-06, 2.86102e-06)
-scale = Vector2(20, 20)
-texture = SubResource("CanvasTexture_sge2x")
+position = Vector2(8.58307e-06, 5.96046e-07)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("2_ink2v")
+
+[node name="Light" type="Area2D" parent="."]
+position = Vector2(-40, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
+shape = SubResource("RectangleShape2D_kfojr")
+
+[node name="templight" type="Sprite2D" parent="Light"]
+position = Vector2(9.53674e-07, 2.6226e-06)
+scale = Vector2(60, 20)
+texture = SubResource("CanvasTexture_o0kjn")
+
+[node name="FloorChecker" type="RayCast2D" parent="."]
+target_position = Vector2(0, 20)
+
+[connection signal="body_entered" from="Light" to="." method="_on_light_body_entered"]
