@@ -38,5 +38,5 @@ func _physics_process(_delta):
 
 func _on_light_body_entered(body):
 	if body == %Player:
-		print("ouch")
+		print("Ouch! A guard!")
 

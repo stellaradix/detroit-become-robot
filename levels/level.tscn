@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc7lnq0dc6c2f"]
+[gd_scene load_steps=5 format=3 uid="uid://cc7lnq0dc6c2f"]
 
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_nla6u"]
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_05h4e"]
 [ext_resource type="PackedScene" uid="uid://qn2lh78nfdxu" path="res://Guard.tscn" id="3_8l111"]
+[ext_resource type="PackedScene" uid="uid://ck315tewigdni" path="res://camera.tscn" id="4_f2ldd"]
 
 [node name="Level" type="Node2D"]
 
@@ -18,3 +19,6 @@ position = Vector2(184, 152)
 
 [node name="Flashlight2" parent="." instance=ExtResource("3_8l111")]
 position = Vector2(-16, 56)
+
+[node name="Camera" parent="." instance=ExtResource("4_f2ldd")]
+position = Vector2(193, -2)
