@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" path="res://Guard.gd" id="1_kl3pk"]
 [ext_resource type="Texture2D" uid="uid://coblt5sat8r7y" path="res://icon.svg" id="2_ink2v"]
+[ext_resource type="Texture2D" uid="uid://dlgtrcg1l5qe5" path="res://assets/guardlight.png" id="3_dispp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfojr"]
-size = Vector2(62, 20)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_o0kjn"]
+size = Vector2(62, 16)
 
 [node name="Guard" type="CharacterBody2D"]
 script = ExtResource("1_kl3pk")
@@ -32,9 +31,9 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_kfojr")
 
 [node name="templight" type="Sprite2D" parent="lightPivot/Light"]
-position = Vector2(0, 2.6226e-06)
-scale = Vector2(62, 20)
-texture = SubResource("CanvasTexture_o0kjn")
+position = Vector2(-0.0167351, 8.59597e-08)
+rotation = 3.14159
+texture = ExtResource("3_dispp")
 
 [node name="FloorChecker" type="RayCast2D" parent="."]
 target_position = Vector2(0, 20)
