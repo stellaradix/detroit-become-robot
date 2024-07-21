@@ -36,6 +36,6 @@ func _physics_process(delta):
 func _on_light_body_entered(body):
 	#not detecting player
 	#its detecting the ledge as a player?
-	if body == $".":
+	if body == %Player:
 		print("ouch")
 

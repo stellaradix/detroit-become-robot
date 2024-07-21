@@ -11,7 +11,6 @@ size = Vector2(60, 20)
 [sub_resource type="CanvasTexture" id="CanvasTexture_o0kjn"]
 
 [node name="Guard" type="CharacterBody2D"]
-position = Vector2(-163, 129)
 script = ExtResource("1_kl3pk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -24,6 +23,8 @@ texture = ExtResource("2_ink2v")
 
 [node name="Light" type="Area2D" parent="."]
 position = Vector2(-40, 0)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
 shape = SubResource("RectangleShape2D_kfojr")
