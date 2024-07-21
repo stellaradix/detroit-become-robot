@@ -4,6 +4,10 @@ extends CharacterBody2D
 #left = -1
 var direction = -1
 
+#used to move light accorsing to direction of enemy
+@onready var light_pivot = $lightPivot
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#flips sprite if direction changed
@@ -16,13 +20,14 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	#swaps direction if theres a wall or no floor
 	if is_on_wall() or not $FloorChecker.is_colliding():
 		direction = direction * -1
 		#$animatedsprite.flip_h = not $animatedsprite.flip_h
 		$FloorChecker.position.x = $CollisionShape2D.get_shape().size.x * direction
+		light_pivot.rotation_degrees += 180
 	
 	velocity.y += 20
 	
@@ -30,12 +35,8 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-	
-
 
 func _on_light_body_entered(body):
-	#not detecting player
-	#its detecting the ledge as a player?
 	if body == %Player:
 		print("ouch")
 
