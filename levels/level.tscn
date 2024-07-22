@@ -18,9 +18,13 @@ position = Vector2(168, -64)
 
 [node name="Camera" parent="Enemies" instance=ExtResource("4_f2ldd")]
 position = Vector2(112, 48)
+type = "cieling"
+facing = "down"
 
 [node name="Camera2" parent="Enemies" instance=ExtResource("4_f2ldd")]
 position = Vector2(-176, 48)
+type = "cieling"
+facing = "right"
 
 [node name="Guard" parent="Enemies" instance=ExtResource("3_8l111")]
 position = Vector2(-8, 112)
