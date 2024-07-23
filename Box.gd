@@ -1,5 +1,6 @@
 extends Area2D
 
+var BehindBox = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -7,19 +8,19 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+func _process(_delta):
+	if %Player.is_crouching == true and BehindBox == true:
+		%Player.is_invurnable = true
+	else:
+		%Player.is_invurnable = false
 
 func _on_body_entered(body):
 	#testing collision
 	if body == %Player:
-		print("You're Hiding!")
-	
-	
+		var BehindBox = true
+		print("You're behind a box")
+
+func _on_body_exited(body):
 	if body == %Player:
-		if %Player.iscrouching() == true:
-			%Player.is_invurnable = true
-		else:
-			%Player.is_invurnable = false
-		
+		var BehindBox = false
+		print("You're no longer behind a box")

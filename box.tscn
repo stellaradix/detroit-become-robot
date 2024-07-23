@@ -29,3 +29,4 @@ offset_bottom = -11.0
 text = "BOX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

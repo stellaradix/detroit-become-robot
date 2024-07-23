@@ -27,7 +27,6 @@ texture = ExtResource("2_v6tt6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
 position = Vector2(65.5944, -0.707123)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_w1p0f")
 
 [connection signal="body_entered" from="Light" to="." method="_on_light_body_entered"]

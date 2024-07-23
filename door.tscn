@@ -15,8 +15,8 @@ collision_mask = 2
 script = ExtResource("1_qj4ls")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.90735e-06, 83.25)
-scale = Vector2(86, 167.5)
+position = Vector2(-1, 83.5)
+scale = Vector2(34, 61)
 texture = SubResource("CanvasTexture_xa0cw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -31,9 +31,10 @@ position = Vector2(0, 83.5)
 shape = SubResource("RectangleShape2D_1fwc3")
 
 [node name="RemoveMe" type="Label" parent="."]
-offset_top = -35.0
-offset_right = 48.0
-offset_bottom = 23.0
+offset_left = -24.0
+offset_top = 29.0
+offset_right = 24.0
+offset_bottom = 62.0
 text = "DOOR"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

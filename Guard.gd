@@ -38,5 +38,9 @@ func _physics_process(_delta):
 
 func _on_light_body_entered(body):
 	if body == %Player:
-		print("Ouch! A guard!")
+		#checks if the player is behind a box and crouching
+		if %Player.is_invurnable == true:
+			print("I can't see you!")
+		else:
+			print("Ouch! A guard!")
 
