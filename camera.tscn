@@ -21,12 +21,14 @@ rotation = 1.5708
 collision_layer = 4
 collision_mask = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Light"]
-position = Vector2(65.5944, -0.707108)
-texture = ExtResource("2_v6tt6")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
 position = Vector2(65.5944, -0.707123)
 shape = SubResource("RectangleShape2D_w1p0f")
+
+[node name="PointLight2D" type="PointLight2D" parent="Light"]
+position = Vector2(7, -2.53399e-05)
+range_z_max = 0
+shadow_enabled = true
+texture = ExtResource("2_v6tt6")
 
 [connection signal="body_entered" from="Light" to="." method="_on_light_body_entered"]

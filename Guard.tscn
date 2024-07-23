@@ -31,9 +31,11 @@ collision_mask = 2
 position = Vector2(-28.5, 0)
 shape = SubResource("RectangleShape2D_kfojr")
 
-[node name="templight" type="Sprite2D" parent="lightPivot/Light"]
-position = Vector2(-31, 0)
+[node name="PointLight2D" type="PointLight2D" parent="lightPivot/Light"]
+position = Vector2(33, 0)
 rotation = 3.14159
+range_z_max = 0
+shadow_enabled = true
 texture = ExtResource("3_dispp")
 
 [node name="FloorChecker" type="RayCast2D" parent="."]

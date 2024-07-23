@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr18h5ylochm7"]
+[gd_scene load_steps=5 format=3 uid="uid://cr18h5ylochm7"]
 
 [ext_resource type="Script" path="res://key.gd" id="1_1ea6n"]
+[ext_resource type="Texture2D" uid="uid://ipbif70rd252" path="res://assets/light.tres" id="2_fu4rf"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0mibt"]
 
@@ -27,5 +28,12 @@ offset_top = -23.0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "KEY"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(7.62939e-06, 7.62939e-06)
+scale = Vector2(3.75, 3.75)
+color = Color(0.986273, 0.894873, 0.436796, 1)
+shadow_enabled = true
+texture = ExtResource("2_fu4rf")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

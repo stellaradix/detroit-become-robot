@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj7pd5x1t6skh"]
+[gd_scene load_steps=9 format=3 uid="uid://bj7pd5x1t6skh"]
 
 [ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_3v0y5"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_7dc0b"]
@@ -76,7 +76,11 @@ func _physics_process(delta):
 radius = 16.0
 height = 64.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_162l7"]
+polygon = PackedVector2Array(16, 32, 16, -32, -16, -32, -16, 32)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
 collision_layer = 2
 collision_mask = 5
 script = SubResource("GDScript_ub4pc")
@@ -112,3 +116,7 @@ one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 drag_horizontal_enabled = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_162l7")
+sdf_collision = false

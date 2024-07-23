@@ -17,10 +17,10 @@ func _process(_delta):
 func _on_body_entered(body):
 	#testing collision
 	if body == %Player:
-		var BehindBox = true
+		BehindBox = true
 		print("You're behind a box")
 
 func _on_body_exited(body):
 	if body == %Player:
-		var BehindBox = false
+		BehindBox = false
 		print("You're no longer behind a box")

@@ -11,9 +11,9 @@ func _ready():
 	match facing:
 		"left":
 			sprite_2d.frame = 1
-			sprite_2d.flip_h
+			sprite_2d.flip_h = true
 			light.position.x = -4
-			light.rotation_degrees = -45
+			light.rotation_degrees = 135
 		"right":
 			sprite_2d.frame = 1
 			light.position.x = 4
