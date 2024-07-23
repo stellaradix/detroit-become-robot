@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr5d4yajfj7xv"]
+
+[ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="1_5si18"]
+[ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="2_wruk8"]
+
+[node name="TutorialLevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_5si18")]
+
+[node name="TileMap" parent="." instance=ExtResource("2_wruk8")]
+layer_0/tile_data = PackedInt32Array(196604, 65536, 0, 196605, 65536, 0, 196606, 65536, 0, 196607, 65536, 0, 131072, 65536, 0, 131073, 65536, 0, 131074, 65536, 0, 131075, 65536, 0, 131076, 65536, 0, 131067, 131072, 1, 65531, 131072, 1, -5, 131072, 1, -65541, 131072, 1, -131077, 131072, 1, -196612, 65536, 2, -196611, 65536, 2, -196610, 65536, 2, -196609, 65536, 2, -262144, 65536, 2, -262143, 65536, 2, -262142, 65536, 2, -262141, 65536, 2, -262140, 65536, 2, 131077, 65536, 0, 196603, 327680, 2, -196613, 327680, 1, -262139, 65536, 2, 131079, 65536, 0, 131078, 65536, 0, 131080, 65536, 0, 131081, 65536, 0, 131082, 65536, 0, 131083, 65536, 0, -262138, 65536, 2, -262137, 65536, 2, -262136, 65536, 2, -262135, 65536, 2, -262134, 65536, 2, -262133, 65536, 2, 131084, 131072, 0, 196620, 131072, 1, 262156, 131072, 1, 327692, 131072, 1, 327696, 0, 1, 262160, 0, 1, 196624, 0, 1, 131088, 0, 1, 65552, 0, 1, 65553, 65536, 1, 65554, 65536, 1, 393228, 131072, 1, 393232, 0, 1, 458764, 327680, 2, 458768, 393216, 2, 458765, 65536, 0, 458766, 65536, 0, 458767, 65536, 0, 16, 0, 1, -65520, 0, 0, 18, 65536, 1, 17, 65536, 1, -65519, 65536, 0, -65518, 65536, 0, -262132, 131072, 2, -327668, 131072, 1, -393204, 131072, 1, -65517, 65536, 0, -65516, 65536, 0, -65515, 65536, 0, -65514, 65536, 0)
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Keys" type="Node2D" parent="."]
+
+[node name="Movement" type="Label" parent="."]
+offset_left = -109.0
+offset_top = -71.0
+offset_right = 132.0
+offset_bottom = -48.0
+text = "Use the arrowkeys to move"
+uppercase = true
+
+[node name="Jump" type="Label" parent="."]
+offset_left = 426.0
+offset_top = -70.0
+offset_right = 597.0
+offset_bottom = -47.0
+text = "Press Space to Jump"
+uppercase = true

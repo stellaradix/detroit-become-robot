@@ -13,7 +13,6 @@ script/source = "extends CharacterBody2D
 var keys_found = []
 
 #makes it so enemies cant see the player
-#Guard and box don't seem to be seeing these variables. this is prob the issue
 var is_invurnable = true
 var is_crouching = false
 
