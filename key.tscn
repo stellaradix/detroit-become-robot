@@ -22,4 +22,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_24al6")
 
+[node name="RemoveMe" type="Label" parent="."]
+offset_top = -23.0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "KEY"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

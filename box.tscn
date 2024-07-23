@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b120py1740egx"]
+
+[ext_resource type="Script" path="res://Box.gd" id="1_ykr88"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e0c7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uub4o"]
+size = Vector2(10, 21)
+
+[node name="Box" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ykr88")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, -1.5)
+scale = Vector2(12, 23)
+texture = SubResource("CanvasTexture_e0c7w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_uub4o")
+
+[node name="RemoveMe" type="Label" parent="."]
+offset_left = -17.0
+offset_top = -34.0
+offset_right = 17.0
+offset_bottom = -11.0
+text = "BOX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

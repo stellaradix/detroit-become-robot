@@ -12,6 +12,9 @@ script/source = "extends CharacterBody2D
 #keeps track of the keys the player has
 var keys_found = []
 
+#makes it so enemies cant see the player
+@onready var is_invurnable = false
+
 @onready var coyote_timer := $CoyoteTimer
 
 var jump_buffer_time : int = 15
@@ -57,6 +60,13 @@ func _physics_process(delta):
 	if jump_buffer_counter > 0 and (is_on_floor() or not coyote_timer.is_stopped()):
 		velocity.y = JUMP_VELOCITY
 		jump_buffer_counter = 0.0
+	
+	if Input.is_action_just_pressed(\"crouch\"):
+		print(\"You're crouching\")
+		
+func iscrouching ():
+	if Input.is_action_just_pressed(\"crouch\"):
+		return true
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpmbs"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc7lnq0dc6c2f"]
+[gd_scene load_steps=8 format=3 uid="uid://cc7lnq0dc6c2f"]
 
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_nla6u"]
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_05h4e"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ck315tewigdni" path="res://camera.tscn" id="4_f2ldd"]
 [ext_resource type="PackedScene" uid="uid://cr18h5ylochm7" path="res://key.tscn" id="5_m4cmg"]
 [ext_resource type="PackedScene" uid="uid://w83wh2d66vpi" path="res://door.tscn" id="6_jcvw0"]
+[ext_resource type="PackedScene" uid="uid://b120py1740egx" path="res://box.tscn" id="7_mwebn"]
 
 [node name="Level" type="Node2D"]
 
@@ -28,9 +29,12 @@ position = Vector2(193, -2)
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="Door1" parent="Doors" instance=ExtResource("6_jcvw0")]
-position = Vector2(421, -101)
+position = Vector2(-491, -100)
 
 [node name="Keys" type="Node2D" parent="."]
 
 [node name="Door1" parent="Keys" instance=ExtResource("5_m4cmg")]
-position = Vector2(308, 52)
+position = Vector2(-355, -42)
+
+[node name="Box" parent="." instance=ExtResource("7_mwebn")]
+position = Vector2(136, 54)
