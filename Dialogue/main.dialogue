@@ -1,0 +1,7 @@
+~ start
+
+if spoken_to == "never"
+	NPC: This is test dialogue
+	
+set dialogue_is_open = false
+=> END

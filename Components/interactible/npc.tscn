@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5yi3cnw06c10"]
+
+[ext_resource type="Script" path="res://Components/interactible/npc.gd" id="1_l4bol"]
+[ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_rfagy"]
+[ext_resource type="PackedScene" uid="uid://c8su05aeqprxi" path="res://Components/Collision/interaction_area.tscn" id="2_hgdvm"]
+[ext_resource type="Resource" uid="uid://ckwmndvdgajhw" path="res://Dialogue/main.dialogue" id="4_12oc5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fdht0"]
+radius = 16.0
+height = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ux1yg"]
+radius = 48.0
+
+[node name="NPC" type="StaticBody2D"]
+script = ExtResource("1_l4bol")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 1, 0.909804, 1)
+texture = ExtResource("1_rfagy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_fdht0")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_hgdvm")]
+dialogue_resource = ExtResource("4_12oc5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_ux1yg")
+debug_color = Color(0.463107, 0.898008, 1, 0.42)
+
+[editable path="InteractionArea"]

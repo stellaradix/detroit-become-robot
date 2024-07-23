@@ -58,7 +58,7 @@ position = Vector2(-449, -50)
 position = Vector2(-352, -88)
 
 [node name="Box" parent="." instance=ExtResource("7_mwebn")]
-position = Vector2(384, 32)
+position = Vector2(396, 54)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)

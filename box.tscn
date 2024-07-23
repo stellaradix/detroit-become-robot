@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b120py1740egx"]
+[gd_scene load_steps=5 format=3 uid="uid://b120py1740egx"]
 
 [ext_resource type="Script" path="res://Box.gd" id="1_ykr88"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_e0c7w"]
+[ext_resource type="Texture2D" uid="uid://2lhjvl3dmy41" path="res://assets/texturesquare.png" id="2_mih7h"]
+[ext_resource type="FontFile" uid="uid://5pxe0yke8pfb" path="res://Fonts/Quadrunde.ttf" id="3_8bl7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uub4o"]
-size = Vector2(10, 21)
+size = Vector2(32, 32)
 
 [node name="Box" type="Area2D"]
 collision_layer = 4
@@ -13,20 +13,22 @@ collision_mask = 2
 script = ExtResource("1_ykr88")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.53674e-07, -1.5)
-scale = Vector2(12, 23)
-texture = SubResource("CanvasTexture_e0c7w")
+scale = Vector2(2, 2)
+texture = ExtResource("2_mih7h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.5)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_uub4o")
 
-[node name="RemoveMe" type="Label" parent="."]
-offset_left = -17.0
-offset_top = -34.0
-offset_right = 17.0
-offset_bottom = -11.0
-text = "BOX"
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -32.0
+offset_top = -56.0
+offset_right = 32.0
+offset_bottom = -33.0
+theme_override_fonts/font = ExtResource("3_8bl7l")
+text = "Hidden"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
