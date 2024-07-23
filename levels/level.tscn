@@ -44,7 +44,8 @@ position = Vector2(-176, -16)
 facing = "right"
 
 [node name="Camera3" parent="." instance=ExtResource("4_f2ldd")]
-position = Vector2(-168, -176)
+position = Vector2(496, -128)
+type = "wall"
 facing = "right"
 
 [node name="Doors" type="Node2D" parent="."]
@@ -68,4 +69,4 @@ shadow_enabled = true
 shadow_item_cull_mask = 0
 
 [node name="NPC" parent="." instance=ExtResource("8_pjk2b")]
-position = Vector2(192, -96)
+position = Vector2(-88, -96)
