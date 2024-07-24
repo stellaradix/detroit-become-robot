@@ -26,7 +26,7 @@ func _on_body_entered(body):
 	#testing collision
 	if body == %Player:
 		BehindBox = true
-		sprite_2d.self_modulate = Color(1, 1, 1, 0.5)
+		sprite_2d.self_modulate = Color(1, 1, 1, 0.75)
 		print("You're behind a box")
 
 func _on_body_exited(body):

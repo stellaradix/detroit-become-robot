@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfojr"]
-size = Vector2(123, 24)
+size = Vector2(104, 24)
 
 [node name="Guard" type="CharacterBody2D"]
 script = ExtResource("1_kl3pk")
@@ -29,7 +29,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lightPivot/Light"]
-position = Vector2(-28.5, 0)
+position = Vector2(-19, 0)
 shape = SubResource("RectangleShape2D_kfojr")
 
 [node name="PointLight2D" type="PointLight2D" parent="lightPivot/Light"]

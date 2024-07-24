@@ -91,11 +91,11 @@ func _physics_process(delta):
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpmbs"]
-radius = 16.0
-height = 64.0
+radius = 7.0
+height = 44.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_162l7"]
-polygon = PackedVector2Array(16, 32, 16, -32, -16, -32, -16, 32)
+polygon = PackedVector2Array(5, 32, 5, 30, 3, 26, 4, 21, 4, 14, 6, 9, 4, -1, 4, -4, 6, -8, 6, -10, 5, -13, 3, -16, 0, -17, -4, -16, -6, -13, -7, -10, -6, -4, -8, -1, -10, 9, -9, 13, -7, 13, -8, 20, -8, 25, -11, 30, -11, 32, -6, 32, -2, 18, -1, 18, 0, 32)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
@@ -104,10 +104,11 @@ collision_mask = 5
 script = SubResource("GDScript_ub4pc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(1, -9.5)
 texture = ExtResource("1_3v0y5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_xpmbs")
 
 [node name="PlayerStateChart" type="Node" parent="."]
@@ -133,9 +134,11 @@ wait_time = 0.2
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 drag_horizontal_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(1, -9)
 occluder = SubResource("OccluderPolygon2D_162l7")
 sdf_collision = false
 
