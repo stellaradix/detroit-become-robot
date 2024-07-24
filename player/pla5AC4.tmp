@@ -1,0 +1,146 @@
+[gd_scene load_steps=11 format=3 uid="uid://bj7pd5x1t6skh"]
+
+[ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_3v0y5"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_7dc0b"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="4_qy1bn"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="5_2jixw"]
+[ext_resource type="AudioStream" uid="uid://deodpvfg753un" path="res://assets/Jump 3 Dan Knoflicek.mp3" id="6_5dmks"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="6_hmtl6"]
+[ext_resource type="AudioStream" uid="uid://dox1266wb5pf8" path="res://assets/Jump 1 Dan Knoflicek.mp3" id="7_fsrk5"]
+
+[sub_resource type="GDScript" id="GDScript_ub4pc"]
+script/source = "extends CharacterBody2D
+
+#keeps track of the keys the player has
+var keys_found = []
+
+#makes it so enemies cant see the player
+var is_invurnable = true
+var is_crouching = false
+
+var already_landed = false
+
+#Sound effects
+@onready var sfx_jump_start = $JumpStartSFX
+@onready var sfx_jump_land = $JumpLandSFX
+
+@onready var coyote_timer := $CoyoteTimer
+
+var jump_buffer_time : int = 15
+var jump_buffer_counter: int = 0
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -600.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+
+
+func _physics_process(delta):
+	#For coyote timer
+	var was_on_floor = is_on_floor()
+	
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Get the input direction and handle the movement/deceleration.
+	var direction = Input.get_axis(\"move_left\", \"move_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+		
+	#Coyote Timer
+	if was_on_floor and not is_on_floor() and not Input.is_action_pressed(\"jump\"):
+		coyote_timer.start()
+	
+	#Jump Buffer
+	if Input.is_action_just_pressed(\"jump\"):
+		jump_buffer_counter = jump_buffer_time
+		
+	if jump_buffer_counter > 0:
+		jump_buffer_counter -= 1
+	
+	# Handle jump.
+	if jump_buffer_counter > 0 and (is_on_floor() or not coyote_timer.is_stopped()):
+		#plays sound then jumps
+		sfx_jump_start.play()
+		velocity.y = JUMP_VELOCITY
+		jump_buffer_counter = 0.0
+	
+	if Input.is_action_just_pressed(\"crouch\"):
+		print(\"You're crouching\")
+		is_crouching = true
+		
+	if Input.is_action_just_released(\"crouch\"):
+		print(\"You're no longer crouching\")
+		is_crouching = false
+		
+	if not is_on_floor():
+		already_landed = false
+		
+	if is_on_floor() and already_landed == false:
+		sfx_jump_land.play()
+		already_landed = true
+		
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpmbs"]
+radius = 16.0
+height = 64.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_162l7"]
+polygon = PackedVector2Array(16, 32, 16, -32, -16, -32, -16, 32)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
+collision_layer = 2
+collision_mask = 5
+script = SubResource("GDScript_ub4pc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.5)
+texture = ExtResource("1_3v0y5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xpmbs")
+
+[node name="PlayerStateChart" type="Node" parent="."]
+script = ExtResource("3_7dc0b")
+
+[node name="PlayerState" type="Node" parent="PlayerStateChart"]
+script = ExtResource("4_qy1bn")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="PlayerStateChart/PlayerState"]
+script = ExtResource("5_2jixw")
+
+[node name="ToRun" type="Node" parent="PlayerStateChart/PlayerState/Idle"]
+script = ExtResource("6_hmtl6")
+to = NodePath("../../Run")
+delay_in_seconds = "0.0"
+
+[node name="Run" type="Node" parent="PlayerStateChart/PlayerState"]
+script = ExtResource("5_2jixw")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_162l7")
+sdf_collision = false
+
+[node name="JumpStartSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5dmks")
+volume_db = -20.0
+
+[node name="JumpLandSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_fsrk5")
+volume_db = -20.0

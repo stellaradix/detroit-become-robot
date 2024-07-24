@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://cc7lnq0dc6c2f"]
+
+[ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_nla6u"]
+[ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_05h4e"]
+[ext_resource type="PackedScene" uid="uid://qn2lh78nfdxu" path="res://Guard.tscn" id="3_8l111"]
+[ext_resource type="PackedScene" uid="uid://ck315tewigdni" path="res://camera.tscn" id="4_f2ldd"]
+[ext_resource type="PackedScene" uid="uid://cr18h5ylochm7" path="res://key.tscn" id="5_m4cmg"]
+[ext_resource type="PackedScene" uid="uid://w83wh2d66vpi" path="res://door.tscn" id="6_jcvw0"]
+[ext_resource type="PackedScene" uid="uid://b120py1740egx" path="res://box.tscn" id="7_mwebn"]
+[ext_resource type="PackedScene" uid="uid://c5yi3cnw06c10" path="res://Components/interactible/npc.tscn" id="8_pjk2b"]
+[ext_resource type="PackedScene" uid="uid://de0kbqhey3awg" path="res://assets/Soundtrack.tscn" id="9_f308m"]
+
+[node name="Level" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -632.0
+offset_top = -416.0
+offset_right = 880.0
+offset_bottom = 416.0
+color = Color(0.310113, 0.377407, 0.389188, 1)
+
+[node name="TileMap" parent="." instance=ExtResource("1_nla6u")]
+z_index = 1
+layer_0/tile_data = PackedInt32Array(131094, 131072, 0, 131093, 65536, 0, 131092, 65536, 0, 131091, 65536, 0, 196607, 65536, 3, 196606, 65536, 3, 196605, 0, 3, 131072, 131072, 3, 196594, 65536, 0, 196592, 0, 0, 196593, 65536, 0, 196595, 65536, 0, 196596, 65536, 0, 196597, 65536, 0, 196598, 65536, 0, 196599, 65536, 0, 196600, 65536, 0, 262136, 393216, 1, 327672, 0, 1, 393208, 0, 1, 458745, 131072, 1, 458744, 0, 1, 393225, 0, 1, 327689, 0, 1, 262153, 0, 1, 196617, 393216, 1, 131083, 65536, 0, 131084, 131072, 0, 131090, 65536, 0, 196625, 65536, 2, 196624, 65536, 2, 196623, 393216, 3, 196622, 65536, 3, -131063, 0, 3, -131062, 65536, 3, -131061, 65536, 3, -131060, 65536, 3, -131059, 393216, 3, -131058, 131072, 2, -196594, 131072, 1, -196595, 0, 1, -262130, 131072, 1, -131066, 131072, 3, -131067, 0, 3, -131072, 131072, 3, -65537, 65536, 3, -65538, 65536, 3, -65539, 65536, 3, -65540, 65536, 3, -65541, 65536, 3, -65542, 65536, 3, -65543, 327680, 3, -65544, 0, 2, -131080, 0, 1, -196616, 0, 1, -262152, 0, 1, -327688, 0, 1, -393224, 0, 1, -327687, 131072, 1, -262151, 131072, 1, -196615, 131072, 1, -131079, 131072, 1, -393223, 327680, 1, -458760, 0, 0, -458759, 65536, 0, -458758, 65536, 0, -393222, 65536, 2, -458757, 65536, 0, -458756, 65536, 0, -393221, 65536, 2, -393220, 65536, 2, -393219, 65536, 2, -393218, 65536, 2, -393217, 65536, 2, -458752, 65536, 2, -458751, 65536, 2, -458750, 65536, 2, -524287, 65536, 0, -524288, 65536, 0, -458753, 65536, 0, -458754, 65536, 0, -458755, 65536, 0, -524286, 65536, 0, -524285, 65536, 0, -524284, 65536, 0, -458748, 65536, 2, -458749, 65536, 2, -458747, 65536, 2, -524283, 65536, 0, -524282, 65536, 0, -524281, 65536, 0, -458745, 65536, 2, -458746, 65536, 2, -524280, 65536, 0, -524279, 65536, 0, -524278, 65536, 0, -524277, 65536, 0, -524276, 65536, 0, -524275, 65536, 0, -524274, 131072, 0, -458738, 131072, 1, -327666, 327680, 4, -327667, 0, 1, -393203, 0, 1, -458739, 393216, 1, -458740, 65536, 2, -458741, 65536, 2, -458742, 65536, 2, -458743, 65536, 2, -458744, 65536, 2, -262131, 0, 1, 196601, 131072, 0, 262137, 131072, 1, 327673, 131072, 1, 393209, 131072, 1, 262135, 65536, 2, 262134, 65536, 2, 262133, 65536, 2, 262132, 65536, 2, 262131, 65536, 2, 262130, 65536, 2, 262129, 65536, 2, 262128, 0, 2, 196618, 327680, 1, 196619, 65536, 2, 196620, 327680, 3, 196621, 65536, 3, 196626, 65536, 2, 196627, 65536, 2, 196628, 65536, 2, 196629, 65536, 2, 196630, 131072, 2, 393226, 131072, 1, 327690, 131072, 1, 262154, 131072, 1, 458762, 131072, 1, 458761, 393216, 2, 458760, 65536, 0, 458759, 65536, 0, 458758, 65536, 0, 458754, 65536, 0, 458753, 0, 0, 458755, 65536, 0, 458756, 65536, 0, 458757, 65536, 0, 524284, 131072, 0, 524283, 65536, 0, 524282, 65536, 0, 524281, 327680, 2, 524280, 0, 1, 131088, 65536, 0, 131089, 65536, 0, 131087, 0, 0, 589820, 131072, 2, 589819, 65536, 2, 589818, 65536, 2, 589817, 65536, 2, 589816, 0, 2, 524289, 0, 2, 524290, 65536, 2, 524291, 65536, 2, 524292, 65536, 2, 524293, 65536, 2, 524294, 65536, 2, 524295, 65536, 2, 524296, 65536, 2, 524297, 65536, 2, 524298, 131072, 2, 131082, 65536, 0, 131081, 65536, 0, 131080, 65536, 0, 131079, 65536, 0, 131078, 65536, 0, 131077, 0, 0, 196616, 65536, 2, 196615, 65536, 2, 196614, 65536, 2, 196613, 0, 2, -65548, 0, 3, -65547, 131072, 3, -327665, 131072, 3, -393202, 131072, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_05h4e")]
+unique_name_in_owner = true
+position = Vector2(344, -104)
+
+[node name="Flashlight" parent="." instance=ExtResource("3_8l111")]
+position = Vector2(192, 184)
+
+[node name="Flashlight2" parent="." instance=ExtResource("3_8l111")]
+position = Vector2(-16, 56)
+
+[node name="Flashlight3" parent="." instance=ExtResource("3_8l111")]
+position = Vector2(672, 56)
+
+[node name="Camera" parent="." instance=ExtResource("4_f2ldd")]
+position = Vector2(193, -18)
+facing = "down"
+
+[node name="Camera2" parent="." instance=ExtResource("4_f2ldd")]
+position = Vector2(-172, -17)
+facing = "right"
+
+[node name="Camera3" parent="." instance=ExtResource("4_f2ldd")]
+position = Vector2(511, -113)
+type = "wall"
+facing = "right"
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door1" parent="Doors" instance=ExtResource("6_jcvw0")]
+position = Vector2(-449, -50)
+
+[node name="Keys" type="Node2D" parent="."]
+
+[node name="Door1" parent="Keys" instance=ExtResource("5_m4cmg")]
+position = Vector2(-352, -88)
+
+[node name="Box" parent="." instance=ExtResource("7_mwebn")]
+position = Vector2(384, 32)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+shadow_enabled = true
+shadow_item_cull_mask = 0
+
+[node name="NPC" parent="." instance=ExtResource("8_pjk2b")]
+position = Vector2(-88, -96)
+
+[node name="Soundtrack" parent="." instance=ExtResource("9_f308m")]
+volume_db = -20.0

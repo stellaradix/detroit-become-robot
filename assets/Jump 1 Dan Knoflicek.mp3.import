@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dox1266wb5pf8"
+path="res://.godot/imported/Jump 1 Dan Knoflicek.mp3-5da28608b97f09bb733bf5abee7039c6.mp3str"
+
+[deps]
+
+source_file="res://assets/Jump 1 Dan Knoflicek.mp3"
+dest_files=["res://.godot/imported/Jump 1 Dan Knoflicek.mp3-5da28608b97f09bb733bf5abee7039c6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

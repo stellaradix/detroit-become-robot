@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://de0kbqhey3awg"]
+
+[ext_resource type="AudioStream" uid="uid://cc3517wv5tyc" path="res://assets/cute_bass_Alex McCulloch.mp3" id="1_7dxt6"]
+
+[node name="Soundtrack" type="AudioStreamPlayer"]
+stream = ExtResource("1_7dxt6")
+volume_db = -5.91
+autoplay = true
