@@ -101,7 +101,7 @@ offset_left = 952.0
 offset_top = -240.0
 offset_right = 1262.0
 offset_bottom = -216.0
-text = "Do not stand in the light"
+text = "Avoid the light"
 horizontal_alignment = 1
 uppercase = true
 
@@ -111,7 +111,7 @@ offset_left = 1352.0
 offset_top = -296.0
 offset_right = 1860.0
 offset_bottom = -245.0
-text = "Press ctrl to corouch behind boxes"
+text = "Press ctrl to crouch behind boxes"
 horizontal_alignment = 1
 uppercase = true
 

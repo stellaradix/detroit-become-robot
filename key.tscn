@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr18h5ylochm7"]
+[gd_scene load_steps=6 format=3 uid="uid://cr18h5ylochm7"]
 
 [ext_resource type="Script" path="res://key.gd" id="1_1ea6n"]
 [ext_resource type="Texture2D" uid="uid://ipbif70rd252" path="res://assets/light.tres" id="2_fu4rf"]
+[ext_resource type="AudioStream" uid="uid://bo3muvxx65sju" path="res://assets/619838__cogfirestudios__achievement-happy-beeps-jingle.wav" id="3_plhge"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0mibt"]
 
@@ -35,5 +36,8 @@ scale = Vector2(2.75, 2.75)
 color = Color(0.986273, 0.894873, 0.436796, 1)
 shadow_enabled = true
 texture = ExtResource("2_fu4rf")
+
+[node name="Gotitem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_plhge")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://w83wh2d66vpi"]
+[gd_scene load_steps=6 format=3 uid="uid://w83wh2d66vpi"]
 
 [ext_resource type="Script" path="res://door.gd" id="1_qj4ls"]
+[ext_resource type="AudioStream" uid="uid://dgcod87hfwnx3" path="res://assets/464294__audioway__door-unlocked.wav" id="2_lsbp8"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_xa0cw"]
 
@@ -36,5 +37,8 @@ offset_top = -54.0
 offset_right = 24.0
 offset_bottom = -21.0
 text = "DOOR"
+
+[node name="Unlock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_lsbp8")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var is_moving = false
 @export_enum("left", "right", "down") var facing: String
 
+@onready var caught_player_cam = $CaughtPlayerCam
 @onready var sprite_2d = $Sprite2D
 @onready var light = $Light
 
@@ -25,4 +26,5 @@ func _ready():
 
 func _on_light_body_entered(body):
 		if body == %Player:
+			caught_player_cam.play()
 			print("Ouch! A camera!")

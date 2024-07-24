@@ -7,6 +7,7 @@ var direction = -1
 #used to move light accorsing to direction of enemy
 @onready var light_pivot = $lightPivot
 
+@onready var caught_player = $CaughtPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,5 +43,6 @@ func _on_light_body_entered(body):
 		if %Player.is_invurnable == true:
 			print("I can't see you!")
 		else:
+			caught_player.play()
 			print("Ouch! A guard!")
 
