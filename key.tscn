@@ -30,8 +30,8 @@ offset_bottom = 23.0
 text = "KEY"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(7.62939e-06, 7.62939e-06)
-scale = Vector2(3.75, 3.75)
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(2.75, 2.75)
 color = Color(0.986273, 0.894873, 0.436796, 1)
 shadow_enabled = true
 texture = ExtResource("2_fu4rf")

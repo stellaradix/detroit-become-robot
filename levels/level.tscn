@@ -52,7 +52,7 @@ facing = "right"
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="Door1" parent="Doors" instance=ExtResource("6_jcvw0")]
-position = Vector2(-449, -50)
+position = Vector2(-448, 32)
 
 [node name="Keys" type="Node2D" parent="."]
 
