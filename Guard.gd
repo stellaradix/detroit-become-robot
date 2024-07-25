@@ -45,6 +45,7 @@ func _on_light_body_entered(body):
 		else:
 			#sound not playing cuz scene loads before sound can fully play
 			caught_player.play()
-			get_tree().reload_current_scene()
 			print("Ouch! A guard!")
 
+func _on_caught_player_finished():
+	get_tree().reload_current_scene()

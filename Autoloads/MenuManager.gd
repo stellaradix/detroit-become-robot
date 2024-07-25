@@ -27,7 +27,10 @@ func switch_menu():
 func add_transition():
 	var transition = load("res://Menus/transition.tscn").instantiate()
 	var mainNode = get_tree().get_first_node_in_group("main")
-	mainNode.add_child(transition)
+	if mainNode:
+		mainNode.add_child(transition)
+	else:
+		get_tree().current_scene.add_child(transition)
 
 func remove_transition():
 	var transition = get_tree().get_first_node_in_group("transition")

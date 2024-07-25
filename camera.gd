@@ -28,4 +28,6 @@ func _on_light_body_entered(body):
 		if body == %Player:
 			#sound not playing cuz scene loads before sound can fully play
 			caught_player_cam.play()
-			get_tree().reload_current_scene()
+
+func _on_caught_player_cam_finished():
+	get_tree().reload_current_scene()

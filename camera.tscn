@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://camera.gd" id="1_335q3"]
 [ext_resource type="Texture2D" uid="uid://bquxoe6s6oobm" path="res://assets/camera.png" id="2_cden2"]
 [ext_resource type="Texture2D" uid="uid://dlgtrcg1l5qe5" path="res://assets/guardlight.png" id="2_v6tt6"]
-[ext_resource type="AudioStream" uid="uid://vi7n0rvuu6yg" path="res://assets/alarm.ogg" id="4_mf2dk"]
+[ext_resource type="AudioStream" uid="uid://b0d2uugj2ocsw" path="res://assets/alarm.wav" id="4_ktwov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1p0f"]
 size = Vector2(120.631, 22.6274)
@@ -33,7 +33,8 @@ shadow_enabled = true
 texture = ExtResource("2_v6tt6")
 
 [node name="CaughtPlayerCam" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_mf2dk")
+stream = ExtResource("4_ktwov")
 volume_db = -15.0
 
 [connection signal="body_entered" from="Light" to="." method="_on_light_body_entered"]
+[connection signal="finished" from="CaughtPlayerCam" to="." method="_on_caught_player_cam_finished"]

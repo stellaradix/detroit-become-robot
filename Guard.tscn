@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Guard.gd" id="1_kl3pk"]
 [ext_resource type="Texture2D" uid="uid://coblt5sat8r7y" path="res://icon.svg" id="2_ink2v"]
 [ext_resource type="Texture2D" uid="uid://dlgtrcg1l5qe5" path="res://assets/guardlight.png" id="3_dispp"]
-[ext_resource type="AudioStream" uid="uid://qq8foyhhd82e" path="res://robot.ogg" id="4_1wen4"]
+[ext_resource type="AudioStream" uid="uid://kic3brhbxggt" path="res://assets/robot.ogg" id="4_mpeeh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnge"]
 
@@ -43,7 +43,8 @@ texture = ExtResource("3_dispp")
 target_position = Vector2(0, 20)
 
 [node name="CaughtPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_1wen4")
+stream = ExtResource("4_mpeeh")
 volume_db = -5.0
 
 [connection signal="body_entered" from="lightPivot/Light" to="." method="_on_light_body_entered"]
+[connection signal="finished" from="CaughtPlayer" to="." method="_on_caught_player_finished"]

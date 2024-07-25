@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cohl0du8t8h5c"]
+[gd_scene load_steps=7 format=3 uid="uid://cohl0du8t8h5c"]
 
 [ext_resource type="Script" path="res://Menus/transition.gd" id="1_cuxha"]
 [ext_resource type="Texture2D" uid="uid://cqbx6y60yfj2d" path="res://assets/checker_dark.png" id="2_8157v"]
@@ -16,7 +16,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1536, 648), Vector2(192, 648)]
+"values": [Vector2(1664, 1152), Vector2(256, 1152)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -28,7 +28,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-192, 0), Vector2(1152, 0)]
+"values": [Vector2(-256, -256), Vector2(1152, -256)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -58,7 +58,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(192, 648), Vector2(1536, 648)]
+"values": [Vector2(256, 1152), Vector2(1664, 1152)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -70,7 +70,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-192, 0), Vector2(-192, 0)]
+"values": [Vector2(-256, -256), Vector2(-256, -256)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -87,14 +87,42 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_1d3a4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, 1152)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-192, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2wjpm"]
 _data = {
+"RESET": SubResource("Animation_1d3a4"),
 "swipe_off": SubResource("Animation_p6q2e"),
 "swipe_on": SubResource("Animation_71fqy")
 }
 
 [node name="Transition" type="Control" groups=["transition"]]
-z_index = 1
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,7 +134,8 @@ script = ExtResource("1_cuxha")
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -192.0
-offset_bottom = 648.0
+offset_right = 64.0
+offset_bottom = 1152.0
 texture = ExtResource("2_8157v")
 stretch_mode = 1
 

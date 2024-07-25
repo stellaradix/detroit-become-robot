@@ -109,6 +109,7 @@ position = Vector2(1, -9.5)
 texture = ExtResource("1_3v0y5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_xpmbs")
 
 [node name="PlayerStateChart" type="Node" parent="."]
@@ -138,6 +139,7 @@ zoom = Vector2(2, 2)
 drag_horizontal_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 position = Vector2(1, -9)
 occluder = SubResource("OccluderPolygon2D_162l7")
 sdf_collision = false

@@ -3,7 +3,11 @@ extends Control
 @onready var animation_player = $AnimationPlayer
 
 func animation_finished():
-	MenuManager.switch_menu()
+	if get_tree().get_first_node_in_group("main"):
+		MenuManager.switch_menu()
+	else:
+		animation_player.play("swipe_off")
+		get_tree().reload_current_scene()
 
 func swipe_off_finished():
 	MenuManager.remove_transition()
