@@ -104,19 +104,6 @@ func _physics_process(delta):
 		already_landed = true
 		animation_player.play(\"idle\")
 		
-
-
-
-func _on_level_door_tall_pillar_body_entered(body):
-	#temp door replace with another level in a desired order
-	if body == %Player:
-		get_tree().change_scene_to_file(\"res://levels/tutorial_level.tscn\")
-
-
-
-func _on_level_door_tutorial_body_entered(body):
-	if body == %Player:
-		get_tree().change_scene_to_file(\"res://levels/level_tall_pillar.tscn\")
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpmbs"]
@@ -127,10 +114,8 @@ height = 44.0
 closed = false
 polygon = PackedVector2Array(5, 32, 5, 30, 3, 26, 4, 21, 4, 14, 6, 9, 4, -1, 4, -4, 6, -8, 6, -10, 5, -13, 3, -16, 0, -17, -4, -16, -6, -13, -7, -10, -6, -4, -8, -1, -10, 9, -9, 13, -7, 13, -8, 20, -8, 25, -11, 30, -11, 32, -6, 32, -2, 18, -1, 18, 0, 32)
 
-[sub_resource type="Animation" id="Animation_7uaxq"]
-resource_name = "run"
-length = 0.5
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_yp6tc"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -138,10 +123,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1, 2, 3, 4, 5, 6]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_feb81"]
@@ -177,8 +162,10 @@ tracks/0/keys = {
 "values": [7, 8, 9, 10, 11, 12]
 }
 
-[sub_resource type="Animation" id="Animation_yp6tc"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_7uaxq"]
+resource_name = "run"
+length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -186,10 +173,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [1, 2, 3, 4, 5, 6]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n77sk"]
