@@ -10,10 +10,10 @@
 [node name="LevelTallPillar" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -504.0
-offset_top = -512.0
-offset_right = 320.0
-offset_bottom = 224.0
+offset_left = -568.0
+offset_top = -583.0
+offset_right = 461.0
+offset_bottom = 348.0
 color = Color(0.310113, 0.377407, 0.389188, 1)
 
 [node name="TileMap" parent="." instance=ExtResource("1_ovs8f")]

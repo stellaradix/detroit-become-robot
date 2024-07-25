@@ -41,7 +41,7 @@ func _on_light_body_entered(body):
 	if body == %Player:
 		#checks if the player is behind a box and crouching
 		if %Player.is_invurnable == true:
-			print("I can't see you!")
+			print("The Guard can't see you!")
 		else:
 			#sound not playing cuz scene loads before sound can fully play
 			caught_player.play()

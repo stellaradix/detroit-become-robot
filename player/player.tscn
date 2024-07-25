@@ -92,15 +92,26 @@ func _physics_process(delta):
 
 
 func _on_level_door_tall_pillar_body_entered(body):
+	if body == %Player:
+		get_tree().change_scene_to_file(\"res://levels/level_rabbit_hole.tscn\")
+
+
+func _on_level_door_tutorial_body_entered(body):
+	if body == %Player:
+		get_tree().change_scene_to_file(\"res://levels/level_tall_pillar.tscn\")
+
+
+func _on_level_door_rabbit_hole_body_entered(body):
 	#temp door replace with another level in a desired order
 	if body == %Player:
 		get_tree().change_scene_to_file(\"res://levels/tutorial_level.tscn\")
 
 
 
-func _on_level_door_tutorial_body_entered(body):
+func _on_level_door_long_brigade_body_entered(body):
+	#temp door replace with another level in a desired order
 	if body == %Player:
-		get_tree().change_scene_to_file(\"res://levels/level_tall_pillar.tscn\")
+		get_tree().change_scene_to_file(\"res://levels/tutorial_level.tscn\")
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpmbs"]
