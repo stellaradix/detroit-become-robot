@@ -88,6 +88,19 @@ func _physics_process(delta):
 		sfx_jump_land.play()
 		already_landed = true
 		
+
+
+
+func _on_level_door_tall_pillar_body_entered(body):
+	#temp door replace with another level in a desired order
+	if body == %Player:
+		get_tree().change_scene_to_file(\"res://levels/tutorial_level.tscn\")
+
+
+
+func _on_level_door_tutorial_body_entered(body):
+	if body == %Player:
+		get_tree().change_scene_to_file(\"res://levels/level_tall_pillar.tscn\")
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpmbs"]
