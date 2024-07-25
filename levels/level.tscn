@@ -37,7 +37,7 @@ position = Vector2(8, 88)
 position = Vector2(672, 80)
 
 [node name="Camera" parent="." instance=ExtResource("4_f2ldd")]
-position = Vector2(193, -18)
+position = Vector2(216, -16)
 facing = "down"
 
 [node name="Camera2" parent="." instance=ExtResource("4_f2ldd")]

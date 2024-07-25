@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var sfx_got_item = $Gotitem
+@onready var area_2d = $Area2D
+
 #keeps track of the keys
 
 func _ready():
@@ -12,4 +14,8 @@ func _on_area_2d_body_entered(_body):
 	sfx_got_item.play()
 	%Player.keys_found.append(self.name)
 	print(%Player.keys_found)
+	area_2d.queue_free()
+
+
+func _on_gotitem_finished():
 	queue_free()
