@@ -26,13 +26,13 @@ layer_0/tile_data = PackedInt32Array(262136, 65536, 0, 327672, 393216, 1, 393208
 
 [node name="Player" parent="." instance=ExtResource("2_05h4e")]
 unique_name_in_owner = true
-position = Vector2(352, -88)
+position = Vector2(344, -88)
 
 [node name="Flashlight" parent="." instance=ExtResource("3_8l111")]
 position = Vector2(200, 248)
 
 [node name="Flashlight2" parent="." instance=ExtResource("3_8l111")]
-position = Vector2(16, 88)
+position = Vector2(8, 88)
 
 [node name="Flashlight3" parent="." instance=ExtResource("3_8l111")]
 position = Vector2(672, 80)

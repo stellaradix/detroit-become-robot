@@ -95,6 +95,7 @@ radius = 7.0
 height = 44.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_162l7"]
+closed = false
 polygon = PackedVector2Array(5, 32, 5, 30, 3, 26, 4, 21, 4, 14, 6, 9, 4, -1, 4, -4, 6, -8, 6, -10, 5, -13, 3, -16, 0, -17, -4, -16, -6, -13, -7, -10, -6, -4, -8, -1, -10, 9, -9, 13, -7, 13, -8, 20, -8, 25, -11, 30, -11, 32, -6, 32, -2, 18, -1, 18, 0, 32)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
@@ -108,7 +109,6 @@ position = Vector2(1, -9.5)
 texture = ExtResource("1_3v0y5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_xpmbs")
 
 [node name="PlayerStateChart" type="Node" parent="."]

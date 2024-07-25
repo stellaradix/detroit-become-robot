@@ -8,6 +8,7 @@
 size = Vector2(32, 32)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gyljb"]
+closed = false
 polygon = PackedVector2Array(32, -32, 32, 32, -32, 32, -32, -32)
 
 [node name="Box" type="Area2D"]
