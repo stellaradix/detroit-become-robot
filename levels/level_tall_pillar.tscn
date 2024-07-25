@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bynt07sdurfkl"]
 
-[ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_vhgj7"]
-[ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_o6uym"]
-[ext_resource type="PackedScene" uid="uid://qn2lh78nfdxu" path="res://Guard.tscn" id="3_em0s3"]
-[ext_resource type="PackedScene" uid="uid://ck315tewigdni" path="res://camera.tscn" id="4_h65v4"]
-[ext_resource type="PackedScene" uid="uid://b120py1740egx" path="res://box.tscn" id="5_30mkc"]
-[ext_resource type="PackedScene" uid="uid://b1t5dcyigh5gu" path="res://level_door.tscn" id="6_0bxeb"]
+[ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_ovs8f"]
+[ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_oaq78"]
+[ext_resource type="PackedScene" uid="uid://qn2lh78nfdxu" path="res://Guard.tscn" id="3_ykd0s"]
+[ext_resource type="PackedScene" uid="uid://ck315tewigdni" path="res://camera.tscn" id="4_y3dhk"]
+[ext_resource type="PackedScene" uid="uid://b120py1740egx" path="res://box.tscn" id="5_tpg3r"]
+[ext_resource type="PackedScene" uid="uid://b1t5dcyigh5gu" path="res://level_door.tscn" id="6_f5i3h"]
 
 [node name="LevelTallPillar" type="Node2D"]
 
@@ -16,25 +16,27 @@ offset_right = 320.0
 offset_bottom = 224.0
 color = Color(0.310113, 0.377407, 0.389188, 1)
 
-[node name="TileMap" parent="." instance=ExtResource("1_vhgj7")]
+[node name="TileMap" parent="." instance=ExtResource("1_ovs8f")]
 layer_0/tile_data = PackedInt32Array(393207, 65536, 0, 393208, 65536, 0, 393209, 65536, 0, 393210, 65536, 0, 393211, 65536, 0, 393212, 65536, 0, 393213, 65536, 0, 393214, 65536, 0, 393215, 65536, 0, 327680, 65536, 0, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327686, 65536, 0, 327687, 65536, 0, 327688, 393216, 2, -262153, 65536, 3, -262152, 65536, 3, -262151, 65536, 3, -262150, 65536, 3, -262149, 65536, 3, -262148, 65536, 3, -262147, 65536, 3, -262146, 65536, 3, -327672, 393216, 4, -262136, 0, 1, -196600, 0, 1, -131064, 0, 1, -65528, 0, 1, 8, 393216, 4, 65544, 0, 1, 131080, 0, 1, 196616, 0, 1, 262152, 0, 1, 7, 65536, 3, 6, 65536, 3, -327673, 65536, 3, -327674, 65536, 3, 5, 0, 3, -327675, 0, 3, -393208, 0, 1, -458744, 0, 1, -524280, 0, 1, -589816, 0, 1, -655352, 0, 1, -720888, 0, 1, -786424, 0, 1, -851960, 0, 1, -917496, 0, 1, -983032, 393216, 1, -983033, 65536, 2, -983034, 65536, 2, -983035, 65536, 2, -983036, 65536, 2, -983037, 65536, 2, -983038, 65536, 2, -983039, 65536, 2, -983040, 65536, 2, -917505, 65536, 2, -262145, 131072, 3, -917506, 65536, 2, -917507, 65536, 2, -917508, 65536, 2, -917509, 65536, 2, -917510, 65536, 2, -917511, 65536, 2, -917512, 65536, 2, -917513, 327680, 1, -851977, 131072, 1, -786441, 131072, 1, -720905, 131072, 1, -655369, 131072, 1, -589833, 131072, 1, -524297, 131072, 2, -524298, 65536, 2, -524299, 65536, 2, -524300, 65536, 2, -524301, 327680, 1, -458765, 131072, 1, -393229, 131072, 1, -327693, 131072, 1, -262157, 327680, 4, -262156, 65536, 3, -262155, 65536, 3, -262154, 65536, 3, 393206, 65536, 0, 393205, 65536, 0, 393204, 65536, 0, 393203, 327680, 2, 393202, 0, 1, 327666, 0, 1, 262130, 0, 1, 196594, 0, 1, 131058, 0, 1, 65522, 0, 1, -14, 0, 1, -65550, 0, 1, -131086, 0, 1, -196622, 0, 1, -262158, 0, 1, -327694, 0, 1, -524302, 0, 1, -458766, 0, 1, -393230, 0, 1, -196621, 131072, 1, -131085, 131072, 1, -65549, 131072, 1, -13, 131072, 1, 65523, 131072, 1, 131059, 131072, 1, 196595, 131072, 1, 262131, 131072, 1, 327667, 131072, 1, 458738, 0, 2, 458739, 65536, 2, 458740, 65536, 2, 458741, 65536, 2, 458742, 65536, 2, 458743, 65536, 2, 458744, 65536, 2, 458745, 65536, 2, 458746, 65536, 2, 458747, 65536, 2, 458748, 65536, 2, 458749, 65536, 2, 458750, 65536, 2, 458751, 65536, 2, 393216, 65536, 2, 393217, 65536, 2, 393218, 65536, 2, 393219, 65536, 2, 393220, 65536, 2, 393221, 65536, 2, 393222, 65536, 2, 393223, 65536, 2, 393224, 65536, 2, 393225, 131072, 2, 327689, 131072, 1, 262153, 131072, 1, 196617, 131072, 1, 131081, 131072, 1, 65545, 131072, 1, 9, 131072, 1, -589815, 131072, 1, -524279, 131072, 1, -458743, 131072, 1, -393207, 131072, 1, -327671, 131072, 1, -262135, 131072, 1, -196599, 131072, 1, -131063, 131072, 1, -65527, 131072, 1, -983031, 131072, 1, -917495, 131072, 1, -851959, 131072, 1, -786423, 131072, 1, -720887, 131072, 1, -655351, 131072, 1, -1048567, 131072, 0, -1048568, 65536, 0, -1048569, 65536, 0, -1048570, 65536, 0, -1048571, 65536, 0, -1048572, 65536, 0, -1048573, 65536, 0, -1048574, 65536, 0, -1048575, 65536, 0, -1048576, 65536, 0, -983041, 65536, 0, -983042, 65536, 0, -983043, 65536, 0, -983044, 65536, 0, -983045, 65536, 0, -983046, 65536, 0, -983047, 65536, 0, -983048, 65536, 0, -983049, 65536, 0, -983050, 0, 0, -917514, 0, 1, -851978, 0, 1, -786442, 0, 1, -720906, 0, 1, -655370, 0, 1, -589834, 393216, 2, -589835, 65536, 0, -589836, 65536, 0, -589837, 65536, 0, -589838, 0, 0)
 
-[node name="Player" parent="." instance=ExtResource("2_o6uym")]
+[node name="Player" parent="." instance=ExtResource("2_oaq78")]
 unique_name_in_owner = true
 position = Vector2(-235, 136)
 
-[node name="Flashlight" parent="." instance=ExtResource("3_em0s3")]
+[node name="Flashlight" parent="." instance=ExtResource("3_ykd0s")]
 position = Vector2(214, -10)
 
-[node name="Camera" parent="." instance=ExtResource("4_h65v4")]
+[node name="Camera" parent="." instance=ExtResource("4_y3dhk")]
 position = Vector2(-16, -432)
 facing = "down"
 
-[node name="Box" parent="." instance=ExtResource("5_30mkc")]
+[node name="Box" parent="." instance=ExtResource("5_tpg3r")]
 position = Vector2(-178, -192)
 
-[node name="Flashlight2" parent="." instance=ExtResource("3_em0s3")]
+[node name="Flashlight2" parent="." instance=ExtResource("3_ykd0s")]
 position = Vector2(-18, -172)
 
-[node name="LevelDoor" parent="." instance=ExtResource("6_0bxeb")]
-position = Vector2(-356, -203)
+[node name="LevelDoor_TallPillar" parent="." instance=ExtResource("6_f5i3h")]
+position = Vector2(-363, -203)
+
+[connection signal="body_entered" from="LevelDoor_TallPillar" to="Player" method="_on_level_door_tall_pillar_body_entered"]
