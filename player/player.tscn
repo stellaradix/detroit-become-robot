@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj7pd5x1t6skh"]
+[gd_scene load_steps=16 format=3 uid="uid://bj7pd5x1t6skh"]
 
 [ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_3v0y5"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_7dc0b"]
@@ -24,6 +24,9 @@ var already_landed = false
 #Sound effects
 @onready var sfx_jump_start = $JumpStartSFX
 @onready var sfx_jump_land = $JumpLandSFX
+@onready var sprite_2d = $Sprite2D
+@onready var animation_player = $AnimationPlayer
+
 
 @onready var coyote_timer := $CoyoteTimer
 
@@ -47,10 +50,21 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis(\"move_left\", \"move_right\")
-	if direction:
+	if direction == -1:
+		sprite_2d.flip_h = true
+		if is_on_floor and Input.is_action_pressed(\"move_left\"):
+			animation_player.play(\"run\")
+		velocity.x = direction * SPEED
+	elif direction == 1:
+		sprite_2d.flip_h = false
+		if is_on_floor() and Input.is_action_pressed(\"move_right\"):
+			animation_player.play(\"run\")
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if Input.is_action_just_released(\"move_left\") or Input.is_action_just_released(\"move_right\") and is_on_floor():
+		animation_player.play(\"idle\")
 
 	move_and_slide()
 		
@@ -59,7 +73,7 @@ func _physics_process(delta):
 		coyote_timer.start()
 	
 	#Jump Buffer
-	if Input.is_action_just_pressed(\"jump\"):
+	if Input.is_action_pressed(\"jump\"):
 		jump_buffer_counter = jump_buffer_time
 		
 	if jump_buffer_counter > 0:
@@ -69,6 +83,7 @@ func _physics_process(delta):
 	if jump_buffer_counter > 0 and (is_on_floor() or not coyote_timer.is_stopped()):
 		#plays sound then jumps
 		sfx_jump_start.play()
+		animation_player.play(\"jump\")
 		velocity.y = JUMP_VELOCITY
 		jump_buffer_counter = 0.0
 	
@@ -87,6 +102,7 @@ func _physics_process(delta):
 	if is_on_floor() and already_landed == false:
 		sfx_jump_land.play()
 		already_landed = true
+		animation_player.play(\"idle\")
 		
 
 
@@ -122,6 +138,79 @@ height = 44.0
 closed = false
 polygon = PackedVector2Array(5, 32, 5, 30, 3, 26, 4, 21, 4, 14, 6, 9, 4, -1, 4, -4, 6, -8, 6, -10, 5, -13, 3, -16, 0, -17, -4, -16, -6, -13, -7, -10, -6, -4, -8, -1, -10, 9, -9, 13, -7, 13, -8, 20, -8, 25, -11, 30, -11, 32, -6, 32, -2, 18, -1, 18, 0, 32)
 
+[sub_resource type="Animation" id="Animation_7uaxq"]
+resource_name = "run"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_feb81"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_f2d68"]
+resource_name = "jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_yp6tc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n77sk"]
+_data = {
+"RESET": SubResource("Animation_yp6tc"),
+"idle": SubResource("Animation_feb81"),
+"jump": SubResource("Animation_f2d68"),
+"run": SubResource("Animation_7uaxq")
+}
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 collision_layer = 2
@@ -129,8 +218,9 @@ collision_mask = 5
 script = SubResource("GDScript_ub4pc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -9.5)
+position = Vector2(0, -9.5)
 texture = ExtResource("1_3v0y5")
+hframes = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -175,3 +265,9 @@ volume_db = -20.0
 [node name="JumpLandSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_fsrk5")
 volume_db = -20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n77sk")
+}
+autoplay = "idle"
