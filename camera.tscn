@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b0d2uugj2ocsw" path="res://assets/alarm.wav" id="4_ktwov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1p0f"]
-size = Vector2(120.631, 22.6274)
+size = Vector2(97.7211, 22.6274)
 
 [node name="Camera" type="CharacterBody2D"]
 script = ExtResource("1_335q3")
@@ -14,7 +14,6 @@ script = ExtResource("1_335q3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_cden2")
 hframes = 2
-frame = 1
 
 [node name="Light" type="Area2D" parent="."]
 position = Vector2(0, 9)
@@ -23,7 +22,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
-position = Vector2(65.5944, -0.707123)
+position = Vector2(54.1394, -0.707123)
 shape = SubResource("RectangleShape2D_w1p0f")
 
 [node name="PointLight2D" type="PointLight2D" parent="Light"]

@@ -44,6 +44,14 @@ facing = "down"
 position = Vector2(-172, -17)
 facing = "right"
 
+[node name="Camera4" parent="." instance=ExtResource("4_f2ldd")]
+position = Vector2(-112, 336)
+facing = "right"
+
+[node name="Camera5" parent="." instance=ExtResource("4_f2ldd")]
+position = Vector2(48, 336)
+facing = "left"
+
 [node name="Camera3" parent="." instance=ExtResource("4_f2ldd")]
 position = Vector2(511, -113)
 type = "wall"
