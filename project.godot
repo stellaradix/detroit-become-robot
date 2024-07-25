@@ -21,6 +21,7 @@ MenuManager="*res://Autoloads/menu_manager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 InteractionManager="*res://Autoloads/interaction_manager.tscn"
 State="*res://Autoloads/state.gd"
+Soundtrack="*res://assets/Soundtrack.tscn"
 
 [dialogue_manager]
 

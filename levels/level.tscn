@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cc7lnq0dc6c2f"]
+[gd_scene load_steps=10 format=3 uid="uid://cc7lnq0dc6c2f"]
 
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_nla6u"]
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_05h4e"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://b120py1740egx" path="res://box.tscn" id="7_mwebn"]
 [ext_resource type="PackedScene" uid="uid://c5yi3cnw06c10" path="res://Components/interactible/npc.tscn" id="8_pjk2b"]
 [ext_resource type="PackedScene" uid="uid://dpj1tl28kvvft" path="res://objects/small_box.tscn" id="8_w87cc"]
-[ext_resource type="PackedScene" path="res://assets/Soundtrack.tscn" id="9_f308m"]
 
 [node name="Level" type="Node2D"]
 
@@ -84,6 +83,3 @@ shadow_item_cull_mask = 0
 
 [node name="NPC" parent="." instance=ExtResource("8_pjk2b")]
 position = Vector2(-88, -96)
-
-[node name="Soundtrack" parent="." instance=ExtResource("9_f308m")]
-volume_db = -20.0

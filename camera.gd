@@ -23,8 +23,9 @@ func _ready():
 			sprite_2d.frame = 0
 			light.position.x = 0
 			light.rotation_degrees = 90
-
+	
 func _on_light_body_entered(body):
 		if body == %Player:
+			#sound not playing cuz scene loads before sound can fully play
 			caught_player_cam.play()
-			print("Ouch! A camera!")
+			get_tree().reload_current_scene()

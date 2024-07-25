@@ -43,6 +43,8 @@ func _on_light_body_entered(body):
 		if %Player.is_invurnable == true:
 			print("I can't see you!")
 		else:
+			#sound not playing cuz scene loads before sound can fully play
 			caught_player.play()
+			get_tree().reload_current_scene()
 			print("Ouch! A guard!")
 

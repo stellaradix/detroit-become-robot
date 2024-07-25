@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1t5dcyigh5gu"]
+
+[ext_resource type="Script" path="res://level_door.gd" id="1_ya3am"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pk0pv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbsms"]
+size = Vector2(19, 53)
+
+[node name="LevelDoor" type="Area2D"]
+script = ExtResource("1_ya3am")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.499996, 17.5)
+scale = Vector2(19, 53)
+texture = SubResource("CanvasTexture_pk0pv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 17.5)
+shape = SubResource("RectangleShape2D_hbsms")
+
+[node name="RemoveMe" type="Label" parent="."]
+offset_left = -40.0
+offset_top = -30.0
+offset_right = 42.0
+offset_bottom = -7.0
+text = "Next Level"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
