@@ -2,6 +2,8 @@ extends Area2D
 
 var BehindBox = false
 
+@onready var player = get_tree().get_first_node_in_group("player")
+
 @onready var sprite_2d = $Sprite2D
 @onready var label = $Label
 
@@ -13,24 +15,24 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if %Player.is_crouching == true and BehindBox == true:
-		%Player.is_invurnable = true
+	if player.is_crouching == true and BehindBox == true:
+		player.is_invurnable = true
 		label.show()
 
 	else:
-		%Player.is_invurnable = false
+		player.is_invurnable = false
 		label.hide()
 			
 
 func _on_body_entered(body):
 	#testing collision
-	if body == %Player:
+	if body == player:
 		BehindBox = true
 		sprite_2d.self_modulate = Color(1, 1, 1, 0.75)
 		print("You're behind a box")
 
 func _on_body_exited(body):
-	if body == %Player:
+	if body == player:
 		BehindBox = false
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 		print("You're no longer behind a box")
