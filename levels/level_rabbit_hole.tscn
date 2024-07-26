@@ -53,14 +53,14 @@ offset_top = -72.0
 offset_bottom = -39.0
 
 [node name="Flashlight" parent="." instance=ExtResource("6_51sf7")]
-position = Vector2(177, 278)
+position = Vector2(164, 279)
 
 [node name="Camera2" parent="." instance=ExtResource("3_5j83r")]
 position = Vector2(70, 368)
 facing = "down"
 
 [node name="Flashlight2" parent="." instance=ExtResource("6_51sf7")]
-position = Vector2(156, 725)
+position = Vector2(78, 726)
 
 [node name="Camera3" parent="." instance=ExtResource("3_5j83r")]
 position = Vector2(273, 526)

@@ -3,11 +3,12 @@ extends CharacterBody2D
 #right = 1
 #left = -1
 var direction = -1
-
-#used to move light accorsing to direction of enemy
+var moving = true
+var already_turned = false
+#used to move light according to direction of enemy
 @onready var light_pivot = $lightPivot
-
 @onready var caught_player = $CaughtPlayer
+@onready var turn_timer = $TurnTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,16 +25,24 @@ func _ready():
 func _physics_process(_delta):
 	
 	#swaps direction if theres a wall or no floor
-	if is_on_wall() or not $FloorChecker.is_colliding():
+	if already_turned == false and (is_on_wall() or not $FloorChecker.is_colliding()):
+		moving = false
+		already_turned = true
 		direction = direction * -1
 		#$animatedsprite.flip_h = not $animatedsprite.flip_h
 		$FloorChecker.position.x = $CollisionShape2D.get_shape().size.x * direction
-		light_pivot.rotation_degrees += 180
+		turn_timer.start()
 	
-	velocity.y += 20
-	
-	velocity.x = 50 * direction
-	
+	if turn_timer.is_stopped():
+		already_turned = false
+		
+	if moving == true:
+		velocity.y += 20
+		velocity.x = 50 * direction
+	else:
+		velocity.x = 0
+		velocity.y = 0
+		
 	move_and_slide()
 	
 
@@ -49,3 +58,9 @@ func _on_light_body_entered(body):
 
 func _on_caught_player_finished():
 	get_tree().reload_current_scene()
+
+
+func _on_turn_timer_timeout():
+	print("timer done")
+	light_pivot.rotation_degrees += 180
+	moving = true

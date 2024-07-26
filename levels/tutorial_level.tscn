@@ -33,7 +33,7 @@ type = "cieling"
 facing = "down"
 
 [node name="Guard" parent="Enemies" instance=ExtResource("4_glfe6")]
-position = Vector2(1688, -40)
+position = Vector2(1689, -43)
 
 [node name="Boxes" type="Node2D" parent="."]
 

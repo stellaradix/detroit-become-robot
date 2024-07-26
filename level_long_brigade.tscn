@@ -70,7 +70,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="Flashlight3" parent="." instance=ExtResource("6_gxq3g")]
-position = Vector2(383, -137)
+position = Vector2(383, -139)
 
 [node name="Flashlight4" parent="." instance=ExtResource("6_gxq3g")]
 position = Vector2(865, 342)

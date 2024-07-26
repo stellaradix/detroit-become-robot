@@ -15,7 +15,7 @@ script/source = "extends CharacterBody2D
 var keys_found = []
 
 #makes it so enemies cant see the player
-var is_invurnable = true
+var is_invurnable = false
 var is_crouching = false
 
 #tracks if the sfx_jump_land has already played

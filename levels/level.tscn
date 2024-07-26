@@ -34,7 +34,7 @@ position = Vector2(200, 248)
 position = Vector2(8, 88)
 
 [node name="Flashlight3" parent="." instance=ExtResource("3_8l111")]
-position = Vector2(672, 80)
+position = Vector2(663, 83)
 
 [node name="Camera" parent="." instance=ExtResource("4_f2ldd")]
 position = Vector2(216, -16)
