@@ -5,3 +5,12 @@
 [node name="Main" type="Node" groups=["main"]]
 
 [node name="TitleMenu" parent="." instance=ExtResource("1_5k6xw")]
+
+[node name="Level Select" type="Button" parent="."]
+offset_left = 957.0
+offset_top = 272.0
+offset_right = 1135.0
+offset_bottom = 332.0
+text = "Level Select"
+
+[connection signal="pressed" from="Level Select" to="TitleMenu" method="_on_level_select_pressed"]

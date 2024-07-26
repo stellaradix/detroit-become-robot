@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://covog0ofqledj"]
+
+[ext_resource type="Script" path="res://level_select.gd" id="1_p7rxi"]
+
+[node name="Level_Select" type="Node2D"]
+script = ExtResource("1_p7rxi")
+
+[node name="Tutorial" type="Button" parent="."]
+offset_left = 85.0
+offset_top = 48.0
+offset_right = 186.0
+offset_bottom = 130.0
+text = "Day 0
+Tutorial"
+
+[node name="BackButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+
+[node name="RabbitHole" type="Button" parent="."]
+offset_left = 347.0
+offset_top = 47.0
+offset_right = 469.0
+offset_bottom = 130.0
+text = "Day 2
+Rabbit Hole"
+
+[node name="LongBrigade" type="Button" parent="."]
+offset_left = 78.0
+offset_top = 194.0
+offset_right = 187.0
+offset_bottom = 277.0
+text = "Day X
+Long Brigade"
+
+[node name="TallPillar" type="Button" parent="."]
+offset_left = 210.0
+offset_top = 47.0
+offset_right = 330.0
+offset_bottom = 129.0
+text = "Day 1
+Tall Pillar"
+
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="RabbitHole" to="." method="_on_rabbit_hole_pressed"]
+[connection signal="pressed" from="LongBrigade" to="." method="_on_long_brigade_pressed"]
+[connection signal="pressed" from="TallPillar" to="." method="_on_tall_pillar_pressed"]

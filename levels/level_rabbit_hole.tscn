@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2iegjarfq0cn"]
+[gd_scene load_steps=8 format=3 uid="uid://c2iegjarfq0cn"]
 
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_hckmd"]
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_caqcq"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cr18h5ylochm7" path="res://key.tscn" id="4_hdd27"]
 [ext_resource type="PackedScene" uid="uid://w83wh2d66vpi" path="res://door.tscn" id="5_kwv1g"]
 [ext_resource type="PackedScene" uid="uid://qn2lh78nfdxu" path="res://Guard.tscn" id="6_51sf7"]
-[ext_resource type="PackedScene" uid="uid://b120py1740egx" path="res://box.tscn" id="7_ao7gw"]
 [ext_resource type="PackedScene" uid="uid://b1t5dcyigh5gu" path="res://level_door.tscn" id="8_pdqa7"]
 
 [node name="level_rabbit_hole" type="Node2D"]
@@ -62,9 +61,6 @@ facing = "down"
 
 [node name="Flashlight2" parent="." instance=ExtResource("6_51sf7")]
 position = Vector2(156, 725)
-
-[node name="Box" parent="." instance=ExtResource("7_ao7gw")]
-position = Vector2(107, 705)
 
 [node name="Camera3" parent="." instance=ExtResource("3_5j83r")]
 position = Vector2(273, 526)
