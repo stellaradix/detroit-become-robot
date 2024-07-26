@@ -32,6 +32,7 @@ position = Vector2(200, 248)
 
 [node name="Flashlight2" parent="." instance=ExtResource("3_8l111")]
 position = Vector2(8, 88)
+move_speed = 40
 
 [node name="Flashlight3" parent="." instance=ExtResource("3_8l111")]
 position = Vector2(663, 83)

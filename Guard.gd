@@ -63,6 +63,5 @@ func _on_caught_player_finished():
 
 
 func _on_turn_timer_timeout():
-	print("timer done")
 	light_pivot.rotation_degrees += 180
 	moving = true
