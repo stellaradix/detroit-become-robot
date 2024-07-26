@@ -7,11 +7,11 @@
 [sub_resource type="GDScript" id="GDScript_ub4pc"]
 script/source = "extends CharacterBody2D
 
-const ACCELERATION = 600.0
-const FRICTION = 800.0
+const ACCELERATION = 800.0
+const FRICTION = 900.0
 const AIR_RESISTANCE = 200
 const MAX_SPEED = 300.0
-const MAX_JUMP_HEIGHT = -550.0
+const MAX_JUMP_HEIGHT = -600.0
 
 #keeps track of the keys the player has
 var keys_found = []
@@ -97,14 +97,15 @@ func handle_jump():
 		if Input.is_action_just_released(\"jump\") and velocity.y < MAX_JUMP_HEIGHT / 2:
 			velocity.y = MAX_JUMP_HEIGHT / 2
 	
-func handle_wall_jump():
+func handle_wall_jump(input_axis):
 	if !is_on_wall or is_on_floor():
 		return
 	var wall_normal = get_wall_normal()
 	if Input.is_action_just_pressed(\"jump\") and wall_normal and is_on_wall():
-		velocity.x = wall_normal.x * MAX_SPEED * 0.8
-		velocity.y = MAX_JUMP_HEIGHT * 0.7
+		velocity.x = wall_normal.x * MAX_SPEED 
+		velocity.y = MAX_JUMP_HEIGHT 
 		player_action = JUMP
+		input_axis * -1
 	
 func handle_acceleration(input_axis, delta):
 	if input_axis != 0:
