@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var move_speed = 50
+
 #right = 1
 #left = -1
 var direction = -1
