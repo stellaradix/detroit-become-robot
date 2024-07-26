@@ -125,6 +125,7 @@ shadow_item_cull_mask = 0
 
 [node name="LevelDoor_Tutorial" parent="." instance=ExtResource("9_ymv33")]
 position = Vector2(1631, 84)
+level_scene = "res://levels/level_tall_pillar.tscn"
 
 [node name="Jump" type="Label" parent="."]
 offset_left = -105.0
@@ -133,7 +134,5 @@ offset_right = 233.0
 offset_bottom = 55.0
 text = "Press ESC to go back to the main menu"
 uppercase = true
-
-[connection signal="body_entered" from="LevelDoor_Tutorial" to="Player" method="_on_level_door_tutorial_body_entered"]
 
 [editable path="Doors/door1"]

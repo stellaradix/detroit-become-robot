@@ -38,20 +38,6 @@ position = Vector2(14, 782)
 [node name="door1" parent="Doors" instance=ExtResource("5_kwv1g")]
 position = Vector2(-188, 113)
 
-[node name="Sprite2D" parent="Doors/door1" index="0"]
-position = Vector2(-1, 9.53674e-07)
-scale = Vector2(34, 96)
-
-[node name="CollisionShape2D" parent="Doors/door1" index="1"]
-position = Vector2(0, 0)
-
-[node name="CollisionShape2D" parent="Doors/door1/Area2D" index="0"]
-position = Vector2(0, 0)
-
-[node name="RemoveMe" parent="Doors/door1" index="3"]
-offset_top = -72.0
-offset_bottom = -39.0
-
 [node name="Flashlight" parent="." instance=ExtResource("6_51sf7")]
 position = Vector2(164, 279)
 
@@ -68,7 +54,4 @@ facing = "left"
 
 [node name="LevelDoor_RabbitHole" parent="." instance=ExtResource("8_pdqa7")]
 position = Vector2(-315, 116)
-
-[connection signal="body_entered" from="LevelDoor_RabbitHole" to="Player" method="_on_level_door_rabbit_hole_body_entered"]
-
-[editable path="Doors/door1"]
+level_scene = "res://levels/level_long_brigade.tscn"

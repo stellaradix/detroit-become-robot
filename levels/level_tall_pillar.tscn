@@ -25,6 +25,7 @@ position = Vector2(-235, 136)
 
 [node name="Flashlight" parent="." instance=ExtResource("3_ykd0s")]
 position = Vector2(214, -10)
+move_speed = 30
 
 [node name="Camera" parent="." instance=ExtResource("4_y3dhk")]
 position = Vector2(-16, -432)
@@ -38,5 +39,4 @@ position = Vector2(-18, -172)
 
 [node name="LevelDoor_TallPillar" parent="." instance=ExtResource("6_f5i3h")]
 position = Vector2(-363, -203)
-
-[connection signal="body_entered" from="LevelDoor_TallPillar" to="Player" method="_on_level_door_tall_pillar_body_entered"]
+level_scene = "res://levels/level_rabbit_hole.tscn"

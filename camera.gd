@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var caught_player_cam = $CaughtPlayerCam
 @onready var sprite_2d = $Sprite2D
 @onready var light = $Light
+@onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready():
 	match facing:
@@ -25,7 +26,7 @@ func _ready():
 			light.rotation_degrees = 90
 	
 func _on_light_body_entered(body):
-	if body == %Player:
+	if body == player:
 		caught_player_cam.play()
 
 func _on_caught_player_cam_finished():

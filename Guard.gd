@@ -11,6 +11,7 @@ var already_turned = false
 @onready var light_pivot = $lightPivot
 @onready var caught_player = $CaughtPlayer
 @onready var turn_timer = $TurnTimer
+@onready var player = get_tree().get_first_node_in_group("player")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,7 +41,7 @@ func _physics_process(_delta):
 		
 	if moving == true:
 		velocity.y += 20
-		velocity.x = 50 * direction
+		velocity.x = move_speed * direction
 	else:
 		velocity.x = 0
 		velocity.y = 0
@@ -49,9 +50,9 @@ func _physics_process(_delta):
 	
 
 func _on_light_body_entered(body):
-	if body == %Player:
+	if body == player:
 		#checks if the player is behind a box and crouching
-		if %Player.is_invurnable == true:
+		if player.is_invurnable == true:
 			print("The Guard can't see you!")
 		else:
 			#sound not playing cuz scene loads before sound can fully play
