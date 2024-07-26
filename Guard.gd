@@ -4,6 +4,8 @@ extends CharacterBody2D
 #left = -1
 var direction = -1
 
+@export var walk_speed = 50
+
 #used to move light accorsing to direction of enemy
 @onready var light_pivot = $lightPivot
 
@@ -32,7 +34,7 @@ func _physics_process(_delta):
 	
 	velocity.y += 20
 	
-	velocity.x = 50 * direction
+	velocity.x = walk_speed * direction
 	
 	move_and_slide()
 	
