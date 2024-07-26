@@ -1,27 +1,32 @@
-[gd_scene load_steps=12 format=3 uid="uid://bj7pd5x1t6skh"]
+[gd_scene load_steps=16 format=3 uid="uid://bj7pd5x1t6skh"]
 
 [ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_3v0y5"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_7dc0b"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="4_qy1bn"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="5_2jixw"]
 [ext_resource type="AudioStream" uid="uid://deodpvfg753un" path="res://assets/Jump 3 Dan Knoflicek.mp3" id="6_5dmks"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="6_hmtl6"]
 [ext_resource type="AudioStream" uid="uid://dox1266wb5pf8" path="res://assets/Jump 1 Dan Knoflicek.mp3" id="7_fsrk5"]
 
 [sub_resource type="GDScript" id="GDScript_ub4pc"]
 script/source = "extends CharacterBody2D
 
-const ACCELERATION = 800.0
-const FRICTION = 700.0
-const MAX_SPEED = 300.0
-const MAX_JUMP_HEIGHT = -600.0
+const ACCELERATION = 800
+const FRICTION = 1000
+const MAX_SPEED = 100
+const MAX_JUMP_HEIGHT = -600
 
 #keeps track of the keys the player has
 var keys_found = []
 
 #makes it so enemies cant see the player
-var is_invurnable = false
+var is_invurnable = true
 var is_crouching = false
-var can_jump = false
 
 #tracks if the sfx_jump_land has already played
 var already_landed = false
+
+var state = MOVE
 
 #Sound effects
 @onready var sfx_jump_start = $JumpStartSFX
@@ -31,80 +36,113 @@ var already_landed = false
 @onready var animation_player = $AnimationPlayer
 @onready var coyote_timer := $CoyoteTimer
 
+var jump_buffer_time : int = 15
+var jump_buffer_counter: int = 0
+
 var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+
+enum {
+	MOVE,
+	JUMP,
+	CROUCH,
+}
+
 
 func _physics_process(delta):
 	
 	var input_axis = Input.get_axis(\"move_left\", \"move_right\")
 	
-	var was_on_floor = is_on_floor()
+	match state:
+		MOVE:
+			move_state(delta)
+		JUMP:
+			jump_state(delta)
+		CROUCH:
+			crouch_state(delta)
 	
 	apply_gravity(delta)
 	handle_jump()
 	handle_acceleration(input_axis, delta)
 	apply_friction(input_axis, delta)
-	escape_to_menu()
 	move_and_slide()
 	
-	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
+	#goes back to main menu
+	#if Input.is_action_just_pressed(\"escape\"):
+		#get_tree().change_scene_to_file(\"res://Main/main.tscn\")
+	
+	#For coyote timer
+	#var was_on_floor = is_on_floor()
 		
-	if just_left_ledge:
-		coyote_timer.start()
-		can_jump = true
+	#if Input.is_action_just_released(\"move_left\") or Input.is_action_just_released(\"move_right\") and is_on_floor():
+		#animation_player.play(\"idle\")
 
-	if Input.is_action_just_pressed(\"crouch\"):
-		print(\"You're crouching\")
-		is_crouching = true
+	#move_and_slide()
 		
-	if Input.is_action_just_released(\"crouch\"):
-		print(\"You're no longer crouching\")
-		is_crouching = false
+	#Coyote Timer
+	#if was_on_floor and not is_on_floor() and not Input.is_action_pressed(\"jump\"):
+		#coyote_timer.start()
+	
+	#Jump Buffer
+	#if Input.is_action_pressed(\"jump\"):
+		#jump_buffer_counter = jump_buffer_time
 		
-	if not is_on_floor():
-		already_landed = false
+	#if jump_buffer_counter > 0:
+		#jump_buffer_counter -= 1
+	
+	# Handle jump.
+	#if jump_buffer_counter > 0 and (is_on_floor() or not coyote_timer.is_stopped()):
+		#plays sound then jumps
+		#sfx_jump_start.play()
+		#animation_player.play(\"jump\")
+		#velocity.y = JUMP_VELOCITY
+		#jump_buffer_counter = 0.0
+	
+	#if Input.is_action_just_pressed(\"crouch\"):
+		#print(\"You're crouching\")
+		#is_crouching = true
 		
-	if is_on_floor() and !already_landed:
-		sfx_jump_land.play()
-		already_landed = true
-		animation_player.play(\"idle\")
+	#if Input.is_action_just_released(\"crouch\"):
+		#print(\"You're no longer crouching\")
+		#is_crouching = false
+		
+	#plays sound effect when landing
+	#if not is_on_floor():
+		#already_landed = false
+		
+	#if is_on_floor() and already_landed == false:
+		#sfx_jump_land.play()
+		#already_landed = true
+		#animation_player.play(\"idle\")
 		
 
 func apply_gravity(delta):
-	if !is_on_floor():
+	if not is_on_floor():
 		velocity.y += gravity * delta
-	else:
-		can_jump = true
 
 func handle_jump():
-	if is_on_floor() or coyote_timer.time_left > 0.0:
-		if Input.is_action_just_pressed(\"jump\"):
-			if can_jump:
-				velocity.y = MAX_JUMP_HEIGHT
-				sfx_jump_start.play()
-				can_jump = false
-	if !is_on_floor():
-		if Input.is_action_just_released(\"jump\") and velocity.y < MAX_JUMP_HEIGHT / 2:
-			velocity.y = MAX_JUMP_HEIGHT / 2
-		
+	if is_on_floor() and Input.is_action_just_pressed(\"jump\"):
+		print(Input.get_action_strength(\"jump\"))
+		velocity.y = MAX_JUMP_HEIGHT * Input.get_action_strength(\"jump\")
+	elif Input.is_action_just_released(\"jump\") and velocity.y < MAX_JUMP_HEIGHT / 2:
+		velocity.y = MAX_JUMP_HEIGHT / 2
+
 func handle_acceleration(input_axis, delta):
 	if input_axis != 0:
 		velocity.x = move_toward(velocity.x, MAX_SPEED * input_axis, ACCELERATION * delta)
-		sprite_2d.flip_h = (input_axis < 0)
-		if is_on_floor():
-			animation_player.play(\"run\")
-	
-	if Input.is_action_just_released(\"move_left\") or Input.is_action_just_released(\"move_right\"):
-		if is_on_floor():
-			animation_player.play(\"idle\")
 
 func apply_friction(input_axis, delta):
-	if input_axis == 0:
-		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+	if input_axis != 0:
+		velocity.x = move_toward(velocity.x, MAX_SPEED * input_axis, ACCELERATION * delta)
 
-func escape_to_menu():
-	if Input.is_action_just_pressed(\"escape\"):
-		MenuManager.set_menu(\"res://Menus/title_menu.tscn\")
-		MenuManager.add_transition()
+func move_state(delta):
+	pass
+	
+
+func jump_state(delta):
+	pass
+
+func crouch_state(delta):
+	pass
 
 func _on_level_door_tall_pillar_body_entered(body):
 	if body == %Player:
@@ -169,9 +207,9 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_74owe"]
+[sub_resource type="Animation" id="Animation_f2d68"]
 resource_name = "jump"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -179,10 +217,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [7, 8, 9, 10, 11]
+"values": [7, 8, 9, 10, 11, 12]
 }
 
 [sub_resource type="Animation" id="Animation_7uaxq"]
@@ -206,7 +244,7 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_yp6tc"),
 "idle": SubResource("Animation_feb81"),
-"jump": SubResource("Animation_74owe"),
+"jump": SubResource("Animation_f2d68"),
 "run": SubResource("Animation_7uaxq")
 }
 
@@ -224,6 +262,24 @@ hframes = 13
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CapsuleShape2D_xpmbs")
+
+[node name="PlayerStateChart" type="Node" parent="."]
+script = ExtResource("3_7dc0b")
+
+[node name="PlayerState" type="Node" parent="PlayerStateChart"]
+script = ExtResource("4_qy1bn")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="PlayerStateChart/PlayerState"]
+script = ExtResource("5_2jixw")
+
+[node name="ToRun" type="Node" parent="PlayerStateChart/PlayerState/Idle"]
+script = ExtResource("6_hmtl6")
+to = NodePath("../../Run")
+delay_in_seconds = "0.0"
+
+[node name="Run" type="Node" parent="PlayerStateChart/PlayerState"]
+script = ExtResource("5_2jixw")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.2
