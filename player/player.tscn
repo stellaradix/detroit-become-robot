@@ -7,9 +7,9 @@
 [sub_resource type="GDScript" id="GDScript_ub4pc"]
 script/source = "extends CharacterBody2D
 
-const ACCELERATION = 600.0
-const FRICTION = 800.0
-const AIR_RESISTANCE = 200
+const ACCELERATION = 1200.0
+const FRICTION = 1200.0
+const AIR_RESISTANCE = 100
 const MAX_SPEED = 300.0
 const MAX_JUMP_HEIGHT = -550.0
 
@@ -80,6 +80,7 @@ func _physics_process(delta):
 	var just_left_wall = was_on_wall and not is_on_wall()
 	
 	if just_left_wall:
+		#this was missing some () at the end. Adding () seemed to break it tho
 		wall_jump_timer.start
 		can_wall_jump = true
 

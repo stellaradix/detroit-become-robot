@@ -77,20 +77,21 @@ theme = ExtResource("8_jovuc")
 
 [node name="Movement" type="Label" parent="TutorialText"]
 layout_mode = 0
-offset_left = -472.0
-offset_top = -86.0
-offset_right = -120.0
-offset_bottom = -62.0
+offset_left = -474.0
+offset_top = -81.0
+offset_right = -122.0
+offset_bottom = -57.0
 text = "Use arrow keys or WASD to move"
 uppercase = true
 
 [node name="Jump" type="Label" parent="TutorialText"]
 layout_mode = 0
-offset_left = 109.0
-offset_top = -85.0
-offset_right = 327.0
-offset_bottom = -61.0
-text = "Press Space to Jump"
+offset_left = 135.0
+offset_top = -84.0
+offset_right = 397.0
+offset_bottom = -33.0
+text = "Press Space to Jump off 
+floors or walls"
 uppercase = true
 
 [node name="Key" type="Label" parent="TutorialText"]
@@ -124,6 +125,7 @@ horizontal_alignment = 1
 uppercase = true
 
 [node name="Jump2" type="Label" parent="TutorialText"]
+layout_mode = 0
 offset_left = 731.0
 offset_top = -246.0
 offset_right = 1171.0
@@ -132,10 +134,11 @@ text = "Press ESC to go back to the main menu"
 uppercase = true
 
 [node name="Label" type="Label" parent="TutorialText"]
-offset_left = -89.0
-offset_top = -21.0
-offset_right = 117.0
-offset_bottom = 3.0
+layout_mode = 0
+offset_left = -103.0
+offset_top = -29.0
+offset_right = 103.0
+offset_bottom = -5.0
 text = "Press E to interact"
 uppercase = true
 

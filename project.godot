@@ -76,7 +76,7 @@ escape={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/main.dialogue", "res://Shopkeep.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/main.dialogue", "res://Shopkeep.dialogue", "res://tutorial_level.dialogue")
 
 [layer_names]
 
