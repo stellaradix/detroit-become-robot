@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ck315tewigdni"]
+[gd_scene load_steps=7 format=3 uid="uid://ck315tewigdni"]
 
 [ext_resource type="Script" path="res://camera.gd" id="1_335q3"]
 [ext_resource type="Texture2D" uid="uid://bquxoe6s6oobm" path="res://assets/camera.png" id="2_cden2"]
 [ext_resource type="Texture2D" uid="uid://dlgtrcg1l5qe5" path="res://assets/guardlight.png" id="2_v6tt6"]
+[ext_resource type="Texture2D" uid="uid://ipbif70rd252" path="res://assets/light.tres" id="4_4pfhe"]
 [ext_resource type="AudioStream" uid="uid://b0d2uugj2ocsw" path="res://assets/alarm.wav" id="4_ktwov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1p0f"]
@@ -30,6 +31,14 @@ position = Vector2(7, -2.53399e-05)
 range_z_max = 0
 shadow_enabled = true
 texture = ExtResource("2_v6tt6")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Light"]
+position = Vector2(2.00001, 2.99999)
+scale = Vector2(0.497293, 0.497293)
+color = Color(1, 0, 0, 1)
+range_z_max = 0
+shadow_enabled = true
+texture = ExtResource("4_4pfhe")
 
 [node name="CaughtPlayerCam" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ktwov")
