@@ -7,6 +7,7 @@ if spoken_to == "never"
 	- I have to
 		Sister: You don't!
 	Sister: We can get by some other way.
+	set spoken_to = "has"
 	
 else:
 	Sister: You think Mom and Dad are coming back soon?
