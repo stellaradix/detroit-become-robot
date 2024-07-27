@@ -27,3 +27,5 @@ offset_top = -30.0
 offset_right = 42.0
 offset_bottom = -7.0
 text = "Next Level"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

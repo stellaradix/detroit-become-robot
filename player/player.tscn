@@ -20,7 +20,8 @@ var keys_found = []
 var is_invurnable = false
 var is_crouching = false
 var can_jump = false
-var wall_jump = false
+var can_wall_jump = false
+var old_wall_normal = Vector2.ZERO
 
 #tracks if the sfx_jump_land has already played
 var already_landed = false
@@ -33,6 +34,8 @@ var has_jumped = false
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 @onready var coyote_timer := $CoyoteTimer
+@onready var wall_jump_timer = $WallJumpTimer
+
 
 var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
 
@@ -42,6 +45,7 @@ enum {
 	MOVE,
 	IDLE,
 	JUMP,
+	WALL_JUMP,
 	CROUCH
 }
 
@@ -52,6 +56,9 @@ func _physics_process(delta):
 	var input_axis = Input.get_axis(\"move_left\", \"move_right\")
 	
 	var was_on_floor = is_on_floor()
+	var was_on_wall = is_on_wall_only()
+	if was_on_wall:
+		old_wall_normal = get_wall_normal()
 	
 	apply_gravity(delta)
 	handle_jump()
@@ -69,6 +76,12 @@ func _physics_process(delta):
 	if just_left_ledge:
 		coyote_timer.start()
 		can_jump = true
+
+	var just_left_wall = was_on_wall and not is_on_wall()
+	
+	if just_left_wall:
+		wall_jump_timer.start
+		can_wall_jump = true
 
 	if Input.is_action_just_pressed(\"crouch\"):
 		print(\"You're crouching\")
@@ -98,13 +111,17 @@ func handle_jump():
 			velocity.y = MAX_JUMP_HEIGHT / 2
 	
 func handle_wall_jump():
-	if !is_on_wall or is_on_floor():
+	if !is_on_wall_only() and wall_jump_timer.time_left <= 0.0:
 		return
 	var wall_normal = get_wall_normal()
-	if Input.is_action_just_pressed(\"jump\") and wall_normal and is_on_wall():
-		velocity.x = wall_normal.x * MAX_SPEED * 0.8
-		velocity.y = MAX_JUMP_HEIGHT * 0.7
-		player_action = JUMP
+	if wall_jump_timer.time_left > 0.0:
+		wall_normal = old_wall_normal
+	if is_on_wall() or wall_jump_timer.time_left > 0.0:
+		if Input.is_action_just_pressed(\"jump\"):
+			if can_wall_jump:
+				velocity.x = wall_normal.x * MAX_SPEED * 0.8
+				velocity.y = MAX_JUMP_HEIGHT * 0.7
+				player_action = WALL_JUMP
 	
 func handle_acceleration(input_axis, delta):
 	if input_axis != 0:
@@ -139,6 +156,8 @@ func handle_animations():
 		JUMP:
 			if has_jumped == false:
 				animation_player.play(\"jump\")
+		WALL_JUMP:
+			animation_player.play(\"jump\")
 		IDLE:
 			if is_on_floor():
 				animation_player.play(\"idle\")
@@ -159,28 +178,6 @@ func handle_landing(input_axis):
 
 func _on_jump_animation_finished():
 	has_jumped = true
-
-func _on_level_door_tall_pillar_body_entered(body):
-	if body == %Player:
-		get_tree().change_scene_to_file(\"res://levels/level_rabbit_hole.tscn\")
-
-
-func _on_level_door_tutorial_body_entered(body):
-	if body == %Player:
-		get_tree().change_scene_to_file(\"res://levels/level_tall_pillar.tscn\")
-
-
-func _on_level_door_rabbit_hole_body_entered(body):
-	#temp door replace with another level in a desired order
-	if body == %Player:
-		get_tree().change_scene_to_file(\"res://levels/tutorial_level.tscn\")
-
-
-
-func _on_level_door_long_brigade_body_entered(body):
-	#temp door replace with another level in a desired order
-	if body == %Player:
-		get_tree().change_scene_to_file(\"res://levels/tutorial_level.tscn\")
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpmbs"]
@@ -295,6 +292,10 @@ shape = SubResource("CapsuleShape2D_xpmbs")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.2
+one_shot = true
+
+[node name="WallJumpTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
