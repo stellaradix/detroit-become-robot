@@ -49,10 +49,6 @@ position = Vector2(1385, 31)
 [node name="door1" parent="Doors" instance=ExtResource("6_nst58")]
 position = Vector2(513, 16)
 
-[node name="Sprite2D" parent="Doors/door1" index="0"]
-position = Vector2(-1, 9.53674e-07)
-scale = Vector2(34, 96)
-
 [node name="CollisionShape2D" parent="Doors/door1" index="1"]
 visible = false
 position = Vector2(0, 0)

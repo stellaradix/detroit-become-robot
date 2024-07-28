@@ -1,8 +1,55 @@
 ~ TutorialEnd
 
-Are you ready to continue?
-- Continue
-	
-	set dialogue_is_open = false
-	set dialogue_status = "level_end"
+Sister: You think Mom and Dad are coming back soon?
+Sister: It's been a while...
+Sister: Hey! Where are you going?
+
+set dialogue_is_open = false
+set dialogue_status = "level_end"
+
+~ Day1End
+
+Shopkeeper: Hey! Give that back!
+Shopkeeper: Come back here thief!
+
+set dialogue_is_open = false
+set dialogue_status = "level_end"
+
+~ Day2End
+
+Shopkeeper: Agh! Finally caught you!
+Shopkeeper: You've been coming here a while now taking what you please. I don't appreciate that.
+Shopkeeper: But I don't blame you.
+Shopkeeper: It's hard being human. I was human once too.
+Shopkeeper: I'll let you off easy, so long as you don't come back. 
+Shopkeeper: In fact, you don't need to.
+Shopkeeper: I know a place that wouldn't mind parting with some of their supplies...
+
+set dialogue_is_open = false
+set dialogue_status = "level_end"
+
+~ Day3End
+
+Sister: *Munch*
+Sister: Wow this is really good!
+Sister: Where do you keep getting this stuff?
+
+set dialogue_is_open = false
+set dialogue_status = "level_end"
+
+~ Day4End
+
+???: Impressive.
+???: Not many people make it this far into this facility.
+???: You've racked up quite the list of charges though.
+???: But I'd personally hate to see such a talented youth go to waste.
+???: You work for me and your family will be taken care of.
+???: Otherwise, everyone will be taken care of in a less 'hospitable' manner.
+???: Do we have an understanding?
+	-Yes
+	-No
+
+set dialogue_is_open = false
+set dialogue_status = "level_end"
+
 => END
