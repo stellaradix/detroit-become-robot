@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cr5d4yajfj7xv"]
+[gd_scene load_steps=13 format=3 uid="uid://cr5d4yajfj7xv"]
 
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="1_ksnt6"]
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="2_qmcxl"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b1t5dcyigh5gu" path="res://level_door.tscn" id="9_ymv33"]
 [ext_resource type="Resource" uid="uid://bfpyj7rlklxqg" path="res://tutorial_level.dialogue" id="10_dnnql"]
 [ext_resource type="PackedScene" uid="uid://c5yi3cnw06c10" path="res://Components/interactible/npc.tscn" id="10_kr88w"]
+[ext_resource type="PackedScene" uid="uid://ciyrg06gwda2x" path="res://objects/platform.tscn" id="12_u8aef"]
 
 [node name="TutorialLevel" type="Node2D"]
 
@@ -117,11 +118,12 @@ uppercase = true
 
 [node name="Guard" type="Label" parent="TutorialText"]
 layout_mode = 0
-offset_left = 1195.0
-offset_top = -49.0
-offset_right = 1703.0
-offset_bottom = 2.0
-text = "Press ctrl to hide behind boxes"
+offset_left = 1192.0
+offset_top = -80.0
+offset_right = 1700.0
+offset_bottom = -29.0
+text = "Press ctrl to hide behind boxes
+ and fall through platforms"
 horizontal_alignment = 1
 uppercase = true
 
@@ -157,6 +159,15 @@ dialogue_resource = ExtResource("10_dnnql")
 
 [node name="NPC" parent="." instance=ExtResource("10_kr88w")]
 position = Vector2(-17, 31)
+
+[node name="Platform" parent="." instance=ExtResource("12_u8aef")]
+position = Vector2(368, -24)
+
+[node name="Platform2" parent="." instance=ExtResource("12_u8aef")]
+position = Vector2(800, -16)
+
+[node name="Platform3" parent="." instance=ExtResource("12_u8aef")]
+position = Vector2(1472, 88)
 
 [connection signal="body_entered" from="LevelDoor_Tutorial" to="Player" method="_on_level_door_tutorial_body_entered"]
 

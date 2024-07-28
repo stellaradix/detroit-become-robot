@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxfunvwofvvkr"]
+[gd_scene load_steps=9 format=3 uid="uid://cxfunvwofvvkr"]
 
 [ext_resource type="Texture2D" uid="uid://cuwp7xmpujf5v" path="res://assets/spring.png" id="1_a0xbt"]
 [ext_resource type="Script" path="res://objects/spring.gd" id="1_hoy5n"]
+[ext_resource type="AudioStream" uid="uid://cv5e8yabhx4wc" path="res://Sound/SFX/spring.ogg" id="3_arui2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uf82h"]
 size = Vector2(32, 24)
@@ -71,5 +72,8 @@ debug_color = Color(0.362389, 0.603506, 0.373003, 0.42)
 libraries = {
 "": SubResource("AnimationLibrary_yhxcd")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_arui2")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

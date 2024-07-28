@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://bj7pd5x1t6skh"]
 
 [ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_3v0y5"]
-[ext_resource type="AudioStream" uid="uid://deodpvfg753un" path="res://assets/Jump 3 Dan Knoflicek.mp3" id="6_5dmks"]
-[ext_resource type="AudioStream" uid="uid://dox1266wb5pf8" path="res://assets/Jump 1 Dan Knoflicek.mp3" id="7_fsrk5"]
+[ext_resource type="AudioStream" uid="uid://b3kbqoygosqip" path="res://Sound/SFX/jump.ogg" id="2_wrs2d"]
+[ext_resource type="AudioStream" uid="uid://bdcsx8s2nuskk" path="res://Sound/SFX/jump_land.ogg" id="3_h5qu4"]
 
 [sub_resource type="GDScript" id="GDScript_ub4pc"]
 script/source = "extends CharacterBody2D
 
 const ACCELERATION = 650.0
 const FRICTION = 1200.0
-const AIR_RESISTANCE = 250.0
+const AIR_RESISTANCE = 150
 const MAX_SPEED = 350.0
 const MAX_JUMP_HEIGHT = -550.0
 
@@ -83,7 +83,6 @@ func _physics_process(delta):
 		can_wall_jump = true
 	
 	if just_left_wall:
-		#this was missing some () at the end. Adding () seemed to break it tho
 		wall_jump_timer.start()
 		can_wall_jump = true
 
@@ -110,6 +109,7 @@ func handle_jump():
 				velocity.y = MAX_JUMP_HEIGHT
 				can_jump = false
 				player_action = JUMP
+				sfx_jump_start.play()
 	if !is_on_floor():
 		if Input.is_action_just_released(\"jump\") and velocity.y < MAX_JUMP_HEIGHT / 2:
 			velocity.y = MAX_JUMP_HEIGHT / 2
@@ -124,8 +124,10 @@ func handle_wall_jump():
 		if Input.is_action_just_pressed(\"jump\"):
 			if can_wall_jump:
 				velocity.x = wall_normal.x * MAX_SPEED * 1.1
+				print(wall_normal.x)
 				velocity.y = MAX_JUMP_HEIGHT * 0.7
 				player_action = WALL_JUMP 
+				sfx_jump_start.play()
 	
 func handle_acceleration(input_axis, delta):
 	if input_axis != 0:
@@ -312,12 +314,12 @@ occluder = SubResource("OccluderPolygon2D_162l7")
 sdf_collision = false
 
 [node name="JumpStartSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_5dmks")
-volume_db = -20.0
+stream = ExtResource("2_wrs2d")
+volume_db = 6.559
 
 [node name="JumpLandSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_fsrk5")
-volume_db = -20.0
+stream = ExtResource("3_h5qu4")
+volume_db = 5.622
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

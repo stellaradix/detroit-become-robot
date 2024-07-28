@@ -65,7 +65,7 @@ facing = "down"
 position = Vector2(952, 96)
 
 [node name="DeathZone" parent="." instance=ExtResource("8_n01ap")]
-position = Vector2(100, 468)
+position = Vector2(144, 480)
 collision_layer = 7
 collision_mask = 7
 
