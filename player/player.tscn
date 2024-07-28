@@ -291,7 +291,6 @@ texture = ExtResource("1_3v0y5")
 hframes = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_xpmbs")
 
 [node name="CoyoteTimer" type="Timer" parent="."]

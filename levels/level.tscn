@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cc7lnq0dc6c2f"]
+[gd_scene load_steps=15 format=3 uid="uid://cc7lnq0dc6c2f"]
 
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_nla6u"]
 [ext_resource type="Texture2D" uid="uid://bhdn7asj673vp" path="res://assets/brick_bg.png" id="1_xx73d"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c5yi3cnw06c10" path="res://Components/interactible/npc.tscn" id="8_pjk2b"]
 [ext_resource type="PackedScene" uid="uid://dpj1tl28kvvft" path="res://objects/small_box.tscn" id="8_w87cc"]
 [ext_resource type="PackedScene" uid="uid://ciyrg06gwda2x" path="res://objects/platform.tscn" id="11_job8a"]
+[ext_resource type="PackedScene" uid="uid://cxfunvwofvvkr" path="res://objects/spring.tscn" id="12_vk3b1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7ey3"]
 texture = ExtResource("1_xx73d")
@@ -172,3 +173,6 @@ position = Vector2(64, 120)
 
 [node name="Platform4" parent="Platforms" instance=ExtResource("11_job8a")]
 position = Vector2(128, 120)
+
+[node name="Spring" parent="Platforms" instance=ExtResource("12_vk3b1")]
+position = Vector2(-16, -272)
