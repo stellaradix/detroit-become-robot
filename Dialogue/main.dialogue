@@ -1,13 +1,13 @@
 ~ start
 
-if spoken_to == "never"
+if spoken_to == false
 	Sister: Are you going out again?
 	- Don't worry about it
 		Sister: You're the one making me worry!
 	- I have to
 		Sister: You don't!
 	Sister: We can get by some other way.
-	set spoken_to = "has"
+	set spoken_to = true
 	
 else:
 	Sister: You think Mom and Dad are coming back soon?

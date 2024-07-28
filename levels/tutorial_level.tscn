@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr5d4yajfj7xv"]
+[gd_scene load_steps=12 format=3 uid="uid://cr5d4yajfj7xv"]
 
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="1_ksnt6"]
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="2_qmcxl"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cr18h5ylochm7" path="res://key.tscn" id="7_ncaf5"]
 [ext_resource type="Theme" uid="uid://b2cdtmdnikgwr" path="res://Themes/Title.tres" id="8_jovuc"]
 [ext_resource type="PackedScene" uid="uid://b1t5dcyigh5gu" path="res://level_door.tscn" id="9_ymv33"]
+[ext_resource type="Resource" uid="uid://bfpyj7rlklxqg" path="res://tutorial_level.dialogue" id="10_dnnql"]
 [ext_resource type="PackedScene" uid="uid://c5yi3cnw06c10" path="res://Components/interactible/npc.tscn" id="10_kr88w"]
 
 [node name="TutorialLevel" type="Node2D"]
@@ -151,6 +152,8 @@ shadow_item_cull_mask = 0
 
 [node name="LevelDoor_Tutorial" parent="." instance=ExtResource("9_ymv33")]
 position = Vector2(1472, 179)
+level_scene = "res://levels/level_tall_pillar.tscn"
+dialogue_resource = ExtResource("10_dnnql")
 
 [node name="NPC" parent="." instance=ExtResource("10_kr88w")]
 position = Vector2(-17, 31)

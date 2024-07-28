@@ -1,0 +1,125 @@
+~ start
+
+if spoken_to == "has":
+	Freya: Hi again! thank you for that mushroom before, the potion is underway.
+	Freya: I will give you a sample when I finish, as promised.
+	Freya: Is there anything I could do for you?
+	=> shop
+elif spoken_to == "ignored":
+	Freya: Hey what was that before, why did you leave?
+	- My bad
+		Freya: It's alright, I just need help making a healing potion.
+		Freya: Will you help me?
+		- Sure
+			Fox: Sure, I'll help.
+			Freya: Thank you! I just need you to go find ingredients and bring them to me.
+			Freya: I will tell you if I can use them.
+			Fox: Alright, will do!
+			
+			set dialogue_is_open = false
+			set spoken_to = "helping"
+			=> END
+		- No thank you
+		Fox: No.
+	- Leave again
+		Fox: Goodbye.
+	set dialogue_is_open = false
+	=> END
+elif spoken_to == "helping":
+	if mushroom_status == "has":
+		Freya: wait . . . is that a mushroom?
+		Fox: Yes.
+		Freya: Thats perfect!! can I have it please?
+		- Yes
+			Fox: Here you go. *given mushroom
+			Freya: Thank you so mush, I will give a sample of the potion when I finish.
+			
+			set spoken_to = "has"
+		- No
+			Fox: It is mine.
+	else:
+		Fox: I have ingredients
+		Freya: Let me see . . . um . . . no . . . that's not it.
+		Freya: Maybe try something else, there are plenty of plants growing in the forest.
+		Fox: Okay, I will return.
+	set dialogue_is_open = false
+	=> END
+else:
+	Freya: Hello little fox man, how are you?
+	- I am good
+		Fox: I am doing good, how are you doing?
+		Freya: Fine, except I can't seem to get this potion right.
+		=> potion_trouble
+	- Not so good
+		Fox: I am not feeling so well.
+		Freya: I feel you, I have been trying to craft this
+			potion for hours but can't seem to get it right.
+		=> potion_trouble
+
+set dialogue_is_open == false
+=> END
+~ potion_trouble
+
+- What kind of potion?
+	Fox: What are you trying to make?
+	Freya: Just a simple healing potion.
+	Freya: I want something that heals just a bit but not too little.
+	Freya: Berry Juice isn't enough . . . I wonder what else I could use.
+	- I could help!
+		Fox: I can help you figure it out!
+		Freya: Really? that would be great.
+		Freya: I guess you could bring me some ingredients.
+		Fox: What kind.
+		Freya: Um . . . I guess anything that you think will work.
+		- Okay, I will look!
+			set dialogue_is_open = false
+			set spoken_to = "helping"
+			=> END
+		- Nevermind, sounds hard
+	- Not My Problem
+- That's too bad
+	
+set dialogue_is_open = false
+set spoken_to = "ignored"
+=> END
+
+~ shop
+
+- Sell Items
+	Freya: You want to sell? well, what do you have?
+	- Item 1
+		Freya: Thanks! here you go.
+		Freya: Anything else?
+		=> shop
+	- Item 2
+		Freya: Thanks! here you go.
+		Freya: Anything else?
+		=> shop
+	- Leave
+		Freya: Okay, bye!
+- Buy Items
+		What are you looking for?
+		- Lesser Speed Potion
+			Freya: Here you are.
+			Freya: Anything else?
+			=> shop
+		- Berry Juice
+			Freya: Here you are.
+			Freya: Anything else?
+			=> shop
+		- Lesser Strength Potion
+			Freya: Here you are.
+			Freya: Anything else?
+			=> shop
+		- Leave
+		if spoken_to == "quest 1"
+			- Lesser Healing Potion
+				Freya: Here you are, and thanks for helping me with this recipe!
+				Freya: Is there Anything else?
+				=> shop
+- Chat
+	Freya: Sorry, I am kind of busy, I can't talk.
+- Leave
+
+set dialogue_is_open = false
+=> END

@@ -8,4 +8,5 @@ Shopkeep: Tell you what, I know a place where you can get all the supplies you n
 Shopkeep: Through that door behind me. Just avoid the security.
 Shopkeep: Don't worry though they're not too bright.
 
+set dialogue_is_open = false
 => END

@@ -7,10 +7,10 @@
 [sub_resource type="GDScript" id="GDScript_ub4pc"]
 script/source = "extends CharacterBody2D
 
-const ACCELERATION = 1200.0
+const ACCELERATION = 650.0
 const FRICTION = 1200.0
-const AIR_RESISTANCE = 100
-const MAX_SPEED = 300.0
+const AIR_RESISTANCE = 250.0
+const MAX_SPEED = 350.0
 const MAX_JUMP_HEIGHT = -550.0
 
 #keeps track of the keys the player has
@@ -79,9 +79,12 @@ func _physics_process(delta):
 
 	var just_left_wall = was_on_wall and not is_on_wall()
 	
+	if is_on_wall():
+		can_wall_jump = true
+	
 	if just_left_wall:
 		#this was missing some () at the end. Adding () seemed to break it tho
-		wall_jump_timer.start
+		wall_jump_timer.start()
 		can_wall_jump = true
 
 	if Input.is_action_just_pressed(\"crouch\"):
@@ -120,9 +123,9 @@ func handle_wall_jump():
 	if is_on_wall() or wall_jump_timer.time_left > 0.0:
 		if Input.is_action_just_pressed(\"jump\"):
 			if can_wall_jump:
-				velocity.x = wall_normal.x * MAX_SPEED * 0.8
+				velocity.x = wall_normal.x * MAX_SPEED * 1.1
 				velocity.y = MAX_JUMP_HEIGHT * 0.7
-				player_action = WALL_JUMP
+				player_action = WALL_JUMP 
 	
 func handle_acceleration(input_axis, delta):
 	if input_axis != 0:
@@ -296,7 +299,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="WallJumpTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
