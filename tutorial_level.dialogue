@@ -92,7 +92,9 @@ set dialogue_status = "level_end"
 	
 	#Sister: What's going on?
 	#Sister: Where are we going?
-	#You: Someplace Human
+	#You: ...
+	#You: I don't know...
+	#You: Someplace Human...
 	#send to title screen
 	 
 set dialogue_is_open = false
