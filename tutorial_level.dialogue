@@ -11,7 +11,7 @@ set dialogue_status = "level_end"
 
 ~ FirstTimeCollect
 You found a ♍︎□︎●︎●︎♏︎♍︎⧫︎♓︎♌︎●︎♏︎! Try to collect them all!
-set FirstTimeCollect = true
+#set FirstTimeCollect = true
 
 => END
 
@@ -20,8 +20,8 @@ set FirstTimeCollect = true
 Shopkeeper: Hey! Give that back!
 Shopkeeper: Come back here thief!
 
-if CollectiblesGot >= 1:
-	Shopkeeper: Give my ❒︎♓︎♍︎🙵⍓︎⬥︎♋︎⬧︎♒︎♏︎❒︎♏︎ back!
+#if CollectiblesGot >= 1:
+	#Shopkeeper: Give my ❒︎♓︎♍︎🙵⍓︎⬥︎♋︎⬧︎♒︎♏︎❒︎♏︎ back!
 
 set dialogue_is_open = false
 set dialogue_status = "level_end"
@@ -38,8 +38,8 @@ Shopkeeper: I'll let you off easy, so long as you don't come back.
 Shopkeeper: In fact, you don't need to.
 Shopkeeper: I know a place that wouldn't mind parting with some of their supplies...
 
-if CollectiblesGot >= 1:
-	Shopkeeper: And you gotta give me back my ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎
+#if CollectiblesGot >= 1:
+	#Shopkeeper: And you gotta give me back my ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎
 
 set dialogue_is_open = false
 set dialogue_status = "level_end"
@@ -52,11 +52,11 @@ Sister: *Munch*
 Sister: Wow this is really good!
 Sister: Where do you keep getting this stuff?
 
-if CollectiblesGot == 1:
-	Sister: Oh wow you got this for me? Thanks!
+#if CollectiblesGot == 1:
+	#Sister: Oh wow you got this for me? Thanks!
 
-else:
-	Sister: Wow where'd you get this ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎? This is so cool! Thanks!
+#else:
+	#Sister: Wow where'd you get this ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎? This is so cool! Thanks!
 	
 set dialogue_is_open = false
 set dialogue_status = "level_end"

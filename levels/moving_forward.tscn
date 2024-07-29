@@ -265,4 +265,12 @@ self_modulate = Color(0.168627, 1, 0.2, 1)
 position = Vector2(1792, -1040)
 texture = ExtResource("11_0om7o")
 
+[node name="DialogueCover" type="ColorRect" parent="." index="18"]
+visible = false
+offset_left = 972.0
+offset_top = -1365.0
+offset_right = 2174.0
+offset_bottom = -255.0
+color = Color(0, 0, 0, 1)
+
 [editable path="Enemies/DeathZone"]
