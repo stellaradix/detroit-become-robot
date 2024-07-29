@@ -33,7 +33,7 @@ theme_override_colors/font_outline_color = Color(0.0798066, 0.0844062, 0.130744,
 theme_override_constants/outline_size = 64
 theme_override_fonts/font = ExtResource("3_p6qg2")
 theme_override_font_sizes/font_size = 225
-text = "Become Robot"
+text = "No  Longer  Human"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -64,6 +64,7 @@ offset_bottom = -15.0
 text = "Quit Game"
 
 [node name="Level Select" type="Button" parent="." index="5"]
+layout_mode = 0
 offset_left = 220.0
 offset_top = 363.0
 offset_right = 938.0
@@ -72,6 +73,7 @@ text = "Level Select"
 script = ExtResource("5_2g0uu")
 
 [node name="Credits" type="Button" parent="." index="6"]
+layout_mode = 0
 offset_left = 947.0
 offset_top = 553.0
 offset_right = 1144.0

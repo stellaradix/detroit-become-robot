@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqb6lutanfoxl"]
+[gd_scene load_steps=5 format=3 uid="uid://cqb6lutanfoxl"]
 
 [ext_resource type="Script" path="res://credits.gd" id="1_y6ej3"]
 [ext_resource type="PackedScene" uid="uid://d0gia0aa70285" path="res://Components/UI/menu_background.tscn" id="2_swwm1"]
+[ext_resource type="FontFile" uid="uid://5pxe0yke8pfb" path="res://Fonts/Quadrunde.ttf" id="3_8ft55"]
+[ext_resource type="FontFile" uid="uid://dpbp1apa67smx" path="res://Fonts/Perfect Dark Zero.ttf" id="3_kr147"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_y6ej3")
@@ -13,18 +15,50 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Back"
 
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -72.0
+offset_right = 1152.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.0798066, 0.0844062, 0.130744, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("3_kr147")
+theme_override_font_sizes/font_size = 100
+text = "No  Longer  Human"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label" type="Label" parent="."]
-offset_left = 374.0
-offset_top = 142.0
-offset_right = 675.0
-offset_bottom = 347.0
-text = "Programming: Ricky Rauchfuss and Ayden
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 831.0
+offset_bottom = 584.0
+theme_override_fonts/font = ExtResource("3_8ft55")
+theme_override_font_sizes/font_size = 24
+text = "A game by Ricky Rauchfuss and Ayden Roynon
+
+Programming: Ricky Rauchfuss and Ayden Roynon
+
 Dialogue: Ricky Rauchfuss
-Dialogue Manager: nathan hoad
-Art: Ayden
+
+Dialogue Manager: Nathan Hoad
+
+Art: Ayden Roynon
+
 Soundtrack: Alex Mcculloch
-SFX:
-Made in Godot and Aesprite"
+
+SFX: Joseph Levesque and Pixabay
+
+Made using Godot and Aesprite
+
+Thank you for playing!!!"
+horizontal_alignment = 1
 uppercase = true
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
