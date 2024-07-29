@@ -55,7 +55,11 @@ set dialogue_status = "level_end"
 ???: Otherwise, everyone will be taken care of in a less 'hospitable' manner.
 ???: Do we have an understanding?
 - Yes
+	???: Good.
 - No
+	???: Shame.
+	#set quit game variable to true
+
 
 set dialogue_is_open = false
 set dialogue_status = "level_end"
