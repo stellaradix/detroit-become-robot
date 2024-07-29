@@ -83,7 +83,7 @@ position = Vector2(404, 49)
 facing = "down"
 
 [node name="Flashlight" parent="." instance=ExtResource("6_c48a5")]
-position = Vector2(903, 118)
+position = Vector2(903, 96)
 
 [node name="Camera2" parent="." instance=ExtResource("5_bdsby")]
 position = Vector2(608, 112)
@@ -98,10 +98,10 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="Flashlight3" parent="." instance=ExtResource("6_c48a5")]
-position = Vector2(383, -139)
+position = Vector2(383, -160)
 
 [node name="Flashlight4" parent="." instance=ExtResource("6_c48a5")]
-position = Vector2(865, 342)
+position = Vector2(865, 320)
 
 [node name="Camera3" parent="." instance=ExtResource("5_bdsby")]
 position = Vector2(744, -80)
