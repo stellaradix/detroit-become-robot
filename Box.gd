@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 var BehindBox = false
 
@@ -12,18 +12,17 @@ var BehindBox = false
 func _process(_delta):
 	if MenuManager.is_changing == false:
 		if player.is_crouching == true:
-	
+			collision_shape_2d.disabled = true
 			if BehindBox == true:
 				PlayerManager.is_invurnable = true
 				label.show()
 			else:
 				PlayerManager.is_invurnable = false
 				label.hide()
-	
-			collision_shape_2d.disabled = true
 		else:
+			PlayerManager.is_invurnable = false
+			label.hide()
 			collision_shape_2d.disabled = false
-			
 
 func _on_body_entered(body):
 	#testing collision

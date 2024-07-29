@@ -102,6 +102,7 @@ Forward"
 ButtonMenu = "res://levels/moving_forward.tscn"
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 224.0
 offset_top = 40.0
 offset_right = 439.0

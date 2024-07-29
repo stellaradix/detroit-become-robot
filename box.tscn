@@ -1,29 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://b120py1740egx"]
+[gd_scene load_steps=7 format=3 uid="uid://b120py1740egx"]
 
 [ext_resource type="Script" path="res://Box.gd" id="1_ykr88"]
 [ext_resource type="Texture2D" uid="uid://b68t2wn8liv12" path="res://assets/crate.png" id="2_n3bvo"]
 [ext_resource type="FontFile" uid="uid://5pxe0yke8pfb" path="res://Fonts/Quadrunde.ttf" id="3_8bl7l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uub4o"]
-size = Vector2(32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvt5a"]
+size = Vector2(64, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gyljb"]
 closed = false
 polygon = PackedVector2Array(32, -32, 32, 32, -32, 32, -32, -32)
 
-[node name="Box" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uub4o"]
+size = Vector2(32, 32)
+
+[node name="Box" type="StaticBody2D"]
 z_index = 2
-collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_ykr88")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9.53674e-07)
 texture = ExtResource("2_n3bvo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_uub4o")
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -36,8 +34,20 @@ theme_override_fonts/font = ExtResource("3_8bl7l")
 text = "Hidden"
 horizontal_alignment = 1
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_nvt5a")
+one_way_collision = true
+
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_gyljb")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="areashape" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_uub4o")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
