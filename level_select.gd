@@ -23,3 +23,7 @@ func _on_tall_pillar_pressed():
 
 func _on_breakin_pressed():
 	get_tree().change_scene_to_file("res://levels/level_break_in.tscn")
+
+
+func _on_moving_forward_pressed():
+	get_tree().change_scene_to_file("res://levels/moving_forward.tscn")

@@ -57,9 +57,18 @@ offset_bottom = 132.0
 text = "Day 3
 Break-in"
 
+[node name="Moving Forward" type="Button" parent="."]
+offset_left = 757.0
+offset_top = 50.0
+offset_right = 891.0
+offset_bottom = 131.0
+text = "Day 5
+Moving Forward"
+
 [connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="RabbitHole" to="." method="_on_rabbit_hole_pressed"]
 [connection signal="pressed" from="LongBrigade" to="." method="_on_long_brigade_pressed"]
 [connection signal="pressed" from="TallPillar" to="." method="_on_tall_pillar_pressed"]
 [connection signal="pressed" from="Break-in" to="." method="_on_breakin_pressed"]
+[connection signal="pressed" from="Moving Forward" to="." method="_on_moving_forward_pressed"]
