@@ -22,6 +22,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 InteractionManager="*res://Autoloads/interaction_manager.tscn"
 DialogueState="*res://Autoloads/dialogue_state.gd"
 Soundtrack="*res://assets/Soundtrack.tscn"
+PlayerManager="*res://Autoloads/player_manager.tscn"
 
 [dialogue_manager]
 

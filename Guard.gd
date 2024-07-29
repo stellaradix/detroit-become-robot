@@ -50,14 +50,11 @@ func _physics_process(_delta):
 	
 
 func _on_light_body_entered(body):
-	if body == player:
-		#checks if the player is behind a box and crouching
-		if player.is_invurnable == true:
-			print("The Guard can't see you!")
-		else:
-			#sound not playing cuz scene loads before sound can fully play
-			caught_player.play()
-			print("Ouch! A guard!")
+	if body == player and PlayerManager.is_invurnable == true:
+		print("The Guard can't see you!")
+	elif body == player and PlayerManager.is_invurnable == false:
+		caught_player.play()
+		print("Ouch! A guard!")
 
 func _on_caught_player_finished():
 	get_tree().reload_current_scene()

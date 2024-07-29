@@ -16,11 +16,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if player.is_crouching == true and BehindBox == true:
-		player.is_invurnable = true
+		PlayerManager.is_invurnable = true
 		label.show()
 
 	else:
-		player.is_invurnable = false
+		PlayerManager.is_invurnable = false
 		label.hide()
 			
 
