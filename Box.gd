@@ -6,22 +6,23 @@ var BehindBox = false
 
 @onready var sprite_2d = $Sprite2D
 @onready var label = $Label
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var collision_shape_2d = $CollisionShape2D
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if player.is_crouching == true and BehindBox == true:
-		PlayerManager.is_invurnable = true
-		label.show()
-
+	if player.is_crouching == true:
+	
+		if BehindBox == true:
+			PlayerManager.is_invurnable = true
+			label.show()
+		else:
+			PlayerManager.is_invurnable = false
+			label.hide()
+	
+		collision_shape_2d.disabled = true
 	else:
-		PlayerManager.is_invurnable = false
-		label.hide()
+		collision_shape_2d.disabled = false
 			
 
 func _on_body_entered(body):
