@@ -27,7 +27,7 @@ position = Vector2(54.1394, -0.707123)
 shape = SubResource("RectangleShape2D_w1p0f")
 
 [node name="PointLight2D" type="PointLight2D" parent="Light"]
-position = Vector2(17.345, -2.53399e-05)
+position = Vector2(8, -2.89599e-05)
 scale = Vector2(0.91918, 1)
 range_z_max = 0
 shadow_enabled = true

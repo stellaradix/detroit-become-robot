@@ -232,7 +232,7 @@ position = Vector2(1440, -176)
 facing = "down"
 
 [node name="Guard" parent="Enemies" index="3" instance=ExtResource("6_38j1n")]
-position = Vector2(1464, 88)
+position = Vector2(1456, 64)
 
 [node name="Camera3" parent="Enemies" index="4" instance=ExtResource("5_2lvbl")]
 position = Vector2(1600, -432)

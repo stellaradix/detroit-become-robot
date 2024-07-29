@@ -1,45 +1,47 @@
 [gd_scene load_steps=7 format=3 uid="uid://qn2lh78nfdxu"]
 
 [ext_resource type="Script" path="res://Guard.gd" id="1_kl3pk"]
-[ext_resource type="Texture2D" uid="uid://coblt5sat8r7y" path="res://icon.svg" id="2_ink2v"]
+[ext_resource type="Texture2D" uid="uid://bdcpybbaqmp0y" path="res://assets/guard.png" id="2_e6gb0"]
 [ext_resource type="Texture2D" uid="uid://dlgtrcg1l5qe5" path="res://assets/guardlight.png" id="3_dispp"]
 [ext_resource type="AudioStream" uid="uid://kic3brhbxggt" path="res://assets/robot.ogg" id="4_mpeeh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnge"]
+size = Vector2(20, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfojr"]
-size = Vector2(102, 24)
+size = Vector2(102, 22.4629)
 
 [node name="Guard" type="CharacterBody2D"]
 script = ExtResource("1_kl3pk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 1.5)
 shape = SubResource("RectangleShape2D_lsnge")
 
-[node name="temp" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(8.58307e-06, 5.96046e-07)
-scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("2_ink2v")
+texture = ExtResource("2_e6gb0")
 
 [node name="lightPivot" type="Marker2D" parent="."]
+position = Vector2(0, -18)
+rotation = 0.392699
 
 [node name="Light" type="Area2D" parent="lightPivot"]
-position = Vector2(-41, 0)
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lightPivot/Light"]
-position = Vector2(-20, 0)
-shape = SubResource("RectangleShape2D_kfojr")
-
 [node name="PointLight2D" type="PointLight2D" parent="lightPivot/Light"]
-position = Vector2(33, 0)
-rotation = 3.14159
+position = Vector2(7.39103, -3.06146)
 range_z_max = 0
 shadow_enabled = true
 texture = ExtResource("3_dispp")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lightPivot/Light"]
+position = Vector2(58.0844, -3.49388)
+shape = SubResource("RectangleShape2D_kfojr")
+
 [node name="FloorChecker" type="RayCast2D" parent="."]
+position = Vector2(0, 21)
 target_position = Vector2(0, 20)
 
 [node name="CaughtPlayer" type="AudioStreamPlayer" parent="."]
