@@ -7,6 +7,8 @@ Sister: Hey! Where are you going?
 set dialogue_is_open = false
 set dialogue_status = "level_end"
 
+=> END
+
 ~ Day1End
 
 Shopkeeper: Hey! Give that back!
@@ -14,6 +16,8 @@ Shopkeeper: Come back here thief!
 
 set dialogue_is_open = false
 set dialogue_status = "level_end"
+
+=> END
 
 ~ Day2End
 
@@ -28,6 +32,8 @@ Shopkeeper: I know a place that wouldn't mind parting with some of their supplie
 set dialogue_is_open = false
 set dialogue_status = "level_end"
 
+=> END
+
 ~ Day3End
 
 Sister: *Munch*
@@ -36,6 +42,8 @@ Sister: Where do you keep getting this stuff?
 
 set dialogue_is_open = false
 set dialogue_status = "level_end"
+
+=> END
 
 ~ Day4End
 
@@ -46,8 +54,8 @@ set dialogue_status = "level_end"
 ???: You work for me and your family will be taken care of.
 ???: Otherwise, everyone will be taken care of in a less 'hospitable' manner.
 ???: Do we have an understanding?
-	-Yes
-	-No
+- Yes
+- No
 
 set dialogue_is_open = false
 set dialogue_status = "level_end"

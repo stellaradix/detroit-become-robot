@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bynt07sdurfkl"]
+[gd_scene load_steps=14 format=3 uid="uid://bynt07sdurfkl"]
 
 [ext_resource type="PackedScene" uid="uid://tqtwhcy818tk" path="res://Tilemaps/bg_tile_map.tscn" id="1_52253"]
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_ovs8f"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b1t5dcyigh5gu" path="res://level_door.tscn" id="6_f5i3h"]
 [ext_resource type="PackedScene" uid="uid://ciyrg06gwda2x" path="res://objects/platform.tscn" id="7_gt258"]
 [ext_resource type="PackedScene" uid="uid://dpj1tl28kvvft" path="res://objects/small_box.tscn" id="8_06mqc"]
+[ext_resource type="Resource" uid="uid://bfpyj7rlklxqg" path="res://tutorial_level.dialogue" id="8_oh7as"]
+[ext_resource type="Texture2D" uid="uid://bndflqawhhgwc" path="res://assets/collectable.png" id="11_81rub"]
 
 [sub_resource type="Gradient" id="Gradient_87fo1"]
 offsets = PackedFloat32Array(0, 0.987013)
@@ -97,6 +99,9 @@ position = Vector2(-328, 128)
 
 [node name="LevelDoor_TallPillar" parent="." instance=ExtResource("6_f5i3h")]
 position = Vector2(-448, -200)
+level_path = "res://levels/level_rabbit_hole.tscn"
+dialogue_resource = ExtResource("8_oh7as")
+dialogue_start = "Day1End"
 
 [node name="Camera2" parent="." instance=ExtResource("4_y3dhk")]
 position = Vector2(8, 240)
@@ -174,5 +179,14 @@ position = Vector2(176, -144)
 
 [node name="small_box8" parent="." instance=ExtResource("8_06mqc")]
 position = Vector2(200, -176)
+
+[node name="Collectable" type="Sprite2D" parent="."]
+self_modulate = Color(0.168627, 1, 0.2, 1)
+position = Vector2(-360, -64)
+texture = ExtResource("11_81rub")
+
+[node name="Collectable2" type="Sprite2D" parent="."]
+position = Vector2(224, -288)
+texture = ExtResource("11_81rub")
 
 [connection signal="body_entered" from="LevelDoor_TallPillar" to="Player" method="_on_level_door_tall_pillar_body_entered"]
