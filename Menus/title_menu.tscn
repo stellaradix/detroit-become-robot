@@ -20,17 +20,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -384.0
-offset_top = -260.0
-offset_right = 384.0
-offset_bottom = -113.0
+offset_left = -576.0
+offset_top = -476.0
+offset_right = 576.0
+offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0.0798066, 0.0844062, 0.130744, 1)
 theme_override_constants/outline_size = 64
+theme_override_constants/line_spacing = -146
 theme_override_fonts/font = ExtResource("3_p6qg2")
 theme_override_font_sizes/font_size = 225
-text = "No  Longer  Human"
+text = "Someplace
+Human"
 horizontal_alignment = 1
 vertical_alignment = 1
 
