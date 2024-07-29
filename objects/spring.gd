@@ -6,6 +6,6 @@ extends StaticBody2D
 
 func _on_area_2d_body_entered(body):
 	if body == player:
-		player.velocity.y = -650
+		player.velocity.y = -750
 		animation_player.play("spring")
 		audio_stream_player.play()

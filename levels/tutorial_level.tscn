@@ -150,8 +150,9 @@ shadow_item_cull_mask = 0
 
 [node name="LevelDoor_Tutorial" parent="." instance=ExtResource("9_ymv33")]
 position = Vector2(1472, 179)
-level_scene = "res://levels/level_tall_pillar.tscn"
+level_path = "res://levels/level_tall_pillar.tscn"
 dialogue_resource = ExtResource("10_dnnql")
+dialogue_start = "TutorialEnd"
 
 [node name="NPC" parent="." instance=ExtResource("10_kr88w")]
 position = Vector2(-17, 31)
