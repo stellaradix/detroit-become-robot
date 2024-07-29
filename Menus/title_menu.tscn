@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4nqkjp0p57s"]
+[gd_scene load_steps=7 format=3 uid="uid://d4nqkjp0p57s"]
 
 [ext_resource type="PackedScene" uid="uid://qii722e0stn" path="res://Components/UI/menu.tscn" id="1_b7e0y"]
 [ext_resource type="Script" path="res://Menus/title_menu.gd" id="2_h64tl"]
 [ext_resource type="FontFile" uid="uid://dpbp1apa67smx" path="res://Fonts/Perfect Dark Zero.ttf" id="3_p6qg2"]
 [ext_resource type="PackedScene" uid="uid://c0tkbjwwf6hm2" path="res://Components/UI/Menu_Button.tscn" id="4_uwl3f"]
+[ext_resource type="Script" path="res://Menus/Level Select.gd" id="5_2g0uu"]
+[ext_resource type="Script" path="res://Menus/Credits.gd" id="6_1o7yf"]
 
 [node name="TitleMenu" instance=ExtResource("1_b7e0y")]
 script = ExtResource("2_h64tl")
@@ -46,19 +48,38 @@ ButtonMenu = "res://levels/level.tscn"
 
 [node name="SettingsButton" parent="." index="3" instance=ExtResource("4_uwl3f")]
 layout_mode = 1
-offset_left = 216.0
-offset_top = 376.0
-offset_right = -216.0
-offset_bottom = -192.0
+offset_left = 219.0
+offset_top = 455.0
+offset_right = -213.0
+offset_bottom = -113.0
 text = "Settings"
 ButtonMenu = "res://Menus/settings_menu.tscn"
 
 [node name="QuitButton" parent="." index="4" instance=ExtResource("4_uwl3f")]
 layout_mode = 1
-offset_left = 216.0
-offset_top = 496.0
-offset_right = -216.0
-offset_bottom = -72.0
+offset_left = 220.0
+offset_top = 553.0
+offset_right = -212.0
+offset_bottom = -15.0
 text = "Quit Game"
 
+[node name="Level Select" type="Button" parent="." index="5"]
+offset_left = 220.0
+offset_top = 363.0
+offset_right = 938.0
+offset_bottom = 437.0
+text = "Level Select"
+script = ExtResource("5_2g0uu")
+
+[node name="Credits" type="Button" parent="." index="6"]
+offset_left = 947.0
+offset_top = 553.0
+offset_right = 1144.0
+offset_bottom = 632.0
+text = "Credits
+"
+script = ExtResource("6_1o7yf")
+
 [connection signal="pressed" from="QuitButton" to="." method="quit_game"]
+[connection signal="pressed" from="Level Select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

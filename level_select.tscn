@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://covog0ofqledj"]
+[gd_scene load_steps=3 format=3 uid="uid://covog0ofqledj"]
 
 [ext_resource type="Script" path="res://level_select.gd" id="1_p7rxi"]
+[ext_resource type="PackedScene" uid="uid://d0gia0aa70285" path="res://Components/UI/menu_background.tscn" id="2_ge5cy"]
 
 [node name="Level_Select" type="Node2D"]
 script = ExtResource("1_p7rxi")
+
+[node name="MenuBackground" parent="." instance=ExtResource("2_ge5cy")]
+offset_left = -16.0
+offset_top = -48.0
+offset_right = -16.0
+offset_bottom = -48.0
 
 [node name="Tutorial" type="Button" parent="."]
 offset_left = 85.0
@@ -27,11 +34,11 @@ text = "Day 2
 Rabbit Hole"
 
 [node name="LongBrigade" type="Button" parent="."]
-offset_left = 78.0
-offset_top = 194.0
-offset_right = 187.0
-offset_bottom = 277.0
-text = "Day X
+offset_left = 628.0
+offset_top = 49.0
+offset_right = 737.0
+offset_bottom = 132.0
+text = "Day 4
 Long Brigade"
 
 [node name="TallPillar" type="Button" parent="."]
@@ -42,8 +49,17 @@ offset_bottom = 129.0
 text = "Day 1
 Tall Pillar"
 
+[node name="Break-in" type="Button" parent="."]
+offset_left = 491.0
+offset_top = 48.0
+offset_right = 607.0
+offset_bottom = 132.0
+text = "Day 3
+Break-in"
+
 [connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="RabbitHole" to="." method="_on_rabbit_hole_pressed"]
 [connection signal="pressed" from="LongBrigade" to="." method="_on_long_brigade_pressed"]
 [connection signal="pressed" from="TallPillar" to="." method="_on_tall_pillar_pressed"]
+[connection signal="pressed" from="Break-in" to="." method="_on_breakin_pressed"]
