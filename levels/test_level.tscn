@@ -35,14 +35,14 @@ unique_name_in_owner = true
 position = Vector2(344, -88)
 
 [node name="Flashlight" parent="." instance=ExtResource("4_yh54d")]
-position = Vector2(200, 248)
+position = Vector2(200, 224)
 
 [node name="Flashlight2" parent="." instance=ExtResource("4_yh54d")]
-position = Vector2(8, 88)
+position = Vector2(-72, 64)
 move_speed = 40
 
 [node name="Flashlight3" parent="." instance=ExtResource("4_yh54d")]
-position = Vector2(663, 83)
+position = Vector2(664, 64)
 
 [node name="Camera" parent="." instance=ExtResource("5_i4u7x")]
 position = Vector2(216, -16)

@@ -4,13 +4,14 @@ extends CharacterBody2D
 
 #right = 1
 #left = -1
-var direction = -1
+var direction = 1
 var moving = true
 var already_turned = false
 #used to move light according to direction of enemy
 @onready var light_pivot = $lightPivot
 @onready var caught_player = $CaughtPlayer
 @onready var turn_timer = $TurnTimer
+@onready var sprite = $sprite
 @onready var player = get_tree().get_first_node_in_group("player")
 
 # Called when the node enters the scene tree for the first time.
@@ -61,5 +62,12 @@ func _on_caught_player_finished():
 
 
 func _on_turn_timer_timeout():
-	light_pivot.rotation_degrees += 180
+	sprite.flip_h = not sprite.flip_h
 	moving = true
+	print("timer timeout ", light_pivot.rotation_degrees)
+	if light_pivot.rotation_degrees > 0:
+		light_pivot.rotation_degrees = -202.5
+		print("flip left ", light_pivot.rotation_degrees)
+	elif light_pivot.rotation_degrees < 0:
+		light_pivot.rotation_degrees = 22.5
+		print("flip right ", light_pivot.rotation_degrees)
