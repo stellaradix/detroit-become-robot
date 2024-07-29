@@ -9,10 +9,19 @@ set dialogue_status = "level_end"
 
 => END
 
+~ FirstTimeCollect
+You found a ♍︎□︎●︎●︎♏︎♍︎⧫︎♓︎♌︎●︎♏︎! Try to collect them all!
+set FirstTimeCollect = true
+
+=> END
+
 ~ Day1End
 
 Shopkeeper: Hey! Give that back!
 Shopkeeper: Come back here thief!
+
+if CollectiblesGot >= 1:
+	Shopkeeper: Give my ❒︎♓︎♍︎🙵⍓︎⬥︎♋︎⬧︎♒︎♏︎❒︎♏︎ back!
 
 set dialogue_is_open = false
 set dialogue_status = "level_end"
@@ -29,6 +38,9 @@ Shopkeeper: I'll let you off easy, so long as you don't come back.
 Shopkeeper: In fact, you don't need to.
 Shopkeeper: I know a place that wouldn't mind parting with some of their supplies...
 
+if CollectiblesGot >= 1:
+	Shopkeeper: And you gotta give me back my ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎
+
 set dialogue_is_open = false
 set dialogue_status = "level_end"
 
@@ -40,6 +52,12 @@ Sister: *Munch*
 Sister: Wow this is really good!
 Sister: Where do you keep getting this stuff?
 
+if CollectiblesGot == 1:
+	Sister: Oh wow you got this for me? Thanks!
+
+else:
+	Sister: Wow where'd you get this ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎? This is so cool! Thanks!
+	
 set dialogue_is_open = false
 set dialogue_status = "level_end"
 
@@ -56,11 +74,27 @@ set dialogue_status = "level_end"
 ???: Do we have an understanding?
 - Yes
 	???: Good.
+	#send to main menu
 - No
 	???: Shame.
 	#set quit game variable to true
 
+#if CollectiblesGot == (Number of All Collectibles):
+#human ending
+	#???: Wait what's that?!
+	#???: Where did you get those ♍︎□︎●︎●︎♏︎♍︎⧫︎♓︎♌︎●︎♏︎⬧︎?!
+	#???: Wait stop! Get them!
 
+	#runningsfx.play()
+
+	#shakingsfx.play()
+	#Sister: !!!
+	
+	#Sister: What's going on?
+	#Sister: Where are we going?
+	#You: Someplace Human
+	#send to title screen
+	 
 set dialogue_is_open = false
 set dialogue_status = "level_end"
 
