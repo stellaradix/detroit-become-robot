@@ -6,12 +6,14 @@ Sister: Hey! Where are you going?
 
 set dialogue_is_open = false
 set dialogue_status = "level_end"
+set FirstTimeCollect = false
 
 => END
 
 ~ FirstTimeCollect
-You found a ♍︎□︎●︎●︎♏︎♍︎⧫︎♓︎♌︎●︎♏︎! Try to collect them all!
-#set FirstTimeCollect = true
+if PlayerManager.total_collected_collectables > 0 and FirstTimeCollect == false
+	You found a ♍︎□︎●︎●︎♏︎♍︎⧫︎♓︎♌︎●︎♏︎! Try to collect them all!
+	set FirstTimeCollect = true
 
 => END
 
@@ -20,7 +22,7 @@ You found a ♍︎□︎●︎●︎♏︎♍︎⧫︎♓︎♌︎●︎♏︎! 
 Shopkeeper: Hey! Give that back!
 Shopkeeper: Come back here thief!
 
-if total_collected_collectables >= 1:
+if PlayerManager.total_collected_collectables >= 2:
 	Shopkeeper: Give my ❒︎♓︎♍︎🙵⍓︎⬥︎♋︎⬧︎♒︎♏︎❒︎♏︎ back!
 
 set dialogue_is_open = false
@@ -38,7 +40,7 @@ Shopkeeper: I'll let you off easy, so long as you don't come back.
 Shopkeeper: In fact, you don't need to.
 Shopkeeper: I know a place that wouldn't mind parting with some of their supplies...
 
-if total_collected_collectables >= 1:
+if PlayerManager.total_collected_collectables >= 4:
 	Shopkeeper: And you gotta give me back my ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎
 
 set dialogue_is_open = false
@@ -52,11 +54,8 @@ Sister: *Munch*
 Sister: Wow this is really good!
 Sister: Where do you keep getting this stuff?
 
-if total_collected_collectables == 1:
-	Sister: Oh wow you got this for me? Thanks!
-
-#else:
-	#Sister: Wow where'd you get this ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎? This is so cool! Thanks!
+if PlayerManager.total_collected_collectables >= 6:
+	Sister: Wow where'd you get this ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎? This is so cool! Thanks!
 	
 set dialogue_is_open = false
 set dialogue_status = "level_end"
@@ -80,8 +79,6 @@ set dialogue_status = "level_end"
 	=> END
 - No
 	???: Shame.
-	set quit_game = true
-
 	if PlayerManager.total_collected_collectables == PlayerManager.total_collectables:
 		???: Wait what's that?!
 		???: Where did you get those ♍︎□︎●︎●︎♏︎♍︎⧫︎♓︎♌︎●︎♏︎⬧︎?!
@@ -95,12 +92,13 @@ set dialogue_status = "level_end"
 		Sister: What's going on?
 		Sister: Where are we going?
 		You: Someplace Human
+		set dialogue_is_open = false
+		set dialogue_status = "level_end"
 		do to_main_menu()
-		set dialogue_is_open = false
-		set dialogue_status = "level_end"
 		=> END
-	 else:
 		
+	 else:
 		set dialogue_is_open = false
 		set dialogue_status = "level_end"
+		do get_tree().quit()
 		=> END

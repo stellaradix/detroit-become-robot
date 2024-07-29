@@ -166,7 +166,8 @@ offset_left = 731.0
 offset_top = -246.0
 offset_right = 1171.0
 offset_bottom = -222.0
-text = "Press ESC to go back to the main menu"
+text = "Press ESC to go back to the main menu
+Press R to restart the current level"
 uppercase = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

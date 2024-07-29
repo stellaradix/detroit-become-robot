@@ -2,7 +2,8 @@ extends Node
 
 var is_invurnable = false
 
-var total_collected_collectables = 10
+var FirstTimeCollect = false
+var total_collected_collectables = 0
 var total_collectables = 10
 var quit_game = false
 
