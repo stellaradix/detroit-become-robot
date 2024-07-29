@@ -260,4 +260,9 @@ dialogue_start = "Day4End"
 position = Vector2(1568, 120)
 texture = ExtResource("11_0om7o")
 
+[node name="Collectable3" type="Sprite2D" parent="." index="17"]
+self_modulate = Color(0.168627, 1, 0.2, 1)
+position = Vector2(1792, -1040)
+texture = ExtResource("11_0om7o")
+
 [editable path="Enemies/DeathZone"]
