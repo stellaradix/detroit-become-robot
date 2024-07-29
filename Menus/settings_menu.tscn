@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cfm65gewl2l0b" path="res://Components/UI/volume_slider.tscn" id="2_1vhmo"]
 [ext_resource type="Script" path="res://Menus/settings_menu.gd" id="2_7wl7m"]
 [ext_resource type="PackedScene" uid="uid://c0tkbjwwf6hm2" path="res://Components/UI/Menu_Button.tscn" id="4_sx06b"]
-[ext_resource type="AudioStream" uid="uid://cs1ybcwegohgi" path="res://Sound/Menu/ui_click.wav" id="5_cfeu0"]
+[ext_resource type="AudioStream" uid="uid://dyt83rp8h2xtr" path="res://assets/key_get.ogg" id="4_w2ih2"]
 [ext_resource type="Texture2D" uid="uid://d2bu0qfk00a2o" path="res://assets/left_arrow.png" id="5_eedbd"]
 [ext_resource type="AudioStream" uid="uid://b34eoklabwu2h" path="res://Sound/Menu/ui_hover.wav" id="6_6arak"]
 
@@ -49,7 +49,7 @@ step = 0.01
 bus_index = 2
 
 [node name="AudioStreamPlayer" parent="SFXSlider/VBoxContainer/VolumeSlider" index="0"]
-stream = ExtResource("5_cfeu0")
+stream = ExtResource("4_w2ih2")
 bus = &"SFX"
 
 [node name="MenuSlider" parent="." index="4" instance=ExtResource("2_1vhmo")]
@@ -89,6 +89,7 @@ offset_right = 439.0
 offset_bottom = 100.0
 theme_override_colors/font_outline_color = Color(0.0784314, 0.0862745, 0.129412, 1)
 theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
 text = "Settings"
 
 [connection signal="volume_changed" from="MasterSlider/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_volume_changed"]

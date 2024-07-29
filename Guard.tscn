@@ -45,6 +45,7 @@ target_position = Vector2(0, 20)
 [node name="CaughtPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_mpeeh")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="TurnTimer" type="Timer" parent="."]
 one_shot = true

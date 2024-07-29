@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bj7pd5x1t6skh"]
+[gd_scene load_steps=13 format=3 uid="uid://bj7pd5x1t6skh"]
 
 [ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_owd42"]
 [ext_resource type="AudioStream" uid="uid://b3kbqoygosqip" path="res://Sound/SFX/jump.ogg" id="2_wrs2d"]
 [ext_resource type="AudioStream" uid="uid://bdcsx8s2nuskk" path="res://Sound/SFX/jump_land.ogg" id="3_h5qu4"]
+[ext_resource type="Script" path="res://player/FootstepSFX.gd" id="4_wjnxy"]
 
 [sub_resource type="GDScript" id="GDScript_ub4pc"]
 script/source = "extends CharacterBody2D
@@ -271,6 +272,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [1, 2, 3, 4, 5, 6]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FootstepSFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n77sk"]
 _data = {
@@ -316,10 +334,16 @@ sdf_collision = false
 [node name="JumpStartSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_wrs2d")
 volume_db = 6.559
+bus = &"SFX"
 
 [node name="JumpLandSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_h5qu4")
 volume_db = 5.622
+bus = &"SFX"
+
+[node name="FootstepSFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+script = ExtResource("4_wjnxy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

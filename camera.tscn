@@ -44,6 +44,7 @@ texture = ExtResource("4_4pfhe")
 [node name="CaughtPlayerCam" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ktwov")
 volume_db = -15.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="Light" to="." method="_on_light_body_entered"]
 [connection signal="finished" from="CaughtPlayerCam" to="." method="_on_caught_player_cam_finished"]
