@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2iegjarfq0cn"]
+[gd_scene load_steps=13 format=3 uid="uid://c2iegjarfq0cn"]
 
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_hckmd"]
+[ext_resource type="Script" path="res://Components/UI/menu.gd" id="1_mljmm"]
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_caqcq"]
 [ext_resource type="PackedScene" uid="uid://ck315tewigdni" path="res://camera.tscn" id="3_5j83r"]
 [ext_resource type="PackedScene" uid="uid://cr18h5ylochm7" path="res://key.tscn" id="4_hdd27"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bndflqawhhgwc" path="res://assets/collectable.png" id="11_y0iq5"]
 
 [node name="level_rabbit_hole" type="Node2D" groups=["menu"]]
+script = ExtResource("1_mljmm")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -712.0

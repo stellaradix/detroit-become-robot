@@ -6,8 +6,7 @@ var next_menu: String
 var is_changing = false
 
 func set_menu(menu):
-	next_menu = menu
-	
+	next_menu = menu	
 
 func close_menu():
 	get_tree().unload_current_scene()

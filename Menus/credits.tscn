@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqb6lutanfoxl"]
+[gd_scene load_steps=8 format=3 uid="uid://cqb6lutanfoxl"]
 
 [ext_resource type="Theme" uid="uid://b2cdtmdnikgwr" path="res://Themes/Title.tres" id="1_xc21b"]
+[ext_resource type="Script" path="res://Components/UI/menu.gd" id="2_082ne"]
 [ext_resource type="PackedScene" uid="uid://d0gia0aa70285" path="res://Components/UI/menu_background.tscn" id="2_swwm1"]
 [ext_resource type="FontFile" uid="uid://5pxe0yke8pfb" path="res://Fonts/Quadrunde.ttf" id="3_8ft55"]
 [ext_resource type="FontFile" uid="uid://dpbp1apa67smx" path="res://Fonts/Perfect Dark Zero.ttf" id="3_kr147"]
@@ -11,6 +12,7 @@
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_xc21b")
+script = ExtResource("2_082ne")
 
 [node name="MenuBackground" parent="." instance=ExtResource("2_swwm1")]
 layout_mode = 1

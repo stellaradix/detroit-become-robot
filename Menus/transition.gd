@@ -5,12 +5,13 @@ extends Control
 func animation_finished():
 	MenuManager.open_menu()
 	MenuManager.close_menu()
+	
+func _ready():
+	if MenuManager.is_changing == false:
+		animation_player.play("swipe_off")
+	else:
+		animation_player.play("swipe_on")
+		
 
 func swipe_off_finished():
 	MenuManager.remove_transition()
-
-func _ready():
-	MenuManager.connect("menu_closed", _on_menu_closed)
-	
-func _on_menu_closed():
-	animation_player.play("swipe_off")

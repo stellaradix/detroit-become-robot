@@ -5,3 +5,4 @@
 [node name="Main" type="Node" groups=["main"]]
 
 [node name="TitleMenu" parent="." instance=ExtResource("1_5k6xw")]
+script = null

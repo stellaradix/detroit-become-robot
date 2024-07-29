@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bynt07sdurfkl"]
+[gd_scene load_steps=17 format=3 uid="uid://bynt07sdurfkl"]
 
 [ext_resource type="PackedScene" uid="uid://tqtwhcy818tk" path="res://Tilemaps/bg_tile_map.tscn" id="1_52253"]
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_ovs8f"]
+[ext_resource type="Script" path="res://Components/UI/menu.gd" id="1_r0ttq"]
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_oaq78"]
 [ext_resource type="PackedScene" uid="uid://qn2lh78nfdxu" path="res://Guard.tscn" id="3_ykd0s"]
 [ext_resource type="PackedScene" uid="uid://ck315tewigdni" path="res://camera.tscn" id="4_y3dhk"]
@@ -25,6 +26,7 @@ fill_from = Vector2(1, 0.940367)
 size = Vector2(64, 8)
 
 [node name="LevelTallPillar" type="Node2D" groups=["menu"]]
+script = ExtResource("1_r0ttq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -720.0

@@ -6,3 +6,6 @@ func set_bus_volume(bus_index: int, value: float):
 
 func _on_volume_slider_volume_changed(value, bus_index):
 	set_bus_volume(bus_index, value)
+
+func _ready():
+	MenuManager.add_transition()

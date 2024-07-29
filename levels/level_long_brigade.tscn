@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm84imoj1b8wa"]
+[gd_scene load_steps=13 format=3 uid="uid://bm84imoj1b8wa"]
 
+[ext_resource type="Script" path="res://Components/UI/menu.gd" id="1_nmbt5"]
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_uemen"]
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_2e3ne"]
 [ext_resource type="PackedScene" uid="uid://cr18h5ylochm7" path="res://key.tscn" id="3_21rk3"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bndflqawhhgwc" path="res://assets/collectable.png" id="11_v3jxx"]
 
 [node name="level_long_brigade" type="Node2D" groups=["menu"]]
+script = ExtResource("1_nmbt5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -730.0

@@ -143,7 +143,6 @@ stretch_mode = 1
 libraries = {
 "": SubResource("AnimationLibrary_2wjpm")
 }
-autoplay = "swipe_on"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)

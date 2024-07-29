@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://covog0ofqledj"]
+[gd_scene load_steps=6 format=3 uid="uid://covog0ofqledj"]
 
 [ext_resource type="Theme" uid="uid://b2cdtmdnikgwr" path="res://Themes/Title.tres" id="1_3owqc"]
 [ext_resource type="PackedScene" uid="uid://d0gia0aa70285" path="res://Components/UI/menu_background.tscn" id="2_ge5cy"]
+[ext_resource type="Script" path="res://Components/UI/menu.gd" id="2_rgf0l"]
 [ext_resource type="PackedScene" uid="uid://c0tkbjwwf6hm2" path="res://Components/UI/Menu_Button.tscn" id="3_pwixq"]
 [ext_resource type="Texture2D" uid="uid://d2bu0qfk00a2o" path="res://assets/left_arrow.png" id="4_swauh"]
 
@@ -9,6 +10,7 @@
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_3owqc")
+script = ExtResource("2_rgf0l")
 
 [node name="MenuBackground" parent="." instance=ExtResource("2_ge5cy")]
 layout_mode = 1
