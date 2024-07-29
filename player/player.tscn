@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bj7pd5x1t6skh"]
 
-[ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_3v0y5"]
+[ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_owd42"]
 [ext_resource type="AudioStream" uid="uid://b3kbqoygosqip" path="res://Sound/SFX/jump.ogg" id="2_wrs2d"]
 [ext_resource type="AudioStream" uid="uid://bdcsx8s2nuskk" path="res://Sound/SFX/jump_land.ogg" id="3_h5qu4"]
 
@@ -228,7 +228,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_74owe"]
 resource_name = "jump"
-length = 0.5
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -239,7 +239,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [7, 8, 9, 9, 10, 11]
+"values": [7, 8, 9, 10, 11, 12]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -258,7 +258,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_7uaxq"]
 resource_name = "run"
-length = 0.5
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -289,10 +289,11 @@ script = SubResource("GDScript_ub4pc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9.5)
-texture = ExtResource("1_3v0y5")
+texture = ExtResource("1_owd42")
 hframes = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_xpmbs")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
