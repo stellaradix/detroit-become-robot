@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqb6lutanfoxl"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_y6ej3"]
+[ext_resource type="PackedScene" uid="uid://d0gia0aa70285" path="res://Components/UI/menu_background.tscn" id="2_swwm1"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_y6ej3")
+
+[node name="MenuBackground" parent="." instance=ExtResource("2_swwm1")]
+
+[node name="BackButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 374.0
+offset_top = 142.0
+offset_right = 675.0
+offset_bottom = 347.0
+text = "Programming: Ricky Rauchfuss and Ayden
+Dialogue: Ricky Rauchfuss
+Dialogue Manager: nathan hoad
+Art: Ayden
+Soundtrack: Alex Mcculloch
+SFX:
+Made in Godot and Aesprite"
+uppercase = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
