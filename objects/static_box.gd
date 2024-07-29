@@ -14,7 +14,8 @@ func _on_body_exited(body):
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 
 func _process(_delta):
-	if player.is_crouching == true:
-		collision_shape_2d.disabled = true
-	else:
-		collision_shape_2d.disabled = false
+	if MenuManager.is_changing == false:
+		if player.is_crouching == true:
+			collision_shape_2d.disabled = true
+		else:
+			collision_shape_2d.disabled = false

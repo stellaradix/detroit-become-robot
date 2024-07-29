@@ -24,7 +24,7 @@ fill_from = Vector2(1, 0.940367)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6hv5"]
 size = Vector2(64, 8)
 
-[node name="LevelTallPillar" type="Node2D"]
+[node name="LevelTallPillar" type="Node2D" groups=["menu"]]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -720.0
@@ -110,6 +110,8 @@ position = Vector2(-208, -192)
 
 [node name="LevelDoor_TallPillar" parent="." instance=ExtResource("6_f5i3h")]
 position = Vector2(-500, -265)
+collision_layer = 1
+collision_mask = 2
 level_path = "res://levels/level_rabbit_hole.tscn"
 dialogue_resource = ExtResource("8_oh7as")
 dialogue_start = "Day1End"
@@ -211,6 +213,7 @@ position = Vector2(216, -288)
 
 [node name="Static Box3" parent="." instance=ExtResource("12_bkgd4")]
 position = Vector2(-144, -192)
+
 [node name="Platform14" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-499, -213)
 

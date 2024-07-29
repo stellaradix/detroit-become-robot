@@ -8,7 +8,7 @@ extends Area2D
 func _process(_delta):
 	if InteractionManager.dialogue_is_open == false and DialogueState.dialogue_status == "level_end":
 		DialogueState.dialogue_status = "level_begin"
-		get_tree().change_scene_to_file(level_path)
+		MenuManager.switch_menu(level_path)
 		
 func _on_body_entered(body):
 	if body == player and dialogue_resource:
@@ -17,5 +17,5 @@ func _on_body_entered(body):
 		DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
 		InteractionManager.dialogue_is_open = true
 	elif body == player and dialogue_resource == null:
-		get_tree().change_scene_to_file(level_path)
+		MenuManager.switch_menu(level_path)
 

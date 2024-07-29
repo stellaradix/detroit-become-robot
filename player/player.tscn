@@ -151,8 +151,7 @@ func apply_air_resistance(input_axis, delta):
 
 func escape_to_menu():
 	if Input.is_action_just_pressed(\"escape\"):
-		MenuManager.set_menu(\"res://Menus/title_menu.tscn\")
-		MenuManager.add_transition()
+		get_tree().change_scene_to_file(\"res://Menus/title_menu.tscn\")
 		
 func handle_animations():
 	match player_action:

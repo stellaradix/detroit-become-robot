@@ -5,7 +5,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_pk0pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbsms"]
-size = Vector2(19, 53)
+size = Vector2(24, 53)
 
 [node name="LevelDoor" type="Area2D"]
 collision_layer = 7

@@ -8,21 +8,21 @@ var BehindBox = false
 @onready var label = $Label
 @onready var collision_shape_2d = $CollisionShape2D
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if player.is_crouching == true:
+	if MenuManager.is_changing == false:
+		if player.is_crouching == true:
 	
-		if BehindBox == true:
-			PlayerManager.is_invurnable = true
-			label.show()
+			if BehindBox == true:
+				PlayerManager.is_invurnable = true
+				label.show()
+			else:
+				PlayerManager.is_invurnable = false
+				label.hide()
+	
+			collision_shape_2d.disabled = true
 		else:
-			PlayerManager.is_invurnable = false
-			label.hide()
-	
-		collision_shape_2d.disabled = true
-	else:
-		collision_shape_2d.disabled = false
+			collision_shape_2d.disabled = false
 			
 
 func _on_body_entered(body):

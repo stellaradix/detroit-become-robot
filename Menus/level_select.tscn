@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://covog0ofqledj"]
+
+[ext_resource type="Theme" uid="uid://b2cdtmdnikgwr" path="res://Themes/Title.tres" id="1_3owqc"]
+[ext_resource type="PackedScene" uid="uid://d0gia0aa70285" path="res://Components/UI/menu_background.tscn" id="2_ge5cy"]
+[ext_resource type="PackedScene" uid="uid://c0tkbjwwf6hm2" path="res://Components/UI/Menu_Button.tscn" id="3_pwixq"]
+[ext_resource type="Texture2D" uid="uid://d2bu0qfk00a2o" path="res://assets/left_arrow.png" id="4_swauh"]
+
+[node name="Level_Select" type="Control" groups=["menu"]]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_3owqc")
+
+[node name="MenuBackground" parent="." instance=ExtResource("2_ge5cy")]
+layout_mode = 1
+offset_left = -16.0
+offset_top = -48.0
+offset_right = -16.0
+offset_bottom = -48.0
+
+[node name="BackButton2" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 1
+grow_vertical = 1
+icon = ExtResource("4_swauh")
+ButtonMenu = "res://Menus/title_menu.tscn"
+
+[node name="MenuButton" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 352.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 32
+text = "Day 0
+Tutorial"
+ButtonMenu = "res://levels/tutorial_level.tscn"
+
+[node name="MenuButton2" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 544.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 32
+text = "Day 1
+Tall Pillar"
+ButtonMenu = "res://levels/level_tall_pillar.tscn"
+
+[node name="MenuButton3" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 576.0
+offset_top = 124.0
+offset_right = 736.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 32
+text = "Day 2
+Rabbit Hole"
+ButtonMenu = "res://levels/level_rabbit_hole.tscn"
+
+[node name="MenuButton4" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 768.0
+offset_top = 128.0
+offset_right = 928.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 32
+text = "Day 3
+The Long
+Brigade"
+ButtonMenu = "res://levels/level_long_brigade.tscn"
+
+[node name="MenuButton6" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 960.0
+offset_top = 128.0
+offset_right = 1120.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 32
+text = "Day 4
+Break In"
+ButtonMenu = "res://levels/level_break_in.tscn"
+
+[node name="MenuButton5" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 192.0
+offset_top = 256.0
+offset_right = 352.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 32
+text = "Day 5
+Moving
+Forward"
+ButtonMenu = "res://levels/moving_forward.tscn"

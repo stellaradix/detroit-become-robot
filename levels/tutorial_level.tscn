@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c5yi3cnw06c10" path="res://Components/interactible/npc.tscn" id="10_kr88w"]
 [ext_resource type="PackedScene" uid="uid://ciyrg06gwda2x" path="res://objects/platform.tscn" id="12_u8aef"]
 
-[node name="TutorialLevel" type="Node2D"]
+[node name="TutorialLevel" type="Node2D" groups=["menu"]]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1250.0

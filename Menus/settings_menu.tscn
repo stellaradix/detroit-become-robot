@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d2bu0qfk00a2o" path="res://assets/left_arrow.png" id="5_eedbd"]
 [ext_resource type="AudioStream" uid="uid://b34eoklabwu2h" path="res://Sound/Menu/ui_hover.wav" id="6_6arak"]
 
-[node name="Settings_menu" groups=["menu"] instance=ExtResource("1_5rdnn")]
+[node name="Settings_menu" instance=ExtResource("1_5rdnn")]
 script = ExtResource("2_7wl7m")
 
 [node name="MenuBackground" parent="." index="0"]

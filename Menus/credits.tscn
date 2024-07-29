@@ -1,21 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqb6lutanfoxl"]
+[gd_scene load_steps=7 format=3 uid="uid://cqb6lutanfoxl"]
 
-[ext_resource type="Script" path="res://credits.gd" id="1_y6ej3"]
+[ext_resource type="Theme" uid="uid://b2cdtmdnikgwr" path="res://Themes/Title.tres" id="1_xc21b"]
 [ext_resource type="PackedScene" uid="uid://d0gia0aa70285" path="res://Components/UI/menu_background.tscn" id="2_swwm1"]
 [ext_resource type="FontFile" uid="uid://5pxe0yke8pfb" path="res://Fonts/Quadrunde.ttf" id="3_8ft55"]
 [ext_resource type="FontFile" uid="uid://dpbp1apa67smx" path="res://Fonts/Perfect Dark Zero.ttf" id="3_kr147"]
+[ext_resource type="PackedScene" uid="uid://c0tkbjwwf6hm2" path="res://Components/UI/Menu_Button.tscn" id="5_5r7pb"]
+[ext_resource type="Texture2D" uid="uid://d2bu0qfk00a2o" path="res://assets/left_arrow.png" id="6_gcby0"]
 
-[node name="Credits" type="Node2D"]
-script = ExtResource("1_y6ej3")
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_xc21b")
 
 [node name="MenuBackground" parent="." instance=ExtResource("2_swwm1")]
-
-[node name="BackButton" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Back"
+layout_mode = 1
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -35,6 +36,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 128.0
 offset_right = 831.0
@@ -63,4 +65,16 @@ Thank you for playing!!!"
 horizontal_alignment = 1
 uppercase = true
 
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[node name="BackButton" parent="." groups=["menu"] instance=ExtResource("5_5r7pb")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 1
+grow_vertical = 1
+icon = ExtResource("6_gcby0")
+ButtonMenu = "res://Menus/title_menu.tscn"

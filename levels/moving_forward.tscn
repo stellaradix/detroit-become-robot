@@ -58,7 +58,7 @@ _data = {
 "move": SubResource("Animation_1pd2u")
 }
 
-[node name="MovingForward" instance=ExtResource("1_f8dsj")]
+[node name="MovingForward" groups=["menu"] instance=ExtResource("1_f8dsj")]
 
 [node name="Background" parent="." index="0"]
 offset_left = -312.0
