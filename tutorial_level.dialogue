@@ -11,7 +11,7 @@ set dialogue_status = "level_end"
 
 ~ FirstTimeCollect
 You found a ♍︎□︎●︎●︎♏︎♍︎⧫︎♓︎♌︎●︎♏︎! Try to collect them all!
-set FirstTimeCollect = true
+#set FirstTimeCollect = true
 
 => END
 
@@ -55,8 +55,8 @@ Sister: Where do you keep getting this stuff?
 if total_collected_collectables == 1:
 	Sister: Oh wow you got this for me? Thanks!
 
-else:
-	Sister: Wow where'd you get this ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎? This is so cool! Thanks!
+#else:
+	#Sister: Wow where'd you get this ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎? This is so cool! Thanks!
 	
 set dialogue_is_open = false
 set dialogue_status = "level_end"
