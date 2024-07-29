@@ -26,7 +26,7 @@ PlayerManager="*res://Autoloads/player_manager.tscn"
 
 [dialogue_manager]
 
-general/states=["State", "InteractionManager", "DialogueState"]
+general/states=["State", "InteractionManager", "DialogueState", "PlayerManager"]
 
 [display]
 

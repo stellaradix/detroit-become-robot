@@ -20,7 +20,7 @@ set FirstTimeCollect = true
 Shopkeeper: Hey! Give that back!
 Shopkeeper: Come back here thief!
 
-if CollectiblesGot >= 1:
+if total_collected_collectables >= 1:
 	Shopkeeper: Give my ❒︎♓︎♍︎🙵⍓︎⬥︎♋︎⬧︎♒︎♏︎❒︎♏︎ back!
 
 set dialogue_is_open = false
@@ -38,7 +38,7 @@ Shopkeeper: I'll let you off easy, so long as you don't come back.
 Shopkeeper: In fact, you don't need to.
 Shopkeeper: I know a place that wouldn't mind parting with some of their supplies...
 
-if CollectiblesGot >= 1:
+if total_collected_collectables >= 1:
 	Shopkeeper: And you gotta give me back my ♏︎♋︎⬧︎⧫︎♏︎❒︎ ♏︎♑︎♑︎
 
 set dialogue_is_open = false
@@ -52,7 +52,7 @@ Sister: *Munch*
 Sister: Wow this is really good!
 Sister: Where do you keep getting this stuff?
 
-if CollectiblesGot == 1:
+if total_collected_collectables == 1:
 	Sister: Oh wow you got this for me? Thanks!
 
 else:
@@ -74,28 +74,33 @@ set dialogue_status = "level_end"
 ???: Do we have an understanding?
 - Yes
 	???: Good.
-	#send to main menu
+	do to_main_menu()
+	set dialogue_is_open = false
+	dialogue_status = "level_end"
+	=> END
 - No
 	???: Shame.
-	#set quit game variable to true
+	set quit_game = true
 
-#if CollectiblesGot == (Number of All Collectibles):
-#human ending
-	#???: Wait what's that?!
-	#???: Where did you get those ♍︎□︎●︎●︎♏︎♍︎⧫︎♓︎♌︎●︎♏︎⬧︎?!
-	#???: Wait stop! Get them!
+	if PlayerManager.total_collected_collectables == PlayerManager.total_collectables:
+		???: Wait what's that?!
+		???: Where did you get those ♍︎□︎●︎●︎♏︎♍︎⧫︎♓︎♌︎●︎♏︎⬧︎?!
+		???: Wait stop! Get them!
 
-	#runningsfx.play()
+		do runningsfx()
 
-	#shakingsfx.play()
-	#Sister: !!!
+		do shakesfx()
+		Sister: !!!
 	
-	#Sister: What's going on?
-	#Sister: Where are we going?
-	#You: Someplace Human
-	#send to title screen
-	 
-set dialogue_is_open = false
-set dialogue_status = "level_end"
-
-=> END
+		Sister: What's going on?
+		Sister: Where are we going?
+		You: Someplace Human
+		do to_main_menu()
+		set dialogue_is_open = false
+		set dialogue_status = "level_end"
+		=> END
+	 else:
+		
+		set dialogue_is_open = false
+		set dialogue_status = "level_end"
+		=> END
