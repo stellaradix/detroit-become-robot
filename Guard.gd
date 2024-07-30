@@ -11,6 +11,7 @@ var already_turned = false
 @onready var light_pivot = $lightPivot
 @onready var caught_player = $CaughtPlayer
 @onready var turn_timer = $TurnTimer
+@onready var animation_player = $AnimationPlayer
 @onready var sprite = $sprite
 @onready var player = get_tree().get_first_node_in_group("player")
 
@@ -35,6 +36,7 @@ func _physics_process(_delta):
 		direction = direction * -1
 		#$animatedsprite.flip_h = not $animatedsprite.flip_h
 		$FloorChecker.position.x = $CollisionShape2D.get_shape().size.x * direction
+		animation_player.play("idle")
 		turn_timer.start()
 	
 	if turn_timer.is_stopped():
@@ -62,6 +64,7 @@ func _on_caught_player_finished():
 
 func _on_turn_timer_timeout():
 	sprite.flip_h = not sprite.flip_h
+	animation_player.play("walk")
 	moving = true
 	if light_pivot.rotation_degrees > 0:
 		light_pivot.rotation_degrees = -202.5

@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://qn2lh78nfdxu"]
+[gd_scene load_steps=11 format=3 uid="uid://qn2lh78nfdxu"]
 
 [ext_resource type="Script" path="res://Guard.gd" id="1_kl3pk"]
-[ext_resource type="Texture2D" uid="uid://bdcpybbaqmp0y" path="res://assets/guard.png" id="2_e6gb0"]
+[ext_resource type="Texture2D" uid="uid://cburoo643uy48" path="res://assets/guard-Sheet.png" id="2_1we0i"]
 [ext_resource type="Texture2D" uid="uid://dlgtrcg1l5qe5" path="res://assets/guardlight.png" id="3_dispp"]
 [ext_resource type="AudioStream" uid="uid://kic3brhbxggt" path="res://assets/robot.ogg" id="4_mpeeh"]
 
@@ -10,6 +10,60 @@ size = Vector2(20, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfojr"]
 size = Vector2(102, 22.4629)
+
+[sub_resource type="Animation" id="Animation_2xxkr"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_4vdhf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_gfqeh"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tpojp"]
+_data = {
+"RESET": SubResource("Animation_4vdhf"),
+"idle": SubResource("Animation_gfqeh"),
+"walk": SubResource("Animation_2xxkr")
+}
 
 [node name="Guard" type="CharacterBody2D"]
 script = ExtResource("1_kl3pk")
@@ -20,7 +74,9 @@ shape = SubResource("RectangleShape2D_lsnge")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(8.58307e-06, 5.96046e-07)
-texture = ExtResource("2_e6gb0")
+texture = ExtResource("2_1we0i")
+hframes = 5
+frame = 2
 
 [node name="lightPivot" type="Marker2D" parent="."]
 position = Vector2(0, -18)
@@ -51,6 +107,11 @@ bus = &"SFX"
 
 [node name="TurnTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tpojp")
+}
 
 [connection signal="body_entered" from="lightPivot/Light" to="." method="_on_light_body_entered"]
 [connection signal="finished" from="CaughtPlayer" to="." method="_on_caught_player_finished"]
