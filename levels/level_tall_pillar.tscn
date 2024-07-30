@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://ciyrg06gwda2x" path="res://objects/platform.tscn" id="7_gt258"]
 [ext_resource type="PackedScene" uid="uid://dpj1tl28kvvft" path="res://objects/small_box.tscn" id="8_06mqc"]
 [ext_resource type="Resource" uid="uid://bfpyj7rlklxqg" path="res://tutorial_level.dialogue" id="8_oh7as"]
-[ext_resource type="Texture2D" uid="uid://bndflqawhhgwc" path="res://assets/collectable.png" id="11_81rub"]
 [ext_resource type="PackedScene" uid="uid://da836l700poav" path="res://objects/static_box.tscn" id="12_bkgd4"]
+[ext_resource type="PackedScene" uid="uid://dmt6vddqnip8k" path="res://objects/collectable.tscn" id="14_pwr4o"]
 [ext_resource type="PackedScene" uid="uid://cxfunvwofvvkr" path="res://objects/spring.tscn" id="14_qm647"]
 
 [sub_resource type="Gradient" id="Gradient_n5xeg"]
@@ -106,7 +106,7 @@ position = Vector2(-235, 136)
 position = Vector2(214, -32)
 
 [node name="Flashlight2" parent="." instance=ExtResource("3_ykd0s")]
-position = Vector2(-352, -192)
+position = Vector2(-400, -192)
 
 [node name="Camera" parent="." instance=ExtResource("4_y3dhk")]
 position = Vector2(24, -368)
@@ -207,15 +207,6 @@ position = Vector2(176, -144)
 [node name="small_box8" parent="." instance=ExtResource("8_06mqc")]
 position = Vector2(200, -176)
 
-[node name="Collectable" type="Sprite2D" parent="."]
-self_modulate = Color(0.168627, 1, 0.2, 1)
-position = Vector2(-360, -64)
-texture = ExtResource("11_81rub")
-
-[node name="Collectable2" type="Sprite2D" parent="."]
-position = Vector2(224, -288)
-texture = ExtResource("11_81rub")
-
 [node name="Static Box" parent="." instance=ExtResource("12_bkgd4")]
 position = Vector2(-328, 128)
 
@@ -241,5 +232,11 @@ color = Color(0, 0, 0, 1)
 
 [node name="Spring" parent="." instance=ExtResource("14_qm647")]
 position = Vector2(-516, -237)
+
+[node name="Collectable" parent="." instance=ExtResource("14_pwr4o")]
+position = Vector2(216, -280)
+
+[node name="Collectable2" parent="." instance=ExtResource("14_pwr4o")]
+position = Vector2(-360, -48)
 
 [connection signal="body_entered" from="LevelDoor_TallPillar" to="Player" method="_on_level_door_tall_pillar_body_entered"]

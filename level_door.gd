@@ -13,6 +13,7 @@ func _process(_delta):
 		
 func _on_body_entered(body):
 	PlayerManager.total_collected_collectables += level.collected_items
+	print("total collected collectables: ", PlayerManager.total_collected_collectables , "/ ", PlayerManager.total_collectables)
 	if body == player and dialogue_resource:
 		print("player detected")
 		$"../DialogueCover".show()

@@ -52,10 +52,9 @@ func _physics_process(_delta):
 
 func _on_light_body_entered(body):
 	if body == player and PlayerManager.is_invurnable == true:
-		print("The Guard can't see you!")
+		return
 	elif body == player and PlayerManager.is_invurnable == false:
 		caught_player.play()
-		print("Ouch! A guard!")
 
 func _on_caught_player_finished():
 	get_tree().reload_current_scene()
@@ -64,10 +63,7 @@ func _on_caught_player_finished():
 func _on_turn_timer_timeout():
 	sprite.flip_h = not sprite.flip_h
 	moving = true
-	print("timer timeout ", light_pivot.rotation_degrees)
 	if light_pivot.rotation_degrees > 0:
 		light_pivot.rotation_degrees = -202.5
-		print("flip left ", light_pivot.rotation_degrees)
 	elif light_pivot.rotation_degrees < 0:
 		light_pivot.rotation_degrees = 22.5
-		print("flip right ", light_pivot.rotation_degrees)

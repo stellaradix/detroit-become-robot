@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var player = get_tree().get_first_node_in_group("player")
-@onready var level = get_tree().get_first_node_in_group("level")
+@onready var level = get_tree().get_first_node_in_group("menu")
 @onready var audio_stream_player = $AudioStreamPlayer
 
 
@@ -12,9 +12,10 @@ extends Area2D
 		#self.queue_free()
 func _on_body_entered(body):
 	if body == player:
-		level.items_collected += 1
+		level.collected_items += 1
 		audio_stream_player.play()
 		self.hide()
+		print("level collectables: ", level.collected_items)
 
 func _on_audio_stream_player_finished():
 	self.queue_free()
