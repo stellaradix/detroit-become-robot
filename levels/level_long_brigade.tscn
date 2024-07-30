@@ -130,12 +130,13 @@ facing = "right"
 
 [node name="LevelDoor_LongBrigade" parent="." instance=ExtResource("9_c03ft")]
 position = Vector2(-315, 116)
-level_path = "res://levels/moving_forward.tscn"
+level_path = "res://levels/heavily_guarded.tscn"
 dialogue_resource = ExtResource("10_1tqjr")
 dialogue_start = "Day3End"
 
 [node name="DialogueCover" type="ColorRect" parent="."]
 visible = false
+z_index = 20
 offset_left = -879.0
 offset_top = -462.0
 offset_right = 323.0

@@ -251,8 +251,8 @@ position = Vector2(96, -1200)
 door_flip = true
 
 [node name="LevelDoor" parent="Doors" index="1" instance=ExtResource("9_circg")]
-position = Vector2(-168, -1201)
-level_path = "res://levels/three_layered_cake.tscn"
+position = Vector2(-168, -1192)
+level_path = "res://levels/level_rabbit_hole.tscn"
 
 [node name="door1" parent="Keys" index="0" instance=ExtResource("9_yieig")]
 position = Vector2(208, -80)

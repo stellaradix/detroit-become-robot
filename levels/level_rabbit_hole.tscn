@@ -107,7 +107,7 @@ facing = "down"
 
 [node name="LevelDoor_RabbitHole" parent="." instance=ExtResource("8_pdqa7")]
 position = Vector2(-315, 116)
-level_path = "res://levels/level_long_brigade.tscn"
+level_path = "res://levels/door_mania.tscn"
 dialogue_resource = ExtResource("8_pej7b")
 dialogue_start = "Day2End"
 
@@ -153,6 +153,7 @@ position = Vector2(-16, 784)
 
 [node name="DialogueCover" type="ColorRect" parent="."]
 visible = false
+z_index = 20
 offset_left = -902.0
 offset_top = -591.0
 offset_right = 300.0
