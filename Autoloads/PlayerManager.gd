@@ -7,6 +7,11 @@ var total_collected_collectables = 0
 var total_collectables = 10
 var quit_game = false
 
+func bitesfx():
+	var Audio = Soundtrack
+	Audio.stream = load("res://Sound/SFX/353067__jofae__bite-cartoon-style.R.ogg")
+	Audio.play()
+
 func runningsfx():
 	var Audio = Soundtrack
 	Audio.stream = load("res://Sound/SFX/runningend.ogg")
