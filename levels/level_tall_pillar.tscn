@@ -103,7 +103,7 @@ unique_name_in_owner = true
 position = Vector2(-235, 136)
 
 [node name="Flashlight" parent="." instance=ExtResource("3_ykd0s")]
-position = Vector2(214, -10)
+position = Vector2(214, -32)
 
 [node name="Flashlight2" parent="." instance=ExtResource("3_ykd0s")]
 position = Vector2(-400, -192)
