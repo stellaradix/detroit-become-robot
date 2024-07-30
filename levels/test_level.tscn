@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dm5jmbp7fi57k"]
+[gd_scene load_steps=15 format=3 uid="uid://dm5jmbp7fi57k"]
 
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_wm6n8"]
 [ext_resource type="Script" path="res://Components/UI/menu.gd" id="1_xasx8"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c5yi3cnw06c10" path="res://Components/interactible/npc.tscn" id="10_4dfqq"]
 [ext_resource type="PackedScene" uid="uid://ciyrg06gwda2x" path="res://objects/platform.tscn" id="11_jhb2w"]
 [ext_resource type="PackedScene" uid="uid://cxfunvwofvvkr" path="res://objects/spring.tscn" id="12_perlx"]
+[ext_resource type="PackedScene" uid="uid://dmt6vddqnip8k" path="res://objects/collectable.tscn" id="14_cu886"]
 
 [node name="test_level" type="Node2D" groups=["menu"]]
 script = ExtResource("1_xasx8")
@@ -116,3 +117,12 @@ position = Vector2(128, 120)
 
 [node name="Spring" parent="Platforms" instance=ExtResource("12_perlx")]
 position = Vector2(-16, -272)
+
+[node name="Collectable" parent="." instance=ExtResource("14_cu886")]
+position = Vector2(104, -288)
+
+[node name="Collectable2" parent="." instance=ExtResource("14_cu886")]
+position = Vector2(240, -288)
+
+[node name="Collectable3" parent="." instance=ExtResource("14_cu886")]
+position = Vector2(168, -288)

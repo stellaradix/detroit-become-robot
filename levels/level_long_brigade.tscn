@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cekkjdgyb7apu" path="res://death_zone.tscn" id="8_n01ap"]
 [ext_resource type="PackedScene" uid="uid://b1t5dcyigh5gu" path="res://level_door.tscn" id="9_c03ft"]
 [ext_resource type="Resource" uid="uid://bfpyj7rlklxqg" path="res://tutorial_level.dialogue" id="10_1tqjr"]
-[ext_resource type="Texture2D" uid="uid://bndflqawhhgwc" path="res://assets/collectable.png" id="11_v3jxx"]
+[ext_resource type="PackedScene" uid="uid://dmt6vddqnip8k" path="res://objects/collectable.tscn" id="13_dcni4"]
 
 [sub_resource type="Gradient" id="Gradient_opq3y"]
 offsets = PackedFloat32Array(0, 0.987013)
@@ -113,15 +113,6 @@ level_path = "res://levels/moving_forward.tscn"
 dialogue_resource = ExtResource("10_1tqjr")
 dialogue_start = "Day3End"
 
-[node name="Collectable" type="Sprite2D" parent="."]
-position = Vector2(456, 64)
-texture = ExtResource("11_v3jxx")
-
-[node name="Collectable3" type="Sprite2D" parent="."]
-self_modulate = Color(0.168627, 1, 0.2, 1)
-position = Vector2(720, -176)
-texture = ExtResource("11_v3jxx")
-
 [node name="DialogueCover" type="ColorRect" parent="."]
 visible = false
 offset_left = -879.0
@@ -129,6 +120,12 @@ offset_top = -462.0
 offset_right = 323.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
+
+[node name="Collectable" parent="." instance=ExtResource("13_dcni4")]
+position = Vector2(456, 64)
+
+[node name="Collectable2" parent="." instance=ExtResource("13_dcni4")]
+position = Vector2(720, -184)
 
 [connection signal="body_entered" from="DeathZone" to="Player" method="_on_death_zone_body_entered"]
 
