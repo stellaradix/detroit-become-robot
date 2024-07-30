@@ -96,10 +96,6 @@ visible = false
 [node name="CollisionShape2D" parent="Doors/door1/Area2D" index="0"]
 position = Vector2(0, 0)
 
-[node name="RemoveMe" parent="Doors/door1" index="3"]
-offset_top = -72.0
-offset_bottom = -39.0
-
 [node name="Keys" type="Node2D" parent="."]
 
 [node name="door1" parent="Keys" instance=ExtResource("7_ncaf5")]

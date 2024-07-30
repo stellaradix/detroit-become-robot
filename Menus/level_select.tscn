@@ -36,20 +36,20 @@ ButtonMenu = "res://Menus/title_menu.tscn"
 
 [node name="MenuButton" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 216.0
-offset_top = 80.0
-offset_right = 376.0
-offset_bottom = 176.0
+offset_left = 320.0
+offset_top = 88.0
+offset_right = 480.0
+offset_bottom = 184.0
 theme_override_font_sizes/font_size = 32
 text = "Tutorial"
 ButtonMenu = "res://levels/tutorial_level.tscn"
 
 [node name="MenuButton2" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 392.0
-offset_top = 80.0
-offset_right = 552.0
-offset_bottom = 176.0
+offset_left = 496.0
+offset_top = 88.0
+offset_right = 656.0
+offset_bottom = 184.0
 theme_override_font_sizes/font_size = 32
 text = "Shopping
 Trip"
@@ -57,20 +57,20 @@ ButtonMenu = "res://levels/shopping.tscn"
 
 [node name="MenuButton7" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 392.0
-offset_top = 192.0
-offset_right = 552.0
-offset_bottom = 288.0
+offset_left = 496.0
+offset_top = 200.0
+offset_right = 656.0
+offset_bottom = 296.0
 theme_override_font_sizes/font_size = 32
 text = "Boxed Up"
 ButtonMenu = "res://levels/boxed_up.tscn"
 
 [node name="MenuButton8" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 216.0
-offset_top = 192.0
-offset_right = 376.0
-offset_bottom = 288.0
+offset_left = 320.0
+offset_top = 200.0
+offset_right = 480.0
+offset_bottom = 296.0
 theme_override_font_sizes/font_size = 32
 text = "Layered
 Cake"
@@ -78,70 +78,71 @@ ButtonMenu = "res://levels/three_layered_cake.tscn"
 
 [node name="MenuButton9" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 568.0
-offset_top = 80.0
-offset_right = 728.0
-offset_bottom = 176.0
+offset_left = 672.0
+offset_top = 88.0
+offset_right = 832.0
+offset_bottom = 184.0
 theme_override_font_sizes/font_size = 32
 text = "Tall Pillar"
 ButtonMenu = "res://levels/level_tall_pillar.tscn"
 
 [node name="MenuButton12" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 216.0
-offset_top = 304.0
-offset_right = 376.0
-offset_bottom = 400.0
+offset_left = 320.0
+offset_top = 312.0
+offset_right = 480.0
+offset_bottom = 408.0
 theme_override_font_sizes/font_size = 32
 text = "Door Mania"
 ButtonMenu = "res://levels/door_mania.tscn"
 
 [node name="MenuButton13" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 392.0
-offset_top = 304.0
-offset_right = 552.0
-offset_bottom = 400.0
+offset_left = 496.0
+offset_top = 312.0
+offset_right = 656.0
+offset_bottom = 408.0
 theme_override_font_sizes/font_size = 32
 text = "Super Jump"
+ButtonMenu = "res://levels/super_jump.tscn"
 
 [node name="MenuButton14" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 392.0
-offset_top = 416.0
-offset_right = 552.0
-offset_bottom = 512.0
+offset_left = 496.0
+offset_top = 424.0
+offset_right = 656.0
+offset_bottom = 520.0
 theme_override_font_sizes/font_size = 32
 text = "Level 11"
 ButtonMenu = "res://levels/level_tall_pillar.tscn"
 
 [node name="MenuButton15" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 216.0
-offset_top = 416.0
-offset_right = 376.0
-offset_bottom = 512.0
+offset_left = 320.0
+offset_top = 424.0
+offset_right = 480.0
+offset_bottom = 520.0
 theme_override_font_sizes/font_size = 32
 text = "Heavily
  Guarded"
-ButtonMenu = "res://levels/level_tall_pillar.tscn"
+ButtonMenu = "res://levels/heavily_guarded.tscn"
 
 [node name="MenuButton3" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 568.0
-offset_top = 192.0
-offset_right = 728.0
-offset_bottom = 288.0
+offset_left = 672.0
+offset_top = 200.0
+offset_right = 832.0
+offset_bottom = 296.0
 theme_override_font_sizes/font_size = 32
 text = "Rabbit Hole"
 ButtonMenu = "res://levels/level_rabbit_hole.tscn"
 
 [node name="MenuButton4" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 568.0
-offset_top = 304.0
-offset_right = 728.0
-offset_bottom = 400.0
+offset_left = 672.0
+offset_top = 312.0
+offset_right = 832.0
+offset_bottom = 408.0
 theme_override_font_sizes/font_size = 32
 text = "The Long
 Brigade"
@@ -149,10 +150,10 @@ ButtonMenu = "res://levels/level_long_brigade.tscn"
 
 [node name="MenuButton5" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 568.0
-offset_top = 416.0
-offset_right = 728.0
-offset_bottom = 512.0
+offset_left = 672.0
+offset_top = 424.0
+offset_right = 832.0
+offset_bottom = 520.0
 theme_override_font_sizes/font_size = 32
 text = "Moving
 Forward"
@@ -160,10 +161,10 @@ ButtonMenu = "res://levels/moving_forward.tscn"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 112.0
-offset_top = 16.0
-offset_right = 340.0
-offset_bottom = 76.0
+offset_left = 216.0
+offset_top = 24.0
+offset_right = 444.0
+offset_bottom = 84.0
 theme_override_colors/font_outline_color = Color(0.0784314, 0.0862745, 0.129412, 1)
 theme_override_constants/outline_size = 16
 theme_override_font_sizes/font_size = 48

@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b1t5dcyigh5gu" path="res://level_door.tscn" id="9_ei38q"]
 [ext_resource type="Texture2D" uid="uid://dxcv6d08vxioy" path="res://assets/sapling.png" id="14_d5j5x"]
 
-[node name="level" groups=["menu"] instance=ExtResource("1_mppis")]
+[node name="level" instance=ExtResource("1_mppis")]
 
 [node name="Background" parent="." index="0"]
 offset_left = -1264.0
@@ -232,6 +232,7 @@ position = Vector2(-624, 24)
 
 [node name="LevelDoor" parent="Objects" index="58" instance=ExtResource("9_ei38q")]
 position = Vector2(416, -16)
+level_path = "res://levels/super_jump.tscn"
 
 [node name="Door2" parent="Doors" index="0" instance=ExtResource("2_h8jvo")]
 position = Vector2(224, -16)

@@ -4,7 +4,7 @@ var is_invurnable = false
 
 var FirstTimeCollect = false
 var total_collected_collectables = 0
-var total_collectables = 10
+var total_collectables = 22
 var quit_game = false
 
 var bite_sfx = "res://Sound/SFX/bite.ogg"

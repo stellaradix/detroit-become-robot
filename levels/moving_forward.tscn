@@ -62,7 +62,7 @@ _data = {
 "move": SubResource("Animation_1pd2u")
 }
 
-[node name="MovingForward" groups=["menu"] instance=ExtResource("1_f8dsj")]
+[node name="MovingForward" instance=ExtResource("1_f8dsj")]
 
 [node name="Background" parent="." index="0"]
 offset_left = -312.0
@@ -272,12 +272,13 @@ facing = "left"
 
 [node name="LevelDoor" parent="." index="15" instance=ExtResource("9_hii1p")]
 position = Vector2(1520, -872)
-level_path = "res://levels/tutorial_level.tscn"
+level_path = "res://Menus/title_menu.tscn"
 dialogue_resource = ExtResource("10_a2vnd")
 dialogue_start = "Day4End"
 
 [node name="DialogueCover" type="ColorRect" parent="." index="16"]
 visible = false
+z_index = 20
 offset_left = 972.0
 offset_top = -1365.0
 offset_right = 2174.0

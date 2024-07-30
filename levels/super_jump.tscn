@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dxcv6d08vxioy" path="res://assets/sapling.png" id="9_dnye7"]
 [ext_resource type="Texture2D" uid="uid://ddjcvt43o3g1w" path="res://assets/monstera.png" id="10_xsyx3"]
 
-[node name="Super Jump" groups=["menu"] instance=ExtResource("1_jq7xo")]
+[node name="Super Jump" instance=ExtResource("1_jq7xo")]
 
 [node name="Background" parent="." index="0"]
 offset_top = -1688.0
@@ -164,6 +164,7 @@ position = Vector2(-56, -1200)
 
 [node name="LevelDoor" parent="Objects" index="39" instance=ExtResource("7_i6cbt")]
 position = Vector2(-576, -368)
+level_path = "res://levels/level_long_brigade.tscn"
 
 [node name="Door" parent="Doors" index="0" instance=ExtResource("4_1avgb")]
 position = Vector2(-352, -16)
