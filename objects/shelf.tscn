@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbxol3cxvu21l"]
+
+[ext_resource type="Script" path="res://objects/Shelf.gd" id="1_xfw43"]
+[ext_resource type="Texture2D" uid="uid://bwuwdwj8a015m" path="res://assets/shelf.png" id="2_jfg6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2omii"]
+size = Vector2(96, 8)
+
+[node name="Shelf" type="StaticBody2D"]
+position = Vector2(920, -32)
+script = ExtResource("1_xfw43")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jfg6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -54)
+shape = SubResource("RectangleShape2D_2omii")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_2omii")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_2omii")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(0, 41)
+shape = SubResource("RectangleShape2D_2omii")
+one_way_collision = true

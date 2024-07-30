@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bynt07sdurfkl"]
+[gd_scene load_steps=24 format=3 uid="uid://bynt07sdurfkl"]
 
 [ext_resource type="PackedScene" uid="uid://tqtwhcy818tk" path="res://Tilemaps/bg_tile_map.tscn" id="1_52253"]
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_ovs8f"]
@@ -14,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://da836l700poav" path="res://objects/static_box.tscn" id="12_bkgd4"]
 [ext_resource type="PackedScene" uid="uid://dmt6vddqnip8k" path="res://objects/collectable.tscn" id="14_pwr4o"]
 [ext_resource type="PackedScene" uid="uid://cxfunvwofvvkr" path="res://objects/spring.tscn" id="14_qm647"]
+[ext_resource type="Texture2D" uid="uid://ddjcvt43o3g1w" path="res://assets/monstera.png" id="15_cctah"]
+[ext_resource type="Script" path="res://Components/interactible/npc.gd" id="16_7j53x"]
+[ext_resource type="PackedScene" uid="uid://c8su05aeqprxi" path="res://Components/Collision/interaction_area.tscn" id="16_pum4q"]
+[ext_resource type="Resource" uid="uid://djqh1ehu20dmn" path="res://Dialogue/inspect.dialogue" id="17_wrid8"]
+[ext_resource type="PackedScene" uid="uid://dbxol3cxvu21l" path="res://objects/shelf.tscn" id="19_2wh21"]
 
 [sub_resource type="Gradient" id="Gradient_n5xeg"]
 offsets = PackedFloat32Array(0, 0.987013)
@@ -26,13 +31,16 @@ fill_from = Vector2(1, 0.940367)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6hv5"]
 size = Vector2(64, 8)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqjhq"]
+radius = 24.0
+
 [node name="LevelTallPillar" type="Node2D" groups=["menu"]]
 script = ExtResource("1_r0ttq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -720.0
+offset_left = -776.0
 offset_top = -624.0
-offset_right = 439.0
+offset_right = 383.0
 offset_bottom = 572.0
 color = Color(0.310113, 0.377407, 0.389188, 1)
 
@@ -187,12 +195,6 @@ position = Vector2(-216, -240)
 [node name="small_box9" parent="." instance=ExtResource("8_06mqc")]
 position = Vector2(-320, 80)
 
-[node name="small_box10" parent="." instance=ExtResource("8_06mqc")]
-position = Vector2(128, 144)
-
-[node name="small_box11" parent="." instance=ExtResource("8_06mqc")]
-position = Vector2(120, 112)
-
 [node name="small_box2" parent="." instance=ExtResource("8_06mqc")]
 position = Vector2(-240, -320)
 
@@ -246,5 +248,31 @@ position = Vector2(216, -280)
 
 [node name="Collectable2" parent="." instance=ExtResource("14_pwr4o")]
 position = Vector2(-360, -48)
+
+[node name="Monstera" type="Sprite2D" parent="."]
+position = Vector2(-184, 128)
+texture = ExtResource("15_cctah")
+script = ExtResource("16_7j53x")
+
+[node name="InteractionArea" parent="Monstera" instance=ExtResource("16_pum4q")]
+action_name = "inspect"
+dialogue_resource = ExtResource("17_wrid8")
+dialogue_start = "plant"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monstera/InteractionArea"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_nqjhq")
+
+[node name="Shelf" parent="." instance=ExtResource("19_2wh21")]
+position = Vector2(184, 96)
+
+[node name="small_box10" parent="." instance=ExtResource("8_06mqc")]
+position = Vector2(96, 144)
+
+[node name="small_box12" parent="." instance=ExtResource("8_06mqc")]
+position = Vector2(88, 112)
+
+[node name="small_box11" parent="." instance=ExtResource("8_06mqc")]
+position = Vector2(152, 117)
 
 [connection signal="body_entered" from="LevelDoor_TallPillar" to="Player" method="_on_level_door_tall_pillar_body_entered"]

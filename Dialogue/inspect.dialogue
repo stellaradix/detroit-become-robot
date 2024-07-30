@@ -1,0 +1,11 @@
+~ plant
+
+if dialogue_status != "inspected":
+	Of course, this isn't a real plant.
+	I haven't seen a real plant in years. . .
+	set dialogue_status = "inspected"
+else:
+	Still a fake plant
+set dialogue_is_open = false
+
+=> END

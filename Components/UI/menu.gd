@@ -6,3 +6,4 @@ var collected_items: int
 func _ready():
 	MenuManager.add_transition()
 	PlayerManager.play_bg_music()
+	DialogueState.dialogue_status = "Level_Start"

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/collectable.gd" id="1_mlfyu"]
 [ext_resource type="Texture2D" uid="uid://bndflqawhhgwc" path="res://assets/collectable.png" id="1_uxxeg"]
-[ext_resource type="AudioStream" uid="uid://dyt83rp8h2xtr" path="res://assets/key_get.ogg" id="3_1bj1i"]
+[ext_resource type="AudioStream" uid="uid://v8k2c74r7n4n" path="res://Sound/SFX/pickup.ogg" id="3_1rmgp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8jxjh"]
 radius = 24.0
@@ -18,7 +18,7 @@ texture = ExtResource("1_uxxeg")
 shape = SubResource("CircleShape2D_8jxjh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_1bj1i")
+stream = ExtResource("3_1rmgp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

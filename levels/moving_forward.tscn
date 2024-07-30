@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cbepfqdgmqoli"]
+[gd_scene load_steps=21 format=3 uid="uid://cbepfqdgmqoli"]
 
 [ext_resource type="PackedScene" uid="uid://cc7lnq0dc6c2f" path="res://levels/level.tscn" id="1_f8dsj"]
 [ext_resource type="PackedScene" uid="uid://ciyrg06gwda2x" path="res://objects/platform.tscn" id="2_1mqiq"]
@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://b1t5dcyigh5gu" path="res://level_door.tscn" id="9_hii1p"]
 [ext_resource type="Resource" uid="uid://bfpyj7rlklxqg" path="res://tutorial_level.dialogue" id="10_a2vnd"]
 [ext_resource type="PackedScene" uid="uid://dmt6vddqnip8k" path="res://objects/collectable.tscn" id="11_0lrf2"]
+[ext_resource type="Texture2D" uid="uid://ddjcvt43o3g1w" path="res://assets/monstera.png" id="12_itm6y"]
+[ext_resource type="Texture2D" uid="uid://dxcv6d08vxioy" path="res://assets/sapling.png" id="13_rr0j6"]
+[ext_resource type="PackedScene" uid="uid://da836l700poav" path="res://objects/static_box.tscn" id="14_4xstl"]
+[ext_resource type="PackedScene" uid="uid://dbxol3cxvu21l" path="res://objects/shelf.tscn" id="15_huger"]
 
 [sub_resource type="Gradient" id="Gradient_qvrjc"]
 offsets = PackedFloat32Array(0, 0.987013)
@@ -282,5 +286,32 @@ position = Vector2(1568, 112)
 
 [node name="Collectable2" parent="." index="18" instance=ExtResource("11_0lrf2")]
 position = Vector2(1792, -1008)
+
+[node name="Monstera" type="Sprite2D" parent="." index="19"]
+position = Vector2(-24, 0)
+texture = ExtResource("12_itm6y")
+
+[node name="Sapling" type="Sprite2D" parent="." index="20"]
+position = Vector2(1200, 96)
+texture = ExtResource("13_rr0j6")
+
+[node name="Sapling2" type="Sprite2D" parent="." index="21"]
+position = Vector2(1936, -864)
+texture = ExtResource("13_rr0j6")
+
+[node name="Sapling3" type="Sprite2D" parent="." index="22"]
+position = Vector2(1704, -864)
+texture = ExtResource("13_rr0j6")
+
+[node name="Static Box" parent="." index="23" instance=ExtResource("14_4xstl")]
+position = Vector2(816, 0)
+
+[node name="Static Box2" parent="." index="24" instance=ExtResource("14_4xstl")]
+position = Vector2(910, -122)
+
+[node name="Static Box3" parent="." index="25" instance=ExtResource("14_4xstl")]
+position = Vector2(800, -64)
+
+[node name="Shelf" parent="." index="26" instance=ExtResource("15_huger")]
 
 [editable path="Enemies/DeathZone"]
