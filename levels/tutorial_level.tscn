@@ -185,12 +185,15 @@ dialogue_start = "TutorialEnd"
 
 [node name="Platform" parent="." instance=ExtResource("12_u8aef")]
 position = Vector2(384, -24)
+is_wooden = true
 
 [node name="Platform4" parent="." instance=ExtResource("12_u8aef")]
 position = Vector2(448, -104)
+is_wooden = true
 
 [node name="Platform5" parent="." instance=ExtResource("12_u8aef")]
 position = Vector2(320, -104)
+is_wooden = true
 
 [node name="Platform2" parent="." instance=ExtResource("12_u8aef")]
 position = Vector2(800, -16)

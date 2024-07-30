@@ -137,21 +137,27 @@ facing = "right"
 
 [node name="Platform" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-32, 72)
+is_wooden = true
 
 [node name="Platform4" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-288, 24)
+is_wooden = true
 
 [node name="Platform11" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-352, 24)
+is_wooden = true
 
 [node name="Platform5" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-224, 24)
+is_wooden = true
 
 [node name="Platform12" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-160, 24)
+is_wooden = true
 
 [node name="Platform2" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(32, 72)
+is_wooden = true
 
 [node name="Platform3" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(96, -104)

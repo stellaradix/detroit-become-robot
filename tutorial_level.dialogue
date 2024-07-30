@@ -2,12 +2,14 @@
 
 Sister: You think Mom and Dad are coming back soon?
 Sister: It's been a while...
-do runningsfx()
+do play_sfx(running_sfx)
 Sister: Hey! Where are you going?
 
 set dialogue_is_open = false
 set dialogue_status = "level_end"
 set FirstTimeCollect = false
+
+do play_bg_music()
 
 => END
 
@@ -20,7 +22,6 @@ if PlayerManager.total_collected_collectables > 0 and FirstTimeCollect == false
 
 ~ Day1End
 
-do runningsfx()
 Shopkeeper: Hey! Give that back!
 Shopkeeper: Come back here thief!
 
@@ -52,7 +53,7 @@ set dialogue_status = "level_end"
 
 ~ Day3End
 
-do bitesfx()
+do play_sfx(bite_sfx)
 Sister: *Munch*
 Sister: Wow this is really good!
 Sister: Where do you keep getting this stuff?
@@ -87,11 +88,16 @@ set dialogue_status = "level_end"
 		???: Where did you get those ♍︎□︎●︎●︎♏︎♍︎⧫︎♓︎♌︎●︎♏︎⬧︎?!
 		???: Wait stop! Get them!
 
-		do runningsfx()
-
-		do shakesfx()
+		do play_sfx(running_sfx)
+		
+		???: Don't let them get away!
+		...
+		...
+		...
+		
+		do play_sfx(shake_sfx)
+		
 		Sister: !!!
-	
 		Sister: What's going on?
 		Sister: Where are we going?
 		You: Someplace Human

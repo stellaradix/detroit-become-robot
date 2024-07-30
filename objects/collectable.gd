@@ -12,8 +12,7 @@ extends Area2D
 		#self.queue_free()
 func _on_body_entered(body):
 	if body == player:
-		monitoring = false
-		collision_shape_2d.disabled = true
+		set_deferred("monitoring", false)
 		level.collected_items += 1
 		audio_stream_player.play()
 		self.hide()

@@ -114,7 +114,6 @@ is_wooden = true
 
 [node name="Platform6" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(0, 584)
-is_wooden = true
 
 [node name="Platform7" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(64, 504)
@@ -137,9 +136,11 @@ is_wooden = true
 
 [node name="Platform3" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(64, 168)
+is_wooden = true
 
 [node name="Platform4" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(224, 168)
+is_wooden = true
 
 [node name="Spring" parent="." instance=ExtResource("10_ddl3p")]
 position = Vector2(208, 784)

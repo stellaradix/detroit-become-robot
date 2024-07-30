@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://de0kbqhey3awg"]
 
-[ext_resource type="AudioStream" uid="uid://cug5rgynyok5s" path="res://Sound/Music/modular-ambient-06-endless-sequence-7597.mp3" id="1_s0v3v"]
+[ext_resource type="AudioStream" uid="uid://cug5rgynyok5s" path="res://Sound/Music/music_1.mp3" id="1_s0v3v"]
 
 [node name="Soundtrack" type="AudioStreamPlayer"]
 stream = ExtResource("1_s0v3v")

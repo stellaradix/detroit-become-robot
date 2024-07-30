@@ -181,6 +181,7 @@ position = Vector2(1056, 40)
 
 [node name="Platform6" parent="Objects" index="8" instance=ExtResource("2_1mqiq")]
 position = Vector2(1632, -216)
+is_wooden = true
 
 [node name="Platform5" parent="Objects" index="9" instance=ExtResource("2_1mqiq")]
 position = Vector2(1152, 136)
@@ -219,7 +220,11 @@ is_wooden = true
 position = Vector2(1568, 152)
 is_wooden = true
 
-[node name="Platform18" parent="Objects" index="19" instance=ExtResource("2_1mqiq")]
+[node name="Platform19" parent="Objects" index="19" instance=ExtResource("2_1mqiq")]
+position = Vector2(1568, 232)
+is_wooden = true
+
+[node name="Platform18" parent="Objects" index="20" instance=ExtResource("2_1mqiq")]
 position = Vector2(1440, 104)
 is_wooden = true
 
