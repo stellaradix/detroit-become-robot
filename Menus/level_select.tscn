@@ -74,29 +74,18 @@ offset_right = 928.0
 offset_bottom = 224.0
 theme_override_font_sizes/font_size = 32
 text = "Day 3
-The Long
+Long
 Brigade"
 ButtonMenu = "res://levels/level_long_brigade.tscn"
 
-[node name="MenuButton6" parent="." instance=ExtResource("3_pwixq")]
-layout_mode = 1
-offset_left = 960.0
-offset_top = 128.0
-offset_right = 1120.0
-offset_bottom = 224.0
-theme_override_font_sizes/font_size = 32
-text = "Day 4
-Break In"
-ButtonMenu = "res://levels/level_break_in.tscn"
-
 [node name="MenuButton5" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 192.0
-offset_top = 256.0
-offset_right = 352.0
-offset_bottom = 352.0
+offset_left = 961.0
+offset_top = 127.0
+offset_right = 1121.0
+offset_bottom = 223.0
 theme_override_font_sizes/font_size = 32
-text = "Day 5
+text = "Day 4
 Moving
 Forward"
 ButtonMenu = "res://levels/moving_forward.tscn"
