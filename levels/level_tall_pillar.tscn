@@ -137,51 +137,43 @@ facing = "right"
 
 [node name="Platform" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-32, 72)
-can_fall = true
 
 [node name="Platform4" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-288, 24)
-can_fall = true
 
 [node name="Platform11" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-352, 24)
-can_fall = true
 
 [node name="Platform5" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-224, 24)
-can_fall = true
 
 [node name="Platform12" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-160, 24)
-can_fall = true
 
 [node name="Platform2" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(32, 72)
-can_fall = true
 
 [node name="Platform3" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(96, -104)
-can_fall = true
+is_wooden = true
 
 [node name="Platform6" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(32, -104)
-can_fall = true
+is_wooden = true
 
 [node name="Platform7" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-224, -296)
-can_fall = true
 
 [node name="Platform8" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(224, -248)
-can_fall = true
+is_wooden = true
 
 [node name="Platform10" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(160, -248)
-can_fall = true
+is_wooden = true
 
 [node name="Platform9" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-64, -296)
-can_fall = true
 
 [node name="small_box" parent="." instance=ExtResource("8_06mqc")]
 position = Vector2(-216, -240)
@@ -230,7 +222,7 @@ position = Vector2(-512, -216)
 
 [node name="Platform15" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-512, -440)
-can_fall = true
+is_wooden = true
 
 [node name="DialogueCover" type="ColorRect" parent="."]
 visible = false

@@ -197,7 +197,7 @@ position = Vector2(800, -16)
 
 [node name="Platform3" parent="." instance=ExtResource("12_u8aef")]
 position = Vector2(1472, 88)
-can_fall = true
+is_wooden = true
 
 [node name="DialogueCover" type="ColorRect" parent="."]
 visible = false
