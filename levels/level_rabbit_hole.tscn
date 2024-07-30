@@ -110,38 +110,37 @@ dialogue_start = "Day2End"
 
 [node name="Platform" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(160, 584)
-can_fall = true
+is_wooden = true
 
 [node name="Platform6" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(0, 584)
 
 [node name="Platform7" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(64, 504)
-can_fall = true
+is_wooden = true
 
 [node name="Platform8" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(128, 504)
-can_fall = true
+is_wooden = true
 
 [node name="Platform5" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(256, 584)
-can_fall = true
+is_wooden = true
 
 [node name="Platform9" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(256, 744)
-can_fall = true
 
 [node name="Platform2" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(224, 344)
-can_fall = true
+is_wooden = true
 
 [node name="Platform3" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(64, 168)
-can_fall = true
+is_wooden = true
 
 [node name="Platform4" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(224, 168)
-can_fall = true
+is_wooden = true
 
 [node name="Spring" parent="." instance=ExtResource("10_ddl3p")]
 position = Vector2(208, 784)
