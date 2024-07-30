@@ -126,6 +126,7 @@ level_path = "res://levels/level_tall_pillar.tscn"
 
 [node name="door2" parent="Doors" index="1" instance=ExtResource("9_yf6yn")]
 position = Vector2(-32, 272)
+card_color = "red"
 
 [node name="door1" parent="Doors" index="2" instance=ExtResource("9_yf6yn")]
 position = Vector2(416, -304)
@@ -135,6 +136,7 @@ position = Vector2(816, -352)
 
 [node name="door2" parent="Keys" index="1" instance=ExtResource("10_plkwu")]
 position = Vector2(696, 184)
+card_color = "red"
 
 [node name="Guard" parent="Enemies" index="0" instance=ExtResource("7_2ot3c")]
 position = Vector2(344, 16)

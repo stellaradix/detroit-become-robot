@@ -92,6 +92,7 @@ position = Vector2(1136, 16)
 
 [node name="door1" parent="Doors" index="0" instance=ExtResource("8_bhdrb")]
 position = Vector2(1248, -144)
+door_flip = true
 
 [node name="LevelDoor" parent="Doors" index="1" instance=ExtResource("9_5mani")]
 position = Vector2(1216, -460)

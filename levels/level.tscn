@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_05h4e"]
 [ext_resource type="PackedScene" uid="uid://tqtwhcy818tk" path="res://Tilemaps/bg_tile_map.tscn" id="2_vfhgk"]
 
-[node name="level" type="Node2D"]
+[node name="level" type="Node2D" groups=["menu"]]
 script = ExtResource("1_14fj3")
 
 [node name="Background" type="ColorRect" parent="."]
