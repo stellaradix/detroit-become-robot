@@ -2,6 +2,7 @@
 
 Sister: You think Mom and Dad are coming back soon?
 Sister: It's been a while...
+do runningsfx()
 Sister: Hey! Where are you going?
 
 set dialogue_is_open = false
@@ -19,6 +20,7 @@ if PlayerManager.total_collected_collectables > 0 and FirstTimeCollect == false
 
 ~ Day1End
 
+do runningsfx()
 Shopkeeper: Hey! Give that back!
 Shopkeeper: Come back here thief!
 
@@ -50,6 +52,7 @@ set dialogue_status = "level_end"
 
 ~ Day3End
 
+do bitesfx()
 Sister: *Munch*
 Sister: Wow this is really good!
 Sister: Where do you keep getting this stuff?

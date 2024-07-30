@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckvgyvclnwggo"]
+[gd_scene load_steps=3 format=3 uid="uid://ckvgyvclnwggo"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="1_cital"]
+[ext_resource type="AudioStream" uid="uid://b1renubbuq0on" path="res://Sound/SFX/keypress-003.wav" id="2_vj402"]
 
 [node name="DialogueLabel" type="RichTextLabel"]
 anchors_preset = 10
@@ -17,3 +18,9 @@ deselect_on_focus_loss_enabled = false
 visible_characters_behavior = 1
 script = ExtResource("1_cital")
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+
+[node name="TalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vj402")
+volume_db = -10.0
+
+[connection signal="spoke" from="." to="." method="_on_spoke"]
