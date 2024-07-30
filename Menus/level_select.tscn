@@ -18,16 +18,17 @@ offset_left = -16.0
 offset_top = -48.0
 offset_right = -16.0
 offset_bottom = -48.0
+metadata/_edit_lock_ = true
 
 [node name="BackButton2" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 120.0
-offset_bottom = 120.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 96.0
 grow_horizontal = 1
 grow_vertical = 1
 icon = ExtResource("4_swauh")
@@ -35,78 +36,164 @@ ButtonMenu = "res://Menus/title_menu.tscn"
 
 [node name="MenuButton" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 192.0
-offset_top = 128.0
-offset_right = 352.0
-offset_bottom = 224.0
+offset_left = 216.0
+offset_top = 80.0
+offset_right = 376.0
+offset_bottom = 176.0
 theme_override_font_sizes/font_size = 32
-text = "Day 0
-Tutorial"
+text = "Tutorial"
 ButtonMenu = "res://levels/tutorial_level.tscn"
 
 [node name="MenuButton2" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 384.0
-offset_top = 128.0
-offset_right = 544.0
-offset_bottom = 224.0
+offset_left = 392.0
+offset_top = 80.0
+offset_right = 552.0
+offset_bottom = 176.0
 theme_override_font_sizes/font_size = 32
-text = "Day 1
-Tall Pillar"
+text = "Shopping
+Trip"
+ButtonMenu = "res://levels/shopping.tscn"
+
+[node name="MenuButton7" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 568.0
+offset_top = 80.0
+offset_right = 728.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 32
+text = "Boxed Up"
+ButtonMenu = "res://levels/boxed_up.tscn"
+
+[node name="MenuButton8" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 920.0
+offset_top = 80.0
+offset_right = 1080.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 32
+text = "Layered
+Cake"
+ButtonMenu = "res://levels/three_layered_cake.tscn"
+
+[node name="MenuButton9" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 744.0
+offset_top = 80.0
+offset_right = 904.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 32
+text = "Tall Pillar"
+ButtonMenu = "res://levels/level_tall_pillar.tscn"
+
+[node name="MenuButton12" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 216.0
+offset_top = 192.0
+offset_right = 376.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 32
+text = "Level 6"
+ButtonMenu = "res://levels/level_tall_pillar.tscn"
+
+[node name="MenuButton13" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 392.0
+offset_top = 192.0
+offset_right = 552.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 32
+text = "Level 7"
+ButtonMenu = "res://levels/level_tall_pillar.tscn"
+
+[node name="MenuButton14" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 920.0
+offset_top = 192.0
+offset_right = 1080.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 32
+text = "Level 10"
+ButtonMenu = "res://levels/level_tall_pillar.tscn"
+
+[node name="MenuButton15" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 744.0
+offset_top = 192.0
+offset_right = 904.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 32
+text = "Level 9"
+ButtonMenu = "res://levels/level_tall_pillar.tscn"
+
+[node name="MenuButton11" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 744.0
+offset_top = 304.0
+offset_right = 904.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 32
+text = "level 15"
+ButtonMenu = "res://levels/level_tall_pillar.tscn"
+
+[node name="MenuButton17" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 216.0
+offset_top = 304.0
+offset_right = 376.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 32
+text = "level 12"
+ButtonMenu = "res://levels/level_tall_pillar.tscn"
+
+[node name="MenuButton18" parent="." instance=ExtResource("3_pwixq")]
+layout_mode = 1
+offset_left = 568.0
+offset_top = 304.0
+offset_right = 728.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 32
+text = "level 13"
 ButtonMenu = "res://levels/level_tall_pillar.tscn"
 
 [node name="MenuButton3" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 576.0
-offset_top = 124.0
-offset_right = 736.0
-offset_bottom = 224.0
+offset_left = 568.0
+offset_top = 192.0
+offset_right = 728.0
+offset_bottom = 288.0
 theme_override_font_sizes/font_size = 32
-text = "Day 2
-Rabbit Hole"
+text = "Rabbit Hole"
 ButtonMenu = "res://levels/level_rabbit_hole.tscn"
 
 [node name="MenuButton4" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 768.0
-offset_top = 128.0
-offset_right = 928.0
-offset_bottom = 224.0
+offset_left = 392.0
+offset_top = 304.0
+offset_right = 552.0
+offset_bottom = 400.0
 theme_override_font_sizes/font_size = 32
-text = "Day 3
-The Long
+text = "The Long
 Brigade"
 ButtonMenu = "res://levels/level_long_brigade.tscn"
 
-[node name="MenuButton6" parent="." instance=ExtResource("3_pwixq")]
-layout_mode = 1
-offset_left = 960.0
-offset_top = 128.0
-offset_right = 1120.0
-offset_bottom = 224.0
-theme_override_font_sizes/font_size = 32
-text = "Day 4
-Break In"
-ButtonMenu = "res://levels/level_break_in.tscn"
-
 [node name="MenuButton5" parent="." instance=ExtResource("3_pwixq")]
 layout_mode = 1
-offset_left = 192.0
-offset_top = 256.0
-offset_right = 352.0
-offset_bottom = 352.0
+offset_left = 920.0
+offset_top = 304.0
+offset_right = 1080.0
+offset_bottom = 400.0
 theme_override_font_sizes/font_size = 32
-text = "Day 5
-Moving
+text = "Moving
 Forward"
 ButtonMenu = "res://levels/moving_forward.tscn"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 224.0
-offset_top = 40.0
-offset_right = 439.0
-offset_bottom = 100.0
+offset_left = 112.0
+offset_top = 16.0
+offset_right = 340.0
+offset_bottom = 76.0
 theme_override_colors/font_outline_color = Color(0.0784314, 0.0862745, 0.129412, 1)
 theme_override_constants/outline_size = 16
 theme_override_font_sizes/font_size = 48

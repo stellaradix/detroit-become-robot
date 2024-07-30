@@ -230,7 +230,6 @@ is_wooden = true
 
 [node name="Platform18" parent="Objects" index="20" instance=ExtResource("2_1mqiq")]
 position = Vector2(1440, 104)
-is_wooden = true
 
 [node name="door1" parent="Doors" index="0" instance=ExtResource("4_jt08p")]
 position = Vector2(1536, -272)

@@ -20,7 +20,7 @@ func to_main_menu():
 
 func play_bg_music():
 	var bg_music : Array = []
-	for i in range(2):
+	for i in range(5):
 		var sound = load("res://Sound/Music/music_" + str(i+1) + ".mp3")
 		bg_music.append(sound)
 	var random_index = randi() % bg_music.size()
