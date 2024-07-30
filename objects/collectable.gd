@@ -3,7 +3,7 @@ extends Area2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var level = get_tree().get_first_node_in_group("menu")
 @onready var audio_stream_player = $AudioStreamPlayer
-
+@onready var collision_shape_2d = $CollisionShape2D
 
 #Player can currently stack collectibles when the level restarts
 #Might want to use an array to keep track and then do something like this:
@@ -12,6 +12,8 @@ extends Area2D
 		#self.queue_free()
 func _on_body_entered(body):
 	if body == player:
+		monitoring = false
+		collision_shape_2d.disabled = true
 		level.collected_items += 1
 		audio_stream_player.play()
 		self.hide()
