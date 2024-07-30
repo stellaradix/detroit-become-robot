@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cr18h5ylochm7" path="res://key.tscn" id="10_plkwu"]
 [ext_resource type="PackedScene" uid="uid://ck315tewigdni" path="res://camera.tscn" id="12_5tkn5"]
 
-[node name="Three-Layered Cake" groups=["menu"] instance=ExtResource("1_jvu0k")]
+[node name="Three-Layered Cake" instance=ExtResource("1_jvu0k")]
 
 [node name="Background" parent="." index="0"]
 offset_left = -776.0
@@ -121,7 +121,7 @@ position = Vector2(232, 112)
 position = Vector2(816, -352)
 
 [node name="LevelDoor" parent="Doors" index="0" instance=ExtResource("3_icw8y")]
-position = Vector2(-112, -296)
+position = Vector2(-103, -304)
 level_path = "res://levels/level_tall_pillar.tscn"
 
 [node name="door2" parent="Doors" index="1" instance=ExtResource("9_yf6yn")]

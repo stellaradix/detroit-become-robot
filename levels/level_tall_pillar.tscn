@@ -128,7 +128,7 @@ facing = "right"
 position = Vector2(-208, -192)
 
 [node name="LevelDoor_TallPillar" parent="." instance=ExtResource("6_f5i3h")]
-position = Vector2(-347, -491)
+position = Vector2(-351, -495)
 collision_layer = 1
 collision_mask = 2
 level_path = "res://levels/level_rabbit_hole.tscn"

@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b1t5dcyigh5gu" path="res://level_door.tscn" id="9_ei38q"]
 [ext_resource type="Texture2D" uid="uid://dxcv6d08vxioy" path="res://assets/sapling.png" id="14_d5j5x"]
 
-[node name="level" groups=["menu"] instance=ExtResource("1_mppis")]
+[node name="level" instance=ExtResource("1_mppis")]
 
 [node name="Background" parent="." index="0"]
 offset_left = -1264.0

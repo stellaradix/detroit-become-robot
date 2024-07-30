@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b1t5dcyigh5gu" path="res://level_door.tscn" id="9_circg"]
 [ext_resource type="PackedScene" uid="uid://cr18h5ylochm7" path="res://key.tscn" id="9_yieig"]
 
-[node name="Boxed Up" groups=["menu"] instance=ExtResource("1_t5fxf")]
+[node name="Boxed Up" instance=ExtResource("1_t5fxf")]
 
 [node name="Background" parent="." index="0"]
 offset_top = -1392.0
@@ -251,7 +251,7 @@ position = Vector2(96, -1200)
 door_flip = true
 
 [node name="LevelDoor" parent="Doors" index="1" instance=ExtResource("9_circg")]
-position = Vector2(-168, -1192)
+position = Vector2(-168, -1201)
 level_path = "res://levels/three_layered_cake.tscn"
 
 [node name="door1" parent="Keys" index="0" instance=ExtResource("9_yieig")]

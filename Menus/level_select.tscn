@@ -112,7 +112,7 @@ offset_top = 416.0
 offset_right = 552.0
 offset_bottom = 512.0
 theme_override_font_sizes/font_size = 32
-text = "Level 11"
+text = "Finite Time"
 ButtonMenu = "res://levels/level_tall_pillar.tscn"
 
 [node name="MenuButton15" parent="." instance=ExtResource("3_pwixq")]
