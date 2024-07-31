@@ -117,57 +117,65 @@ position = Vector2(192, -88)
 is_wooden = true
 
 [node name="Platform5" parent="Objects" index="3" instance=ExtResource("2_4q72c")]
+position = Vector2(1312, -312)
+is_wooden = true
+
+[node name="Platform9" parent="Objects" index="4" instance=ExtResource("2_4q72c")]
 position = Vector2(1312, -408)
 is_wooden = true
 
-[node name="Platform8" parent="Objects" index="4" instance=ExtResource("2_4q72c")]
-position = Vector2(1504, -568)
-is_wooden = true
-
-[node name="Platform6" parent="Objects" index="5" instance=ExtResource("2_4q72c")]
+[node name="Platform10" parent="Objects" index="5" instance=ExtResource("2_4q72c")]
 position = Vector2(1376, -408)
 is_wooden = true
 
-[node name="Platform4" parent="Objects" index="6" instance=ExtResource("2_4q72c")]
+[node name="Platform8" parent="Objects" index="6" instance=ExtResource("2_4q72c")]
+position = Vector2(1504, -568)
+is_wooden = true
+
+[node name="Platform6" parent="Objects" index="7" instance=ExtResource("2_4q72c")]
+position = Vector2(1376, -312)
+is_wooden = true
+
+[node name="Platform4" parent="Objects" index="8" instance=ExtResource("2_4q72c")]
 position = Vector2(480, -88)
 is_wooden = true
 
-[node name="Platform7" parent="Objects" index="7" instance=ExtResource("2_4q72c")]
+[node name="Platform7" parent="Objects" index="9" instance=ExtResource("2_4q72c")]
 position = Vector2(928, -88)
 is_wooden = true
 
-[node name="Monstera" type="Sprite2D" parent="Objects" index="8"]
+[node name="Monstera" type="Sprite2D" parent="Objects" index="10"]
 position = Vector2(768, 32)
 texture = ExtResource("3_fcyc5")
 
-[node name="Shelf" parent="Objects" index="9" instance=ExtResource("4_r4rhf")]
+[node name="Shelf" parent="Objects" index="11" instance=ExtResource("4_r4rhf")]
 position = Vector2(360, -160)
 
-[node name="Shelf2" parent="Objects" index="10" instance=ExtResource("4_r4rhf")]
+[node name="Shelf2" parent="Objects" index="12" instance=ExtResource("4_r4rhf")]
 position = Vector2(1392, -480)
 
-[node name="Static Box" parent="Objects" index="11" instance=ExtResource("5_j7xj8")]
+[node name="Static Box" parent="Objects" index="13" instance=ExtResource("5_j7xj8")]
 position = Vector2(240, -128)
 
-[node name="Collectable" parent="Objects" index="12" instance=ExtResource("6_h6k1a")]
+[node name="Collectable" parent="Objects" index="14" instance=ExtResource("6_h6k1a")]
 position = Vector2(1088, 0)
 
-[node name="Collectable2" parent="Objects" index="13" instance=ExtResource("6_h6k1a")]
+[node name="Collectable2" parent="Objects" index="15" instance=ExtResource("6_h6k1a")]
 position = Vector2(1504, -608)
 
-[node name="small_box" parent="Objects" index="14" instance=ExtResource("7_rco4h")]
+[node name="small_box" parent="Objects" index="16" instance=ExtResource("7_rco4h")]
 position = Vector2(1032, 48)
 
-[node name="small_box2" parent="Objects" index="15" instance=ExtResource("7_rco4h")]
+[node name="small_box2" parent="Objects" index="17" instance=ExtResource("7_rco4h")]
 position = Vector2(1128, 48)
 
-[node name="small_box4" parent="Objects" index="16" instance=ExtResource("7_rco4h")]
+[node name="small_box4" parent="Objects" index="18" instance=ExtResource("7_rco4h")]
 position = Vector2(488, 16)
 
-[node name="small_box5" parent="Objects" index="17" instance=ExtResource("7_rco4h")]
+[node name="small_box5" parent="Objects" index="19" instance=ExtResource("7_rco4h")]
 position = Vector2(388, -139)
 
-[node name="small_box3" parent="Objects" index="18" instance=ExtResource("7_rco4h")]
+[node name="small_box3" parent="Objects" index="20" instance=ExtResource("7_rco4h")]
 position = Vector2(1136, 16)
 
 [node name="door1" parent="Doors" index="0" instance=ExtResource("8_bhdrb")]
@@ -184,25 +192,21 @@ position = Vector2(768, -8)
 [node name="Guard" parent="Enemies" index="0" instance=ExtResource("5_2fygm")]
 position = Vector2(584, 0)
 
-[node name="Guard2" parent="Enemies" index="1" instance=ExtResource("5_2fygm")]
-position = Vector2(896, 0)
-move_speed = 40
-
-[node name="Camera" parent="Enemies" index="2" instance=ExtResource("10_v4flj")]
+[node name="Camera" parent="Enemies" index="1" instance=ExtResource("10_v4flj")]
 position = Vector2(768, -304)
 
-[node name="Camera4" parent="Enemies" index="3" instance=ExtResource("10_v4flj")]
-position = Vector2(1504, -544)
-facing = "left"
+[node name="Camera4" parent="Enemies" index="2" instance=ExtResource("10_v4flj")]
+position = Vector2(1288, -624)
+facing = "down"
 
-[node name="Camera5" parent="Enemies" index="4" instance=ExtResource("10_v4flj")]
+[node name="Camera5" parent="Enemies" index="3" instance=ExtResource("10_v4flj")]
 position = Vector2(1176, -304)
 facing = "left"
 
-[node name="Camera3" parent="Enemies" index="5" instance=ExtResource("10_v4flj")]
+[node name="Camera3" parent="Enemies" index="4" instance=ExtResource("10_v4flj")]
 position = Vector2(160, -304)
 facing = "right"
 
-[node name="Camera2" parent="Enemies" index="6" instance=ExtResource("10_v4flj")]
-position = Vector2(824, -32)
-facing = "down"
+[node name="Camera2" parent="Enemies" index="5" instance=ExtResource("10_v4flj")]
+position = Vector2(808, -32)
+facing = "right"

@@ -4,9 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://c0tkbjwwf6hm2" path="res://Components/UI/Menu_Button.tscn" id="2_cwdd3"]
 [ext_resource type="Texture2D" uid="uid://d2bu0qfk00a2o" path="res://assets/left_arrow.png" id="3_eggf7"]
 
-[node name="placeholdermenu" groups=["menu"] instance=ExtResource("1_7kgie")]
+[node name="placeholdermenu" instance=ExtResource("1_7kgie")]
 
 [node name="BackButton" parent="." index="1" instance=ExtResource("2_cwdd3")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -20,6 +21,7 @@ icon = ExtResource("3_eggf7")
 ButtonMenu = "res://Menus/title_menu.tscn"
 
 [node name="Label" type="Label" parent="BackButton" index="1"]
+layout_mode = 0
 offset_left = 128.0
 offset_right = 538.0
 offset_bottom = 60.0

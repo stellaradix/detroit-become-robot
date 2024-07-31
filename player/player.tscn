@@ -89,7 +89,8 @@ func _physics_process(delta):
 		can_wall_jump = true
 
 	if Input.is_action_just_pressed(\"crouch\"):
-		player_action = CROUCH
+		animation_player.play(\"crouch\")
+		is_crouching = true
 		
 	if Input.is_action_just_released(\"crouch\"):
 		player_action = IDLE
@@ -172,10 +173,6 @@ func handle_animations():
 		IDLE:
 			if is_on_floor():
 				animation_player.play(\"idle\")
-		CROUCH:
-			if is_on_floor():
-				is_crouching = true
-				animation_player.play(\"crouch\")
 
 func handle_landing(input_axis):
 	
