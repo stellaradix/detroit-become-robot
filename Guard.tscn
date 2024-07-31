@@ -97,7 +97,7 @@ position = Vector2(58.0844, -3.49388)
 shape = SubResource("RectangleShape2D_kfojr")
 
 [node name="FloorChecker" type="RayCast2D" parent="."]
-position = Vector2(0, 21)
+position = Vector2(0, 13)
 target_position = Vector2(0, 20)
 
 [node name="CaughtPlayer" type="AudioStreamPlayer" parent="."]
