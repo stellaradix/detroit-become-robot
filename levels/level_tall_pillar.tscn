@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bynt07sdurfkl"]
+[gd_scene load_steps=25 format=3 uid="uid://bynt07sdurfkl"]
 
 [ext_resource type="PackedScene" uid="uid://tqtwhcy818tk" path="res://Tilemaps/bg_tile_map.tscn" id="1_52253"]
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_ovs8f"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c8su05aeqprxi" path="res://Components/Collision/interaction_area.tscn" id="16_pum4q"]
 [ext_resource type="Resource" uid="uid://djqh1ehu20dmn" path="res://Dialogue/inspect.dialogue" id="17_wrid8"]
 [ext_resource type="PackedScene" uid="uid://dbxol3cxvu21l" path="res://objects/shelf.tscn" id="19_2wh21"]
+[ext_resource type="PackedScene" uid="uid://cekkjdgyb7apu" path="res://death_zone.tscn" id="20_i0q04"]
 
 [sub_resource type="Gradient" id="Gradient_n5xeg"]
 offsets = PackedFloat32Array(0, 0.987013)
@@ -38,10 +39,10 @@ radius = 24.0
 script = ExtResource("1_r0ttq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -776.0
-offset_top = -624.0
-offset_right = 383.0
-offset_bottom = 572.0
+offset_left = -1008.0
+offset_top = -793.0
+offset_right = 718.0
+offset_bottom = 1570.0
 color = Color(0.310113, 0.377407, 0.389188, 1)
 
 [node name="BG TileMap" parent="." instance=ExtResource("1_52253")]
@@ -267,5 +268,8 @@ position = Vector2(88, 112)
 
 [node name="small_box11" parent="." instance=ExtResource("8_06mqc")]
 position = Vector2(152, 117)
+
+[node name="DeathZone" parent="." instance=ExtResource("20_i0q04")]
+position = Vector2(-184, 1446)
 
 [connection signal="body_entered" from="LevelDoor_TallPillar" to="Player" method="_on_level_door_tall_pillar_body_entered"]
