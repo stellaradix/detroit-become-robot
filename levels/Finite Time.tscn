@@ -244,6 +244,7 @@ is_wooden = true
 
 [node name="LevelDoor" parent="." instance=ExtResource("5_amj1a")]
 position = Vector2(83, -625)
+level_path = "res://levels/moving_forward.tscn"
 
 [node name="Spring2" parent="." instance=ExtResource("4_0libk")]
 position = Vector2(-32, -368)
