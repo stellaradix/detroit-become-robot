@@ -21,12 +21,8 @@ func _ready():
 		sprite_2d.flip_h = true
 	else:
 		sprite_2d.flip_h = false
-
-func _on_area_2d_body_entered(_body):
-	#keys have to be the same name as the doors they open
-	if self.name in player.keys_found:
-		sfx_unlock.play()
-		area_2d.queue_free()
-
-func _on_unlock_finished():
-	queue_free()
+	
+	DialogueState.connect("door_opened", open_door)
+	
+func open_door():
+	self.queue_free()

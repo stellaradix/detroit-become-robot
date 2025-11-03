@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://xv7tycs6l53p" path="res://assets/player.png" id="1_owd42"]
 [ext_resource type="AudioStream" uid="uid://b3kbqoygosqip" path="res://Sound/SFX/jump.ogg" id="2_wrs2d"]
 [ext_resource type="AudioStream" uid="uid://bdcsx8s2nuskk" path="res://Sound/SFX/jump_land.ogg" id="3_h5qu4"]
-[ext_resource type="Script" path="res://player/FootstepSFX.gd" id="4_wjnxy"]
+[ext_resource type="Script" uid="uid://bgunmlttno6t2" path="res://player/FootstepSFX.gd" id="4_wjnxy"]
 
 [sub_resource type="GDScript" id="GDScript_ub4pc"]
 script/source = "extends CharacterBody2D
@@ -313,11 +313,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n77sk"]
 _data = {
-"RESET": SubResource("Animation_yp6tc"),
-"crouch": SubResource("Animation_tvsxs"),
-"idle": SubResource("Animation_feb81"),
-"jump": SubResource("Animation_74owe"),
-"run": SubResource("Animation_7uaxq")
+&"RESET": SubResource("Animation_yp6tc"),
+&"crouch": SubResource("Animation_tvsxs"),
+&"idle": SubResource("Animation_feb81"),
+&"jump": SubResource("Animation_74owe"),
+&"run": SubResource("Animation_7uaxq")
 }
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
@@ -369,6 +369,6 @@ script = ExtResource("4_wjnxy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_n77sk")
+&"": SubResource("AnimationLibrary_n77sk")
 }
 autoplay = "idle"

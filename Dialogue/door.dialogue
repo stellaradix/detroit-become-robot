@@ -1,0 +1,15 @@
+~ door
+
+if key_obtained != true and door_status == "closed":
+	It won't budge, I need a Keycard to open this door.
+else:
+	Use keycard?
+	- Yes
+		set key_obtained = false
+		set door_status = "open"
+		do open_door()
+	- No
+set dialogue_is_open = false
+
+=> END
+

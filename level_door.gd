@@ -21,4 +21,3 @@ func _on_body_entered(body):
 		InteractionManager.dialogue_is_open = true
 	elif body == player and dialogue_resource == null:
 		MenuManager.switch_menu(level_path)
-

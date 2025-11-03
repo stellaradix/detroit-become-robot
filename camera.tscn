@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck315tewigdni"]
+[gd_scene load_steps=10 format=3 uid="uid://ck315tewigdni"]
 
 [ext_resource type="Script" path="res://camera.gd" id="1_335q3"]
 [ext_resource type="Texture2D" uid="uid://bquxoe6s6oobm" path="res://assets/camera.png" id="2_cden2"]
@@ -8,6 +8,68 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1p0f"]
 size = Vector2(97.7211, 22.6274)
+
+[sub_resource type="Animation" id="Animation_8xyms"]
+resource_name = "blink"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Light:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.866667, 1.06667, 1.23333, 1.4, 1.53333, 1.66667, 1.76667, 1.86667, 1.96667, 2.06667, 4.06667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Light/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.9, 4.16667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_87ee2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Light:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Light/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c1v65"]
+_data = {
+"RESET": SubResource("Animation_87ee2"),
+"blink": SubResource("Animation_8xyms")
+}
 
 [node name="Camera" type="CharacterBody2D"]
 script = ExtResource("1_335q3")
@@ -45,6 +107,11 @@ texture = ExtResource("4_4pfhe")
 stream = ExtResource("4_ktwov")
 volume_db = -15.0
 bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c1v65")
+}
 
 [connection signal="body_entered" from="Light" to="." method="_on_light_body_entered"]
 [connection signal="finished" from="CaughtPlayerCam" to="." method="_on_caught_player_cam_finished"]

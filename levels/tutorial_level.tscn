@@ -144,21 +144,14 @@ position = Vector2(1385, 31)
 
 [node name="door1" parent="Doors" instance=ExtResource("6_nst58")]
 position = Vector2(513, 16)
-
-[node name="CollisionShape2D" parent="Doors/door1" index="1"]
-visible = false
-position = Vector2(0, 0)
-
-[node name="Area2D" parent="Doors/door1" index="2"]
-visible = false
-
-[node name="CollisionShape2D" parent="Doors/door1/Area2D" index="0"]
-position = Vector2(0, 0)
+card_color = "blue"
+door_flip = true
 
 [node name="Keys" type="Node2D" parent="."]
 
 [node name="door1" parent="Keys" instance=ExtResource("7_ncaf5")]
 position = Vector2(448, -128)
+card_color = "blue"
 
 [node name="TutorialText" type="Control" parent="."]
 layout_mode = 3
@@ -319,5 +312,3 @@ offset_bottom = 669.0
 color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="LevelDoor_Tutorial" to="Player" method="_on_level_door_tutorial_body_entered"]
-
-[editable path="Doors/door1"]
