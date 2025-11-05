@@ -1,7 +1,6 @@
 extends StaticBody2D
 
-@onready var sfx_unlock = $Unlock
-@onready var area_2d = $Area2D
+@onready var interaction_area = $InteractionArea
 @onready var sprite_2d = $Sprite2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @export_enum("red", "blue", "green", "yellow") var card_color: String
@@ -21,8 +20,13 @@ func _ready():
 		sprite_2d.flip_h = true
 	else:
 		sprite_2d.flip_h = false
-	
-	DialogueState.connect("door_opened", open_door)
-	
+		
+	interaction_area.interact = Callable(self, "_on_interact")
+
 func open_door():
+	PlayerManager.play_game_sfx(PlayerManager.door_sfx)
 	self.queue_free()
+
+func _on_interact():
+	if self.name in player.keys_found:
+		open_door()

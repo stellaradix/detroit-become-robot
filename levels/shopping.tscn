@@ -114,35 +114,27 @@ position = Vector2(800, -56)
 
 [node name="Platform3" parent="Objects" index="2" instance=ExtResource("2_4q72c")]
 position = Vector2(192, -88)
-is_wooden = true
 
 [node name="Platform5" parent="Objects" index="3" instance=ExtResource("2_4q72c")]
 position = Vector2(1312, -312)
-is_wooden = true
 
 [node name="Platform9" parent="Objects" index="4" instance=ExtResource("2_4q72c")]
 position = Vector2(1312, -408)
-is_wooden = true
 
 [node name="Platform10" parent="Objects" index="5" instance=ExtResource("2_4q72c")]
 position = Vector2(1376, -408)
-is_wooden = true
 
 [node name="Platform8" parent="Objects" index="6" instance=ExtResource("2_4q72c")]
 position = Vector2(1504, -568)
-is_wooden = true
 
 [node name="Platform6" parent="Objects" index="7" instance=ExtResource("2_4q72c")]
 position = Vector2(1376, -312)
-is_wooden = true
 
 [node name="Platform4" parent="Objects" index="8" instance=ExtResource("2_4q72c")]
 position = Vector2(480, -88)
-is_wooden = true
 
 [node name="Platform7" parent="Objects" index="9" instance=ExtResource("2_4q72c")]
 position = Vector2(928, -88)
-is_wooden = true
 
 [node name="Monstera" type="Sprite2D" parent="Objects" index="10"]
 position = Vector2(768, 32)
@@ -159,9 +151,11 @@ position = Vector2(240, -128)
 
 [node name="Collectable" parent="Objects" index="14" instance=ExtResource("6_h6k1a")]
 position = Vector2(1088, 0)
+item_id = 1
 
 [node name="Collectable2" parent="Objects" index="15" instance=ExtResource("6_h6k1a")]
 position = Vector2(1504, -608)
+item_id = 2
 
 [node name="small_box" parent="Objects" index="16" instance=ExtResource("7_rco4h")]
 position = Vector2(1032, 48)

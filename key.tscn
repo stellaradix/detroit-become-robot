@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr18h5ylochm7"]
+[gd_scene load_steps=5 format=3 uid="uid://cr18h5ylochm7"]
 
-[ext_resource type="Script" path="res://key.gd" id="1_1ea6n"]
+[ext_resource type="Script" uid="uid://dfdx3ffuf6vpv" path="res://key.gd" id="1_1ea6n"]
 [ext_resource type="Texture2D" uid="uid://dakelm83srvrx" path="res://assets/keycard.png" id="2_70ygv"]
 [ext_resource type="Texture2D" uid="uid://ipbif70rd252" path="res://assets/light.tres" id="2_fu4rf"]
-[ext_resource type="AudioStream" uid="uid://dyt83rp8h2xtr" path="res://assets/key_get.ogg" id="3_o7v1w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24al6"]
 size = Vector2(16, 16)
@@ -30,9 +29,4 @@ color = Color(1, 1, 0.964706, 0.529412)
 shadow_enabled = true
 texture = ExtResource("2_fu4rf")
 
-[node name="Gotitem" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_o7v1w")
-bus = &"SFX"
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="finished" from="Gotitem" to="." method="_on_gotitem_finished"]

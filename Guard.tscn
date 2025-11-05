@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://qn2lh78nfdxu"]
 
-[ext_resource type="Script" path="res://Guard.gd" id="1_kl3pk"]
+[ext_resource type="Script" uid="uid://buib2riq088a7" path="res://Guard.gd" id="1_kl3pk"]
 [ext_resource type="Texture2D" uid="uid://cburoo643uy48" path="res://assets/guard-Sheet.png" id="2_1we0i"]
 [ext_resource type="Texture2D" uid="uid://dlgtrcg1l5qe5" path="res://assets/guardlight.png" id="3_dispp"]
 [ext_resource type="AudioStream" uid="uid://kic3brhbxggt" path="res://assets/robot.ogg" id="4_mpeeh"]
@@ -60,12 +60,14 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tpojp"]
 _data = {
-"RESET": SubResource("Animation_4vdhf"),
-"idle": SubResource("Animation_gfqeh"),
-"walk": SubResource("Animation_2xxkr")
+&"RESET": SubResource("Animation_4vdhf"),
+&"idle": SubResource("Animation_gfqeh"),
+&"walk": SubResource("Animation_2xxkr")
 }
 
 [node name="Guard" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 9
 script = ExtResource("1_kl3pk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -99,6 +101,7 @@ shape = SubResource("RectangleShape2D_kfojr")
 [node name="FloorChecker" type="RayCast2D" parent="."]
 position = Vector2(0, 13)
 target_position = Vector2(0, 20)
+collision_mask = 9
 
 [node name="CaughtPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_mpeeh")
@@ -110,7 +113,7 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_tpojp")
+&"": SubResource("AnimationLibrary_tpojp")
 }
 
 [connection signal="body_entered" from="lightPivot/Light" to="." method="_on_light_body_entered"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://c2iegjarfq0cn"]
 
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_hckmd"]
-[ext_resource type="Script" path="res://Components/UI/menu.gd" id="1_mljmm"]
+[ext_resource type="Script" uid="uid://c7fhvnvopy5h2" path="res://Components/UI/menu.gd" id="1_mljmm"]
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_caqcq"]
 [ext_resource type="PackedScene" uid="uid://tqtwhcy818tk" path="res://Tilemaps/bg_tile_map.tscn" id="2_vii5q"]
 [ext_resource type="PackedScene" uid="uid://ck315tewigdni" path="res://camera.tscn" id="3_5j83r"]
@@ -29,10 +29,10 @@ fill_from = Vector2(1, 0.940367)
 script = ExtResource("1_mljmm")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -699.0
-offset_top = -406.0
-offset_right = 600.0
-offset_bottom = 1564.0
+offset_left = -1104.0
+offset_top = -624.0
+offset_right = 1232.0
+offset_bottom = 1688.0
 color = Color(0.310113, 0.377407, 0.389188, 1)
 
 [node name="BG TileMap" parent="." instance=ExtResource("2_vii5q")]
@@ -84,7 +84,7 @@ facing = "left"
 [node name="Keys" type="Node2D" parent="."]
 
 [node name="door1" parent="Keys" instance=ExtResource("4_hdd27")]
-position = Vector2(80, 704)
+position = Vector2(240, 784)
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -97,6 +97,11 @@ position = Vector2(136, 256)
 [node name="Camera2" parent="." instance=ExtResource("3_5j83r")]
 position = Vector2(56, 368)
 facing = "down"
+blinking = true
+
+[node name="Camera4" parent="." instance=ExtResource("3_5j83r")]
+position = Vector2(112, 688)
+facing = "left"
 blinking = true
 
 [node name="Flashlight2" parent="." instance=ExtResource("6_51sf7")]
@@ -114,37 +119,30 @@ dialogue_start = "Day2End"
 
 [node name="Platform" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(160, 584)
-is_wooden = true
 
 [node name="Platform6" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(0, 584)
 
 [node name="Platform7" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(64, 504)
-is_wooden = true
 
 [node name="Platform8" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(128, 504)
-is_wooden = true
 
 [node name="Platform5" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(256, 584)
-is_wooden = true
 
 [node name="Platform9" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(256, 744)
 
 [node name="Platform2" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(224, 344)
-is_wooden = true
 
 [node name="Platform3" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(64, 168)
-is_wooden = true
 
 [node name="Platform4" parent="." instance=ExtResource("9_7lx78")]
 position = Vector2(224, 168)
-is_wooden = true
 
 [node name="Spring" parent="." instance=ExtResource("10_ddl3p")]
 position = Vector2(208, 784)
@@ -163,9 +161,11 @@ color = Color(0, 0, 0, 1)
 
 [node name="Collectable" parent="." instance=ExtResource("13_6b4un")]
 position = Vector2(256, 544)
+item_id = 10
 
 [node name="Collectable2" parent="." instance=ExtResource("13_6b4un")]
 position = Vector2(-16, 400)
+item_id = 9
 
 [node name="Static Box" parent="." instance=ExtResource("14_dxf5f")]
 position = Vector2(80, 768)

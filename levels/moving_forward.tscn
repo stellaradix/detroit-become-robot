@@ -58,8 +58,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u3ovg"]
 _data = {
-"RESET": SubResource("Animation_xvgik"),
-"move": SubResource("Animation_1pd2u")
+&"RESET": SubResource("Animation_xvgik"),
+&"move": SubResource("Animation_1pd2u")
 }
 
 [node name="MovingForward" instance=ExtResource("1_f8dsj")]
@@ -156,7 +156,7 @@ position = Vector2(704, 40)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Objects/Platform" index="2"]
 libraries = {
-"": SubResource("AnimationLibrary_u3ovg")
+&"": SubResource("AnimationLibrary_u3ovg")
 }
 autoplay = "move"
 
@@ -174,18 +174,15 @@ position = Vector2(160, 16)
 
 [node name="Platform2" parent="Objects" index="5" instance=ExtResource("2_1mqiq")]
 position = Vector2(1312, -216)
-is_wooden = true
 
 [node name="Platform3" parent="Objects" index="6" instance=ExtResource("2_1mqiq")]
 position = Vector2(1376, -216)
-is_wooden = true
 
 [node name="Platform4" parent="Objects" index="7" instance=ExtResource("2_1mqiq")]
 position = Vector2(1056, 40)
 
 [node name="Platform6" parent="Objects" index="8" instance=ExtResource("2_1mqiq")]
 position = Vector2(1632, -216)
-is_wooden = true
 
 [node name="Platform5" parent="Objects" index="9" instance=ExtResource("2_1mqiq")]
 position = Vector2(1152, 136)
@@ -198,35 +195,27 @@ position = Vector2(1816, -264)
 
 [node name="Platform12" parent="Objects" index="12" instance=ExtResource("2_1mqiq")]
 position = Vector2(1808, -384)
-is_wooden = true
 
 [node name="Platform16" parent="Objects" index="13" instance=ExtResource("2_1mqiq")]
 position = Vector2(1872, -384)
-is_wooden = true
 
 [node name="Platform14" parent="Objects" index="14" instance=ExtResource("2_1mqiq")]
 position = Vector2(1720, -504)
-is_wooden = true
 
 [node name="Platform15" parent="Objects" index="15" instance=ExtResource("2_1mqiq")]
 position = Vector2(1784, -504)
-is_wooden = true
 
 [node name="Platform11" parent="Objects" index="16" instance=ExtResource("2_1mqiq")]
 position = Vector2(1792, -824)
-is_wooden = true
 
 [node name="Platform13" parent="Objects" index="17" instance=ExtResource("2_1mqiq")]
 position = Vector2(1856, -824)
-is_wooden = true
 
 [node name="Platform17" parent="Objects" index="18" instance=ExtResource("2_1mqiq")]
 position = Vector2(1568, 152)
-is_wooden = true
 
 [node name="Platform19" parent="Objects" index="19" instance=ExtResource("2_1mqiq")]
 position = Vector2(1568, 232)
-is_wooden = true
 
 [node name="Platform18" parent="Objects" index="20" instance=ExtResource("2_1mqiq")]
 position = Vector2(1440, 104)
@@ -287,9 +276,11 @@ color = Color(0, 0, 0, 1)
 
 [node name="Collectable" parent="." index="17" instance=ExtResource("11_0lrf2")]
 position = Vector2(1568, 112)
+item_id = 21
 
 [node name="Collectable2" parent="." index="18" instance=ExtResource("11_0lrf2")]
 position = Vector2(1792, -1008)
+item_id = 22
 
 [node name="Monstera" type="Sprite2D" parent="." index="19"]
 position = Vector2(-24, 0)

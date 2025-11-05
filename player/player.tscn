@@ -8,10 +8,10 @@
 [sub_resource type="GDScript" id="GDScript_ub4pc"]
 script/source = "extends CharacterBody2D
 
-const ACCELERATION = 650.0
+const ACCELERATION = 700.0
 const FRICTION = 1200.0
-const AIR_RESISTANCE = 150
-const MAX_SPEED = 350.0
+const AIR_RESISTANCE = 300
+const MAX_SPEED = 275.0
 const MAX_JUMP_HEIGHT = -550.0
 
 #keeps track of the keys the player has
@@ -326,7 +326,7 @@ _data = {
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 script = SubResource("GDScript_ub4pc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

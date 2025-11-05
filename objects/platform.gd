@@ -1,4 +1,4 @@
-extends AnimatableBody2D
+extends StaticBody2D
 
 @export var is_wooden: bool
 @onready var collision_shape_2d = $CollisionShape2D
@@ -10,8 +10,8 @@ func _process(_delta):
 		if is_wooden == true:
 			sprite_2d.texture = load("res://assets/wood_platform.png")
 			if player.is_crouching == true:
-				collision_shape_2d.disabled = true
+				player.collision_mask &= ~(1 << (4 - 1))
 			else:
-				collision_shape_2d.disabled = false
+				player.collision_mask |= (1 << (4 - 1))
 		else:
 			sprite_2d.texture = load("res://assets/platform.png")

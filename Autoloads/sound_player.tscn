@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp7jkmvowfgby"]
+
+[ext_resource type="Script" uid="uid://c17pwqcpq2r1p" path="res://Autoloads/sound_player.gd" id="1_3o1xw"]
+
+[node name="SoundPlayer" type="Node"]
+script = ExtResource("1_3o1xw")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+bus = &"Music"
+
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="SFX2" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

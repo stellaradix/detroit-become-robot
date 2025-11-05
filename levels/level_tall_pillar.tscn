@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://tqtwhcy818tk" path="res://Tilemaps/bg_tile_map.tscn" id="1_52253"]
 [ext_resource type="PackedScene" uid="uid://b5gmg2u4ee3rh" path="res://Tilemaps/tile_map.tscn" id="1_ovs8f"]
-[ext_resource type="Script" path="res://Components/UI/menu.gd" id="1_r0ttq"]
+[ext_resource type="Script" uid="uid://c7fhvnvopy5h2" path="res://Components/UI/menu.gd" id="1_r0ttq"]
 [ext_resource type="PackedScene" uid="uid://bj7pd5x1t6skh" path="res://player/player.tscn" id="2_oaq78"]
 [ext_resource type="PackedScene" uid="uid://qn2lh78nfdxu" path="res://Guard.tscn" id="3_ykd0s"]
 [ext_resource type="PackedScene" uid="uid://ck315tewigdni" path="res://camera.tscn" id="4_y3dhk"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dmt6vddqnip8k" path="res://objects/collectable.tscn" id="14_pwr4o"]
 [ext_resource type="PackedScene" uid="uid://cxfunvwofvvkr" path="res://objects/spring.tscn" id="14_qm647"]
 [ext_resource type="Texture2D" uid="uid://ddjcvt43o3g1w" path="res://assets/monstera.png" id="15_cctah"]
-[ext_resource type="Script" path="res://Components/interactible/npc.gd" id="16_7j53x"]
+[ext_resource type="Script" uid="uid://be01842qj8dqc" path="res://Components/interactible/npc.gd" id="16_7j53x"]
 [ext_resource type="PackedScene" uid="uid://c8su05aeqprxi" path="res://Components/Collision/interaction_area.tscn" id="16_pum4q"]
 [ext_resource type="Resource" uid="uid://djqh1ehu20dmn" path="res://Dialogue/inspect.dialogue" id="17_wrid8"]
 [ext_resource type="PackedScene" uid="uid://dbxol3cxvu21l" path="res://objects/shelf.tscn" id="19_2wh21"]
@@ -138,46 +138,36 @@ facing = "right"
 
 [node name="Platform" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-32, 72)
-is_wooden = true
 
 [node name="Platform4" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-288, 24)
-is_wooden = true
 
 [node name="Platform11" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-352, 24)
-is_wooden = true
 
 [node name="Platform5" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-224, 24)
-is_wooden = true
 
 [node name="Platform12" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-160, 24)
-is_wooden = true
 
 [node name="Platform2" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(32, 72)
-is_wooden = true
 
 [node name="Platform3" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(96, -104)
-is_wooden = true
 
 [node name="Platform6" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(32, -104)
-is_wooden = true
 
 [node name="Platform7" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-224, -296)
 
 [node name="Platform8" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(224, -248)
-is_wooden = true
 
 [node name="Platform10" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(160, -248)
-is_wooden = true
 
 [node name="Platform9" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-64, -296)
@@ -223,7 +213,6 @@ position = Vector2(-512, -216)
 
 [node name="Platform15" parent="." instance=ExtResource("7_gt258")]
 position = Vector2(-512, -440)
-is_wooden = true
 
 [node name="DialogueCover" type="ColorRect" parent="."]
 visible = false
@@ -239,9 +228,13 @@ position = Vector2(-512, -240)
 
 [node name="Collectable" parent="." instance=ExtResource("14_pwr4o")]
 position = Vector2(216, -280)
+priority = 4
+item_id = 4
 
 [node name="Collectable2" parent="." instance=ExtResource("14_pwr4o")]
 position = Vector2(-360, -48)
+priority = 3
+item_id = 3
 
 [node name="Monstera" type="Sprite2D" parent="."]
 position = Vector2(-184, 128)
