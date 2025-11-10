@@ -1,4 +1,4 @@
-extends Sprite2D
+extends StaticBody2D
 
 @onready var interaction_area = $InteractionArea
 
